@@ -1,0 +1,3 @@
+load("/Users/gregor/Dropbox/optimalControlProject/solutions/u-forwardBackwardSweep-x1=1-x2=0.25,normal(2.5,5).rds")
+readRDS("~/Dropbox/optimalControlProject/solutions/u-forwardBackwardSweep-x1=0-x2=0.25,normal(2.5,5).rds")
+readRDS("~/Dropbox/optimalControlProject/solutions/u-forwardBackwardSweep-x1=1-x2=0.25,normal(2.5,5).rds")
