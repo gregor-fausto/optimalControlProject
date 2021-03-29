@@ -36,7 +36,7 @@ j = length(runList[[1]]$beta1.list)
 par(mfrow=c(2,2))
 
 # Axis limits
-ylim.p = c(0,2)
+ylim.p = c(0,1)
 xlim.p = c(0,5)
 
 # Colors
