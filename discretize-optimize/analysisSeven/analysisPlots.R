@@ -20,7 +20,7 @@ directory = "discretize-optimize/analysisSeven/"
 # Get combination of development, meristem constraint, resource constraint
 ######################
 
-files <- list.files(paste0("~/Dropbox/optimalControlProject/",directory))
+files <- list.files(paste0(directory))
 files<-files[c(grep("determinate-uniform-",files,ignore.case=TRUE))]
 
 df.list <- list()
@@ -40,8 +40,8 @@ df <- data.frame(model=rep("model",n),
 
   for(j in 1:length(files)){
     
-  tmp = readRDS(paste0("~/Dropbox/optimalControlProject/",directory,files[j]))
-  source(paste0("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-",tmp$model,".R"))
+  tmp = readRDS(paste0(directory,files[j]))
+  source(paste0("discretize-optimize/scriptsBatch/control-",tmp$model,".R"))
   derivs=numeric(6); 
   
   n=length(tmp$u.list)
