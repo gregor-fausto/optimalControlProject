@@ -12,17 +12,17 @@ library(tidyverse)
 
 model = c('determinate')
 P = c(1)
-V = c(1)
+V = c(.5)
 I = c(0)
 L = c(0.0001)
-m = seq(.1,1,.1)
-alpha = seq(.1,1,.1)
+m = seq(1)
+alpha = seq(.1)
 seasonDistribution = c("uniform")
 mu = c(NA)
 sd = c(NA)
-max = c(1)
+max = c(5)
 min = c(0)
-gamma = c(0,.5,1)
+gamma = c(0)
 
 df<-data.frame(expand.grid(model=model,
                        P=P,V=V,I=I,L=L,
@@ -38,10 +38,10 @@ df<-data.frame(expand.grid(model=model,
   # theme_bw()
 
 # write out file with all parameters
-#saveRDS(df,paste0("model-scripts/",analysisName,"-parameterFile.RDS"))
+saveRDS(df,paste0("model-scripts/",analysisName,"-parameterFile.RDS"))
 
 write.csv(df,paste0("model-scripts/",analysisName,"-parameterTable.csv"),row.names=F)
-#write.csv(df[-c(1:(dim(df)[1])),],paste0("model-scripts/",analysisName,"-exitTable.csv"),row.names=F)
+write.csv(df[-c(1:(dim(df)[1])),],paste0("model-scripts/",analysisName,"-exitTable.csv"),row.names=F)
 
 ####################################
 ## Build inits object
