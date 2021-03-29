@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: annotated_bibliography.aux
+The style file: plain-annote.bst
+Database file #1: /Users/gregor/Dropbox/bibliography/optimal-control-lit.bib
+Warning--empty school in Austen2014
+You've used 29 entries,
+            2219 wiz_defined-function locations,
+            765 strings with 31774 characters,
+and the built_in function-call counts, 11397 in all, are:
+= -- 1189
+> -- 526
+< -- 1
++ -- 207
+- -- 173
+* -- 868
+:= -- 1996
+add.period$ -- 138
+call.type$ -- 29
+change.case$ -- 186
+chr.to.int$ -- 0
+cite$ -- 30
+duplicate$ -- 327
+empty$ -- 810
+format.name$ -- 173
+if$ -- 2248
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 28
+newline$ -- 225
+num.names$ -- 89
+pop$ -- 113
+preamble$ -- 1
+purify$ -- 158
+quote$ -- 0
+skip$ -- 248
+stack$ -- 0
+substring$ -- 854
+swap$ -- 36
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 116
+warning$ -- 1
+while$ -- 143
+width$ -- 31
+write$ -- 423
+(There was 1 warning)

@@ -1,0 +1,348 @@
+\documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set up packages, geometry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry, textcomp, amsmath, graphicx, amssymb,fancyhdr,subcaption,bm}                
+	
+\geometry{letterpaper, marginparwidth=60pt}                   		
+\usepackage[superscript,noadjust]{cite} % puts dash in citations to abbreviate
+%\usepackage [autostyle, english = american]{csquotes} % sets US-style quotes
+%\MakeOuterQuote{"} % sets quote style
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\small}
+
+\usepackage{float,color}
+\usepackage{soul}
+
+\usepackage{pgf, tikz, eqnarray}
+\usetikzlibrary{arrows, automata}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}                                                      %%
+%%%%%%%%%% EXAFT 1in MARGINS %%%%%%%                                   %%
+\setlength{\textwidth}{6.5in}     %%                                   %%
+\setlength{\oddsidemargin}{0in}   %% (It is recommended that you       %%
+\setlength{\evensidemargin}{0in}  %%  not change these parameters,     %%
+\setlength{\textheight}{8.5in}    %%  at the risk of having your       %%
+\setlength{\topmargin}{0in}       %%  proposal dismissed on the basis  %%
+\setlength{\headheight}{0in}      %%  of incorrect formatting!!!)      %%
+\setlength{\headsep}{0in}         %%                                   %%
+\setlength{\footskip}{.5in}       %%                                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   %%		
+
+\usepackage{mathtools}
+\usepackage{physics}
+
+%%%%%%%%%%%%%
+% DEFINE CODE BLOCK
+%%%%%%%%%%%%%
+\usepackage{listings}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+ % keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  otherkeywords={0,1,2,3,4,5,6,7,8,9},
+  deletekeywords={data,frame,length,as,character,dunif,ps},
+}
+
+\begin{document} 
+
+\section{Introduction}
+
+Key points:
+
+\begin{itemize}
+\item Plant phenology changing is a well-documented response to rising temperatures. Despite general advances, there is a fair amount of variation in the response. The paper they discuss show this for both first flowering and other metrics (peak, end).
+\item The authors mention this in the discussion, but I think this is a good framing for this work. Cleland et al. (2006) found that forbs advanced their flowering times but grass species delayed flowering times in relation to start of growing season under a CO2 enrichment experiment. CO2 increases productivity, and might extend season length by reducing transpiration (water loss). 
+\item Dynamic energy allocation models can help guide expectations for phenological change. Classic studies assume that plant growth rate is proportional to the vegetative mass during growth season. Here, the authors investigate the consequences of constrained growth by comparing an exponential  growth model with two constrained growth models (logistic, WBE).
+\item What can lead to constrained growth? Self-shading, structural costs to support vegetative tissue, sibling competition, metabolic rates.
+\end{itemize}
+
+\section{Methods}
+\subsection{Growth function}
+
+\noindent Lindh et al. (2016) begin with the following equation: 
+
+\begin{align}
+F(V) = \underbracket[0.8pt]{ AV^a }_\text{\clap{assimilation~}} - \overbracket[0.8pt]{BV^b}^\text{\clap{maintenance~}} \nonumber 
+\end{align}
+
+The relative growth rate (RGR) is 
+
+\begin{align}
+\frac{F(V)}{V} = \dv{V}{t} \frac{1}{V} \nonumber 
+\end{align}
+
+\subsubsection{Exponential growth model}
+
+\noindent Exponential growth ($a=1$, $B=0$):
+
+\begin{align}
+F(V) = AV
+\end{align}
+
+This growth function directly corresponds to the function presented in King and Roughgarden (1982). King and Roughgarden (1982) solve the case where the growth rate parameter is constant, $A=1$. In this case, the rate of vegetative biomass production is proportional to the mass of the vegetative part of the plant. 
+
+Productivity is thus defined as
+
+\begin{align}
+\frac{F(V)}{V} & = \dv{V}{t} \frac{1}{V} \nonumber \\
+\frac{AV}{V} & = \dv{V}{t} \frac{1}{V} \nonumber \\
+A & = \dv{V}{t} \frac{1}{V} \nonumber \\
+\end{align}
+
+\subsubsection{Logistic growth model}
+
+\noindent Logistic growth  ($a=1$, $B=\frac{P}{V_{\text{max}}}$, $b=2$):
+
+\begin{align}
+F(V) = AV - \frac{P}{V_{\text{max}}} V^2
+\end{align}
+
+Productivity is thus defined as
+
+\begin{align}
+\frac{F(V)}{V} & = \dv{V}{t} \frac{1}{V} \nonumber \\
+\frac{AV - \frac{P}{V_{\text{max}}} V^2}{V} & = \dv{V}{t} \frac{1}{V} \nonumber \\
+A - \frac{P}{V_{\text{max}}} V & = \dv{V}{t} \frac{1}{V} \nonumber \\
+\end{align}
+
+\subsubsection{WBE growth model}
+
+\noindent West-Brown-Enquist (WBE) model of growth ($a=\frac{3}{4}$, $B=P V_\text{max}^{-\frac{1}{4}}$, $b=1$):
+
+\begin{align}
+F(V) & = AV^\frac{3}{4} - P V_\text{max}^{-\frac{1}{4}} V \\
+& =  AV^\frac{3}{4} - \frac{P}{ V_\text{max}^{\frac{3}{4}} } V 
+\end{align}
+
+Productivity is thus defined as
+
+\begin{align}
+\frac{F(V)}{V} & = \dv{V}{t} \frac{1}{V} \nonumber \\
+\frac{AV^\frac{3}{4} - \frac{P}{ V_\text{max}^{\frac{3}{4}} } V }{V} & = \dv{V}{t} \frac{1}{V} \nonumber \\
+AV{-\frac{1}{4}} - \frac{P}{ V_\text{max}^{\frac{3}{4}} }   & = \dv{V}{t} \frac{1}{V} \nonumber \\
+\end{align}
+
+\subsubsection{Dynamic energy allocation model}
+
+Biomass is partitioned between the dry mass of the vegetative part of the plant ($V$) and the reproductive part of the plant ($R$).
+
+\begin{align}
+\dv{V}{t} & = u(t) F(V),\ t\mathrm{\ in\ }[0,T],\ V(0)=V_0>0  \\
+\dv{R}{t} & = (1-u(t)) F(V) 
+\end{align}
+
+The total reproductive output over the season is
+
+\begin{align}
+W =  \int_0^T (1-u(t)) s(t)  F(V) dt  \nonumber \\
+\end{align}
+
+\subsubsection{Mortality}
+
+Lindh et al. (2016) modify the model to explore the effect of constant mortality. The model becomes:
+
+\begin{align}
+\dv{V}{t} & = u(t) F(V),\ t\mathrm{\ in\ }[0,T],\ V(0)=V_0>0  \\
+\dv{R}{t} & = (1-u(t)) F(V) s(t)
+\end{align}
+
+where 
+
+\begin{align}
+s(t) = e^{-mt}
+\end{align}
+
+I prefer thinking about this in terms presented by Fox (1992). Instead of introducing mortality into the differential equations, write the cumulative survivorship to time $t$ as:
+
+\begin{align}
+l(t) = e^{-\int_0^T (mt) dt}
+\end{align}
+
+The optimal strategy is then one that maximizes the fitness
+
+\begin{align}
+W =  \int_0^T \underbracket[0.8pt]{(1-u(t)) F(V)}_{\text{reproduction} } \times \overbracket[0.8pt]{l(t)}^{\text{survivorship}} dt  \nonumber \\
+\end{align}
+
+Following from Theorem 1, the control is bang-bang so we can solve for the reproductive output starting at the onset of reproduction (when $u(t) = 0$. The reproductive output with the bang-bang control is
+
+\begin{align}
+W(t^*_F) & =  \int_{t^*_F}^T  F(V) \times l(t) dt  \nonumber \\
+W(t^*_F) & =  \frac{F(V(T))\times -e^{-mT} - F(V({t^*_F})) \times -e^{-m{t^*_F}}}{m} \nonumber \\
+W(t^*_F) & =  \frac{ F(V({t^*_F})) - F(V(T)) }{m} \times (e^{-m{t^*_F}} - e^{-mT} )
+\end{align}
+
+For exponential growth, $F(V) = PV$, and so the solution becomes 
+
+\dots
+
+\subsubsection{Optimal control}
+
+The control is given by $u(t) \in A$, where the set of admissible controls is given by:
+
+\begin{align}
+A = {u(t): [0,T]  \rightarrow [0,1] } \nonumber \\
+\end{align}
+
+The optimal control problem we are interested in is
+%
+\begin{align}
+\max_{u} &  \int_0^T (1-u(t)) s(t)  F(V) dt  \nonumber \\
+\mathrm{subject\ to\ } 
+& \dot{V} = u(t) F(V) , \nonumber \\
+& \dot{R} = (1-u(t)) F(V) s(t) , \nonumber \\ 
+& V(0) = V_0 > 0, \nonumber \\
+& 0 u(t) \leq 1.  
+\end{align}
+
+\noindent The Hamiltonian is 
+%
+\begin{align}
+H = F(V) s(t) + p_1(t) [u(t) F(V)] +  p_2(t) [(1-u(t)) F(V)] 
+\end{align}
+%
+The optimality conditions are
+%
+\begin{align}
+& \frac{\partial H}{\partial u} = p_1(t) F(V) -  p_2(t) F(V) \\
+\end{align}
+%
+The transversality condition is
+%
+\begin{align}
+p_1(T) = p_2(T) = 0.
+\end{align}
+%
+The adjoint equations are
+%
+\begin{align}
+&-\frac{\partial H}{\partial V} = \dot{p_1}  = \dv{F}{V} (V(t)) s(t) + p_1 u(t)  \dv{F}{V} (V(t)) + p_2  \dv{F}{V} (V(t)) - p_2 u  \dv{F}{V} (V(t)) \\
+& -\frac{\partial H}{\partial V} = \dot{p_1}  = \dv{F}{V} (V(t)) s(t) + u(t)  \dv{F}{V} (V(t)) (p_1 - p_2) + p_2  \dv{F}{V} (V(t)) 
+\end{align}
+%
+and
+\begin{align}
+&-\frac{\partial H}{\partial R} = \dot{p_2}  = \dots
+\end{align}
+
+\subsubsection{Physiological time}
+
+The authors present a reformulation of the model in physiological time to make it compatible with models that work with physiological time (e.g. cumulative GDD or sum of temperatures). They rewrite the growth function as
+
+\begin{align}
+F(V) = \dv{V}{t} = P(T_K) U(V)
+\end{align}
+
+where $P(T_K)$: productivity function of temperature in Kelvin. $U(V)$ is unitless and varies. 
+
+\begin{itemize}
+\item Exponential: $U(V) = V$
+\item Logistic: $U(V) = V(1-\frac{V}{V_\text{max}}$
+\item WBE: $U(V) = V^\frac{3}{4} (1-(\frac{V}{V_\text{max}})^{\frac{1}{4}})$
+\end{itemize}
+
+Translating physiological to calendar time is via
+
+\begin{align}
+\dv{\tau}{t} = c^{-1} P(T_K)
+\end{align}
+
+or 
+
+\begin{align}
+\tau(t) = c^{-1}  \int_{S}^t P(T_K)
+\end{align}
+
+Season length in physiological time is $\tau(E)$, corresponding to the total productivity integral over the season. Via the chain rule, the growth rate becomes
+
+\begin{align}
+F_\tau(V) = \dv{V}{t} \dv{t}{\tau} = \frac{P(T_K) U(V)}{c^{-1} P(T_K)} = cU(V)
+\end{align}
+
+\section{Results}
+
+\subsubsection{Effect of growth constraints and productivity on flowering time (Figure 2)}
+
+\begin{itemize}
+
+\item \textbf{First row, 2A-C}: Plots the relative growth rate against vegetative mass.
+\item Growth rate is constant for exponential growth. Growth rate decreases linearly for logistic growth. Growth rate decreases nonlinearly for WBE growth.
+\item \textbf{Second row, 2D-F}: Plots trajectory of vegetative mass ($V$) at flowering time ($t^*_F$) against time. The lines correspond to the trajectories of $V$ for no switch to reproduction ($u=1$). The solid portion of the line covers the period during which the optimal strategy is vegetative growth; the dotted portion of the line covers the period during which the optimal strategy is reproductive growth.
+\item Vegetative mass at flowering always increases with increasing productivity. This is read by looking across the red to green points and seeing that the vegetative mass at flowering shifts higher on the y-axis. 
+\item \textbf{Third row, 2G-I}: Plots the optimal flowering time $t^*_F$ against productivity $P$.
+\item Higher productivity delays the optimal flowering time for exponential growth (2G); plants can get larger by postponing reproduction.
+\item For logistic or WBE growth, there is less of a benefit to postponing reproduction in productive environments. In these cases (2H-I), the optimal flowering time first increases and then decreases as productivity increases. These cases have earlier reproduction at increased productivity because the plants can invest in reproduction for a longer period of time.
+\end{itemize}
+
+The authors also note that at low productivity, the relative growth rate has a weak negative slope. Plants thus postpone flowering when productivity increases, similarly to plants with exponential growth and a constant RGR. At higher productivity, the RGR has a steeper negative slope, and it thus instead pays off to reproduce earlier.
+
+\subsubsection{Effect of changing season length jointly with growth constraints and productivity on flowering time (Figure 3)}
+
+In this figure, the colors correspond to the optimal season length. The authors vary season length in two different ways (see below) and examine the solution across a range of productivities. The arrow shows the direction in which optimal flowering time is getting later (they represent the gradient of optimal flowering times).
+
+\textbf{Case 1: Influence of season length on optimal flowering in relation to start of growing season}
+
+Here, the authors assume $S=0$ and $E=T$; they vary $T$. This corresponds to Figure 3A-C
+
+\begin{itemize}
+\item Exponential growth: Increasing season length always increases the optimal flowering time. Increasing productivity always increases the optimal flowering time. The arrow points to the upper right corner; gradient is stronger across season length.
+\item Logistic growth: Increasing season length always increases the optimal flowering time (the two arrows point to the right). The thick black line divides the graph into two regions. Below the thick black line (bottom left), increasing productivity delays optimal flowering time. Above the thick black line (top right), increasing productivity advances optimal flowering time (earlier).
+\item WBE growth: Increasing season length always increases the optimal flowering time (the two arrows point to the right). The thick black line divides the graph into two regions. Below the thick black line (bottom left), increasing productivity delays optimal flowering time. Above the thick black line (top right), increasing productivity advances optimal flowering time (earlier).
+\end{itemize}
+
+\textbf{Case 2: Influence of season length on optimal flowering in relation to start \& end of growing season}
+
+Here, the authors assume the middle of the season is at $t$. The start and end of the season are $S=-T/2$ and $E=T/2$, respectively. Varying $T$ thus changes the length of the season at start and end. This corresponds to Figure 3D-G
+
+\begin{itemize}
+\item Exponential growth: Increasing season length always increases the optimal flowering time. Increasing productivity always increases the optimal flowering time. The arrow points to the upper right corner; gradient is stronger across season length; the gradient is shallower than in (A).
+\item Logistic growth: Increasing season length delays the optimal flowering time below the thin black line. Increasing productivity advances the optimal flowering time above the thick black line. So, with low productivity and/or short seasons, increasing season length can delay optimal flowering time. 
+\item WBE growth: Increasing season length delays the optimal flowering time below the thin black line.  Increasing productivity advances the optimal flowering time above the thick black line. So, with low productivity and/or short seasons, increasing season length can delay optimal flowering time. 
+\end{itemize}
+
+For a given season length, the optimal flowering time can be delayed or advanced under constrained growth and changing productivity. For constrained growth, the productivity level that maximizes optimal flowering time decreases with increasing season length (negative slope to black line). The authors claim "the optimal phenological response to increased season length depends on whether growth is constrained or not". "When growth is constrained, season length can influence the direction of the phenological response to increased productivity, and productivity can influence the direction of the phenological response to a longer season."
+
+\section{Discussion}
+
+\begin{enumerate}
+\item Life history strategies may explain variation in phenological responses to a changing climate.
+\item Growth rate depends on plant architecture, self-shading, competition, metabolism. CO2 increases may change productivity and also season length (by extending the season through reducing transpiration).
+\item The focus here is on annual organisms. In perennials, reproduction may be less tightly coupled to energy allocation patterns because perennial plants can use stored resources to produce flowers. Maybe the switch investigated here could correspond to the switch from vegetative growth to storage. There are also many other constraints on reproduction: it might be useful to consider others especially constrained reproduction. 
+\item Model and calculations find a bang-bang control; this is what models show. Note: this is found with models where what is being optimized is arithmetic mean of fitness. Last year, we read a paper (by King and Roughgarden 1982) that showed regions of a singular control with maximizing the geometric mean fitness.
+\item Discuss comparing calendar time and change relative to start of growing season. [\hl{this would be a good point to discuss; I'm not sure I fully follow their argument}]
+\item When faced with increasing season length from increases to start/end of the season, there seems to be an internal maximum of the optimal flowering time for constrained growth.
+\item \dots
+\item \dots Do not expect growth constraints to flip the optimal direction of change for the physiological time for flowering.
+\item \dots
+\end{enumerate}
+
+\end{document}

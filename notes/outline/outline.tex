@@ -1,0 +1,234 @@
+\documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set up packages, geometry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry, textcomp, amsmath, graphicx, amssymb,fancyhdr,subcaption,bm}                		
+\geometry{letterpaper, marginparwidth=60pt}                   		
+\usepackage[superscript,noadjust]{cite} % puts dash in citations to abbreviate
+%\usepackage [autostyle, english = american]{csquotes} % sets US-style quotes
+%\MakeOuterQuote{"} % sets quote style
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\small}
+
+\usepackage{float}
+
+\usepackage{pgf, tikz}
+\usetikzlibrary{arrows, automata}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}                                                      %%
+%%%%%%%%%% EXAFT 1in MARGINS %%%%%%%                                   %%
+\setlength{\textwidth}{6.5in}     %%                                   %%
+\setlength{\oddsidemargin}{0in}   %% (It is recommended that you       %%
+\setlength{\evensidemargin}{0in}  %%  not change these parameters,     %%
+\setlength{\textheight}{8.5in}    %%  at the risk of having your       %%
+\setlength{\topmargin}{0in}       %%  proposal dismissed on the basis  %%
+\setlength{\headheight}{0in}      %%  of incorrect formatting!!!)      %%
+\setlength{\headsep}{0in}         %%                                   %%
+\setlength{\footskip}{.5in}       %%                                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   %%		
+
+
+\begin{document}
+
+\noindent Full model: capacity for growth and reproduction is limited by meristem availability and rate of meristem commitment
+
+ \begin{tikzpicture}[
+            > = stealth, % arrow head style
+            shorten > = 1pt, % don't touch arrow head to node
+            auto,
+            node distance = 3cm, % distance between nodes
+            semithick % line style
+        ]
+
+        \tikzstyle{every state}=[
+            draw = black,
+            thick,
+            fill = white,
+            minimum size = 4mm
+        ]F
+
+        \node[state] (M) {$M$};
+        \node[] (Fc) [above left of=M] {$$};
+        \node[state] (F) [above of=Fc] {$F$};
+        \node (Mc) [right of=M] {$$};
+                \node[] (Gc) [above right of=M] {$$};
+        \node[state] (G) [above  of=Gc] {$G$};
+        \node[state] (V) [right of=Mc] {$V$};
+        \node (Vc) [below of=V,distance=1cm] {$\bowtie$};
+        \node[state] (R) [above right of=V] {$R$};
+                \node (Rc) [below of=R,distance=1cm] {$\bowtie$};
+                        \node (Fout) [above of=F] {$$};
+        \node (P) [below right of=Vc] {$$};
+        \node (Pc) [right of=P,distance=1cm,label=below:$P(t)$] {$\bowtie$};
+
+
+        \path[->] (M) edge node {$v_1(t)$} (F);
+        \path[->] (M) edge node {$v_2(t)$} (G);
+       % \path[->] (M) edge node {$u_3(t)$} (V);
+       
+        %       \draw[dotted,->] (Gc) to[out=315,in=180]node[pos=0.5,left]{[2]} (Vc) ;
+                \draw[dotted,->] (G) to[out=0,in=115]node[pos=0.5,right]{[4]} (Vc);
+                \path[->] (Pc) edge node {} (P);
+      %  \path[->] (P) edge node {1} (V);
+       	\draw[->] (P) to[out=180,in=270]node[pos=0.45,left]{$u_2(t)$} (V) ;
+       % \path[->] (P) edge node {1} (M);
+        \draw[->] (P) to[out=180,in=270]node[pos=0.75,left]{$u_1(t)$} (M) ;
+	% \path[->] (P) edge node {1} (S);
+        \draw[->] (P) to[out=90,in=270]node[pos=0.15,left]{$u_3(t)$} (R) ;
+
+        \draw[dotted,->] (V) to[out=360,in=90]node[pos=0.5,right]{[1]} (Pc) ;
+        %\draw[dotted,->] (Mc) to[out=270,in=180]node[pos=0.25,right]{[2]} (Vc) ;
+        
+    %    \draw[dotted,->] (Fc) to[out=0,in=115]node[pos=0.5,right]{[3]} (Rc) ;
+        \draw[dotted, ->] (F) to[out=45,in=115]node[pos=0.25,right]{[5]} (Rc);
+
+    \end{tikzpicture} \newline
+    
+    \newpage 
+    
+\noindent    Rate model: capacity for growth and reproduction is limited by rate of meristem commitment
+    
+    \begin{tikzpicture}[
+            > = stealth, % arrow head style
+            shorten > = 1pt, % don't touch arrow head to node
+            auto,
+            node distance = 3cm, % distance between nodes
+            semithick % line style
+        ]
+
+        \tikzstyle{every state}=[
+            draw = black,
+            thick,
+            fill = white,
+            minimum size = 4mm
+        ]F
+
+        \node[state] (M) {$M$};
+        \node[] (Fc) [above left of=M] {$$};
+      %  \node[state] (F) [above of=Fc] {$F$};
+        \node (Mc) [right of=M] {$$};
+                \node[] (Gc) [above right of=M] {$$};
+      %  \node[state] (G) [above  of=Gc] {$G$};
+        \node[state] (V) [right of=Mc] {$V$};
+        \node (Vc) [below of=V,distance=1cm] {$\bowtie$};
+        \node[state] (R) [above right of=V] {$R$};
+                \node (Rc) [below of=R,distance=1cm] {$\bowtie$};
+                        \node (Fout) [above of=F] {$$};
+        \node (P) [below right of=Vc] {$$};
+        \node (Pc) [right of=P,distance=1cm,label=below:$P(t)$] {$\bowtie$};
+
+
+        \path[->] (M) edge node {$v_1(t)$} (F);
+        \path[->] (M) edge node {$v_2(t)$} (G);
+       % \path[->] (M) edge node {$u_3(t)$} (V);
+       
+        %       \draw[dotted,->] (Gc) to[out=315,in=180]node[pos=0.5,left]{[2]} (Vc) ;
+    %            \draw[->] (G) to[out=0,in=115]node[pos=0.5,right]{[4]} (V);
+                \path[->] (Pc) edge node {} (P);
+      %  \path[->] (P) edge node {1} (V);
+       	\draw[->] (P) to[out=180,in=270]node[pos=0.45,left]{$u_2(t)$} (V) ;
+       % \path[->] (P) edge node {1} (M);
+        \draw[->] (P) to[out=180,in=270]node[pos=0.75,left]{$u_1(t)$} (M) ;
+	% \path[->] (P) edge node {1} (S);
+        \draw[->] (P) to[out=90,in=270]node[pos=0.15,left]{$u_3(t)$} (R) ;
+
+        \draw[dotted,->] (V) to[out=360,in=90]node[pos=0.5,right]{[1]} (Pc) ;
+        %\draw[dotted,->] (Mc) to[out=270,in=180]node[pos=0.25,right]{[2]} (Vc) ;
+        
+    %    \draw[dotted,->] (Fc) to[out=0,in=115]node[pos=0.5,right]{[3]} (Rc) ;
+     %   \draw[->] (F) to[out=90,in=115]node[pos=0.5,right]{[5]} (R);
+
+    \end{tikzpicture} \newline
+
+\newpage
+
+\noindent Meristem availability model: capacity for growth and reproduction is limited by meristem availability
+
+ \begin{tikzpicture}[
+            > = stealth, % arrow head style
+            shorten > = 1pt, % don't touch arrow head to node
+            auto,
+            node distance = 3cm, % distance between nodes
+            semithick % line style
+        ]
+
+        \tikzstyle{every state}=[
+            draw = black,
+            thick,
+            fill = white,
+            minimum size = 4mm
+        ]F
+
+        \node[state] (M) {$M$};
+        \node[] (Fc) [above left of=M] {$$};
+        \node[state] (F) [above of=Fc] {$F$};
+        \node (Mc) [right of=M] {$$};
+                \node[] (Gc) [above right of=M] {$$};
+        \node[state] (G) [above  of=Gc] {$G$};
+        \node[state] (V) [right of=Mc] {$V$};
+        \node (Vc) [below of=V,distance=1cm] {$\bowtie$};
+        \node[state] (R) [above right of=V] {$R$};
+                \node (Rc) [below of=R,distance=1cm] {$\bowtie$};
+                        \node (Fout) [above of=F] {$$};
+        \node (P) [below right of=Vc] {$$};
+        \node (Pc) [right of=P,distance=1cm,label=below:$P(t)$] {$\bowtie$};
+
+
+        \path[->] (M) edge node {$v_1(t)$} (F);
+        \path[->] (M) edge node {$v_2(t)$} (G);
+       % \path[->] (M) edge node {$u_3(t)$} (V);
+       
+        %       \draw[dotted,->] (Gc) to[out=315,in=180]node[pos=0.5,left]{[2]} (Vc) ;
+                \draw[dotted, ->] (G) to[out=0,in=115]node[pos=0.5,right]{[4]} (Vc);
+                \path[->] (Pc) edge node {} (P);
+      %  \path[->] (P) edge node {1} (V);
+       	\draw[->] (P) to[out=180,in=270]node[pos=0.45,left]{$u_2(t)$} (V) ;
+       % \path[->] (P) edge node {1} (M);
+        \draw[->] (P) to[out=180,in=270]node[pos=0.75,left]{$u_1(t)$} (M) ;
+	% \path[->] (P) edge node {1} (S);
+        \draw[->] (P) to[out=90,in=270]node[pos=0.15,left]{$u_3(t)$} (R) ;
+
+        \draw[dotted,->] (V) to[out=360,in=90]node[pos=0.5,right]{[1]} (Pc) ;
+        %\draw[dotted,->] (Mc) to[out=270,in=180]node[pos=0.25,right]{[2]} (Vc) ;
+        
+    %    \draw[dotted,->] (Fc) to[out=0,in=115]node[pos=0.5,right]{[3]} (Rc) ;
+        \draw[dotted, ->] (F) to[out=45,in=115]node[pos=0.25,right]{[5]} (Rc);
+
+    \end{tikzpicture} \newline
+    
+    \newpage     
+
+\noindent Let un-allocated meristems, vegetative biomass, accumulated reproductive biomass, meristems committed to growth, and meristems committed to reproduction be represented as $M$, $V$, $R$, $G$, and $F$. \\
+
+\noindent Growth in a season ($0<t<T$) is expressed as:
+
+$$\frac{dM}{dt} = u_1(t) P(t) - v_1(t) M - v_2(t) M  $$ 
+$$\frac{dV}{dt} = u_2(t) P(t) $$
+$$\frac{dR}{dt} = u_3(t) P(t) $$
+
+$$\frac{dG}{dt} = v_1(t) M   $$
+$$\frac{dF}{dt} = v_2(t) M   $$
+
+\noindent with constraints $u_1(t) + u_2(t) + u_3(t) = 1$, $u_i(t) \geq 0 \ (i=1,2, 3)$, $v_1(t) + v_2(t) = 1$, and $R(0)=0$. The assumptions here are that all energy produced by photosynthesis is allocated to meristem development, vegetative growth, or reproduction. Meristems are allocated to either growth or flowering; no meristems remain undifferentiated. Initial reproductive biomass is zero. \\
+
+\noindent Daily photosynthesis is a function of vegetative biomass is represented as $g(V)$. The plant starts from initial size $g(V(0))$ set by seed resources. Following Iwasa (200), I assume that daily biomass production (photosynthesis production, respiration cost) daily net production, is an increasing, saturating function of the vegetative biomass:
+
+$$ [3]: g(V) = aV/(1 + hV).$$ 
+
+\noindent Photosynthate is then allocated between meristem differentiation ($u_1(t)$), vegetative biomass ($u_2(t)$), and reproductive biomass ($u_3(t)$). The model jump starts photosynthesis by setting an initial seed size but [2] and [4] are mean to limit further production of vegetative biomass unless there is also allocation to meristems for growth. Plants are modular and meristem differentiation and subsequent determination are necessary to add vegetative modules (phytomers: internode+node with leaf+axillary meristem bud). The arrow from meristem state (M) to meristems for growth (G) corresponds to determination and growth of vegetative organs (e.g. leaf expansion) and requires energy that limits accumulation in V. When $v_2(t)$ is high (high rate of transition from undifferentiated meristems to meristems for growth), this inhibits the allocation of photosynthate to V. 
+
+$$[2]: \frac{1}{1+b u_3(t) }$$
+
+\noindent Many undifferentiated meristems (high M) also inhibits the transition to V:   
+
+$$[1]: \frac{1}{1+c M }$$
+
+\noindent Meristems committed to reproduction promote allocation to reproductive biomass. When there are no such meristems (F=0), allocation of photosynthate to reproductive biomass (R) follows $u_3(t)$. Increasing F linearly increases amount of reproductive biomass (R) per unit photosynthate:   
+
+$$[5]: 1+d F $$
+
+\end{document}

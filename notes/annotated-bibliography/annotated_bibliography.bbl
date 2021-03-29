@@ -1,0 +1,557 @@
+\begin{thebibliography}{10}
+
+\bibitem{Cohen1971}
+Dan Cohen.
+\newblock 1971.
+\newblock Maximizing final yield when growth is limited by time or by limiting
+  resources.
+\newblock {\em Journal of Theoretical Biology}, 33(2):299--307.
+\newblock tex.isbn: 0022-5193 tex.mendeley-tags: optimal control.
+ \begin{quotation}\noindent  \footnotesize This paper spells out that you
+  expect selecting for mean yield (arithmetic mean) and a constant environment
+  produce the same effect: you would expect bang bang reproduction. Is there
+  any data on maize/teosinte flowering phenology that I could use for a
+  comparison? \end{quotation}
+
+\bibitem{Cohen1976}
+Dan Cohen.
+\newblock 1976.
+\newblock The optimal timing of reproduction.
+\newblock {\em The American Naturalist}, 110(975):801--807.
+ \begin{quotation}\noindent  \footnotesize Lindh 2015 summarize this paper as
+  follows: Cohen (1976) showed that with constrained growth, the optimal
+  allocation is to first put all resources to vegetative growth, and at some
+  time switch to put all resources into reproduction until the end of the
+  season. When survival was described instead by a decreasing function, Cohen
+  (1976) also found a bang-bang control; we give an alternative proof of
+  bang-bang control with exponentially decreasing survival corresponding to
+  constant mortality in Methods S1. \end{quotation}
+
+\bibitem{King1982a}
+David King and Jonathan Roughgarden.
+\newblock 1982.
+\newblock Graded allocation between vegetative and reproductive growth for
+  annual plants in growing seasons of random length.
+\newblock {\em Theoretical Population Biology}, 22(1):1--16.
+\newblock tex.isbn: Alphabetical tex.mendeley-tags: optimal control.
+ \begin{quotation}\noindent  \footnotesize from Johansson 2013: King \&
+  Roughgarden (1982a) showed for example that continuing resource allocation
+  after onset of reproduction is optimal when the season length varies between
+  years due to stochastic fluctuations. Similar to our model, the optimal
+  timing of onset of the final, full reproductive stage in their model
+  increases with season length both on a relative and an absolute time scale.
+  \end{quotation}
+
+\bibitem{King1982}
+David King and Jonathan Roughgarden.
+\newblock 1982.
+\newblock Vegetative multiple switches between and reproductive growth in
+  annual.
+\newblock {\em Theoretical Population Biology}, 21:194--204.
+\newblock tex.mendeley-tags: optimal control.
+ \begin{quotation}\noindent  \footnotesize Optimal control model that shows how
+  multiple switches between vegetative and reproductive growth can be the best
+  strategy. For example, vegetative losses can lead to multiple switches in the
+  model. In the paper, they tag and follow individuals of Plantago and Clarkia.
+  They find that almost all the plants follow a graded control rather than
+  instantaneous switch. They also find that the length of graded control is
+  negatively correlated with start of flowering: plants that flower later show
+  less overlap of vegetative/reproductive growth. The observed mean control is
+  suboptimal (vs. instantaneous switch) while the timing of switch seems
+  optimal. They also explore regarding some of the reproductive biomass as
+  vegetative to capture the potential effect of photosynthesis in flowers. Here
+  are some of their hypotheses for why there is a gradual switch to
+  reproduction: metabolic source-sink relationships (i.e. carbon is allocated
+  in proportion to organ size and floral organs grow with time), selection from
+  unpredictable season lengths, light competition. \end{quotation}
+
+\bibitem{King1983a}
+David King and Jonathan Roughgarden.
+\newblock 1983.
+\newblock Energy allocation patterns of the california grassland annuals
+  plantago erecta and clarkia rubicunda author.
+\newblock {\em Ecology}, 64(1):16--24.
+ \begin{quotation}\noindent  \footnotesize The introduction states that few
+  studies have assessed whether annual plants follow optimal allocation
+  patterns, or tested whether the timing of switch to reproduction is optimal.
+  The authors compare the results of theoretical models with empirical data.
+  The authors describe the theory from their paper on multiple switches,
+  specifying that their assumptions exclude shading by competitors. They
+  describe how vegetative and reproductive losses due to senescence or
+  herbivory are proportional to mass. The model results in an optimal strategy
+  with switching. Austen and Weiss (NP review) recognize that the paper shows
+  how under some conditions "the function relating the timing of a life-history
+  event to fitness is expected to be asymmetric". \end{quotation}
+
+\bibitem{Watson1984a}
+Maxine~A Watson.
+\newblock 1984.
+\newblock Developmental constraints: {Effect} on population growth and patterns
+  of resource allocation in a clonal plant.
+\newblock {\em The American Naturalist}, 123(3):411--426.
+\newblock tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize Watson (1984) first proposed a
+  meristem cost as distinct from a resource cost, by showing that the cost of
+  reproductive structures could not account for difference in size between
+  flowering clones and branching clones. This paper proposes that meristem
+  allocation can determine patterns of reproductive allocation. In part, the
+  study is motivated by research showing that vegetative and reproductive
+  modules can 'pay their own [carbon] cost' through photosynthesis. In this
+  study, Watson examines two populations of water hyacinth and assesses
+  patterns of ramet production. She rules out the hypotheses that most carbon
+  allocation takes place early during bud develoment, and that carbon is stored
+  and used during inflorescence production. Instead, she suggests that
+  development constrains resource allocation because meristems are
+  differentiated prior to inflorescence development. \end{quotation}
+
+\bibitem{Pyke1989}
+Author D~A Pyke.
+\newblock 1989.
+\newblock Limited resources and reproductive constraints in annuals.
+\newblock {\em Functional Ecology}, 3(2):221--228.
+ \begin{quotation}\noindent  \footnotesize Considers the role of morphological
+  constraints in determinate and indeterminate reproductive growth. Pyke
+  suggests structural and functional switches between reproductive and
+  vegetative growth. For example, with `reproductive shutdown', plants with
+  determinate modules stop differentiating flowers while plants with
+  indeterminate modules stop differentiating metamers that produce flowers from
+  axillary meristems. With a `reproductive-vegetative switch', plants with
+  indeterminate growth can switch from producing reproductive to vegetative
+  metamers while plants with determinate growth would continue to produce
+  reproductive metamers but these would fail to develop (functional abortion).
+  \end{quotation}
+
+\bibitem{Geber1990}
+Monica~A Geber.
+\newblock 1990.
+\newblock The cost of meristem limitation in polygonum arenastrum: {Negative}
+  genetic correlations between fecundity and growth.
+\newblock {\em Evolution}, 44(4):799--819.
+\newblock tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize Study that suggests meristem
+  limitation can generate trade-offs betwene life history traits. Early
+  committment of meristems to reproduction favors high early fecundity but
+  reduces the number of meristems available for later vegetative
+  differentiation, which can later limit meristem availability and thus growth
+  and reproduction. The opposite relationship also holds: early commitment to
+  vegetative growth reduces early fecundity but can increase late growth and
+  fecundity. \end{quotation}
+
+\bibitem{Fox1992}
+G~A Fox.
+\newblock 1992.
+\newblock Annual plant life histories and the paradigm of resource allocation.
+\newblock {\em Evolutionary Ecology}, 6:482--499.
+\newblock tex.mendeley-tags: optimal control.
+ \begin{quotation}\noindent  \footnotesize Fox describes how allocation models,
+  both with and without assuming an optimal control, generally predict
+  bang-bang control (equivalent to an instantaneous switch). Changing the
+  assumption of these models can lead them to predict multiple switches of a
+  graded control. However, Fox writes that instantaneous-switch allocation
+  patterns are unlikely to occur in many plants. Fox notes Cohen's mention of
+  how development/morphology should couple vegetative and reproductive growth.
+  Three key levers identified by Fox as possibly useful in a model are
+  differentiation of primordia (fast), determination of primordium fate (slow
+  but with a threshold), and expansion of organs. Any of these could act as a
+  'control' in the control-theoretic sense. Fox suggests treating determination
+  as a bang-bang control for simplification (citing Geber 1990 as an example
+  with multiple switches). This idea intersects with those in Kellogg 2000 and
+  Prusinkiewicz et al. 2007. Fox also suggests using allometric models as a
+  temporary fix: he uses flowering time as a constraint on allometric
+  relationships. He works through solving the optimal control problem and
+  solves for the adjoints but concludes that this particular approach doesn't
+  seem particularly promising (?) as it makes predictions such as that
+  reproductive allocation will decline with time for particular parameters.
+  Here's a nice statement "can we successfully address the interesting
+  ecological and evolutionary questions associated with life history evolution
+  by considering whole-plant resource budgets independently from the
+  developmental rules of plants?" Key would be that a developmentally explicit
+  model is concerned with the biological `decisions` that affect the carbon
+  budget, rather than the carbon budget itself. \end{quotation}
+
+\bibitem{Schmitt1993}
+Johanna Schmitt.
+\newblock 1993.
+\newblock Reaction norms of morphological and life-history traits to light
+  availability in impatiens capensis.
+\newblock {\em Evolution}, 47(6):1654--1668.
+\newblock tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize Early allocation of axillary
+  meristems to flowering precludes primary branch formation and might limit
+  later reproduction. Plants from woods population show no variation in
+  branching. Plants from sun population reproduce later and allocate more
+  axillary meristems to branches than flowers but this allocation depends on
+  light availability. Contrast might be that in woods population all
+  individuals receive low light (understory) but that in sun population some
+  individiduals are shaded out due to competition while others are able to
+  reach the canopy. Plastic response of meristem allocation may thus be a way
+  of adapting to "fine scale heterogeneity in the light environment" caused by
+  neighbors. \end{quotation}
+
+\bibitem{Dudley1995}
+Susan~A. Dudley and J~Schmitt.
+\newblock 1995.
+\newblock Genetic differentiation in morphological responses to simulated
+  foliage shade between populations of {Impatiens} capensis from open and
+  woodland sites.
+\newblock {\em Functional Ecology}, 9(4):655--666.
+\newblock arXiv: arXiv:1011.1669v3 tex.arxivid: arXiv:1011.1669v3 tex.isbn:
+  9788578110796 tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize Early mortality selects for
+  allocation to early flowering at expense of branch production. Low light
+  reduces commitment of axillary meristems to branches. \end{quotation}
+
+\bibitem{Donohue2000}
+Kathleen Donohue, Dinan Messiqua, Elizabeth~Hammond Pyle, M.~Shane Heschel, and
+  Johanna Schmitt.
+\newblock December 2000.
+\newblock Evidence of adaptive divergence in plasticity: {Density}- and
+  site-dependent selection on shade-avoidance responses in {Impatiens}
+  capensis.
+\newblock {\em Evolution}, 54(6):1956--1968.
+\newblock tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize Attempts to infer whether plasticity
+  in flowering time is adaptive. In the woodland site, plasticity in flowering
+  time is maladaptive because there is constant early mortality. In the sun
+  site, plasticity in flowering time is adaptive because variation in density
+  (and associated cue for longevity) may select for plasticity. \end{quotation}
+
+\bibitem{Iwasa2000}
+Yoh Iwasa.
+\newblock 2000.
+\newblock Dynamic optimization of plant growth.
+\newblock {\em Evolutionary Ecology Research}, 2(4):437--455.
+\newblock tex.isbn: 1522-0613 tex.mendeley-tags: optimal control.
+ \begin{quotation}\noindent  \footnotesize Reviews study of growth and
+  reproductive schedules by loooking at dynamic optimal allocation of material
+  between organs. Provides summary of early work on optimal timing of switch to
+  reproduction, shoot/root balance models, perennial plants, stochastic
+  environments, and leaf age/chemical defenses. The optimal defense models are
+  interest because they involve a leaf age structure. This may be useful for
+  meristem age structure? \end{quotation}
+
+\bibitem{kellogg2000}
+Elizabeth~A. Kellogg.
+\newblock A model of inflorescence development.
+\newblock In Katherine~L. Wilson and David~A. Morrison, editors, {\em Monocots:
+  {Systematics} and {Evolution}}, pages 84--88. CSIRO Publishing, Collingwood,
+  VIC, Australia, 2000.
+ \begin{quotation}\noindent  \footnotesize Describes genetic regulation of
+  meristem indeterminacy/determinacy and meristem fate. This is directly
+  connected to Prusinkiewicz et al. 2007 by Whipple 2017, so I think it's
+  important to cite this. There's a clear explanation of how the genetic
+  mechanisms create iterated developmental patterns that are a template for an
+  array of morphological outcomes. Also includes a verbal algorithm and
+  relation to comparative study. \end{quotation}
+\bibitem{Shertzer2002}
+Kyle~W. Shertzer and Stephen~P. Ellner.
+\newblock 2002.
+\newblock State-dependent energy allocation in variable environments: life
+  history evolution of a rotifer.
+\newblock {\em Ecology}, 83(8):2181--2193.
+\newblock tex.mendeley-tags: dynamic energy budget,optimal control.
+ \begin{quotation}\noindent  \footnotesize Reread 'energy allocaiton and life
+  history' - difficult to understand without figures on hand? Steve notes that
+  this may be more useful than the optimal control book he initially
+  recommended that I read. The paper presents genetic algorithms as a possible
+  solution to optimization for energy allocation problems. The alternative
+  methods that they discuss in the paper are dynamic programming and
+  Pontryagin's Maximum Prinicple. I think the latter gets used in the early
+  papers by Cohen and King/Roughgarden. Also note that they are modeling a
+  three way tradeoff, which is what Steve suggested a V/M/R problem would be.
+  \end{quotation}
+
+\bibitem{Dalgleish2006}
+Harmony~J Dalgleish and David~C Hartnett.
+\newblock 2006.
+\newblock Below-ground bud banks increase along a precipitation gradient of the
+  {North} {American} {Great} {Plains}: a test of the meristem limitation
+  hypothesis.
+\newblock {\em New Phytologist}, 171:81--89.
+\newblock tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize Study of bud banks in perennials.
+  Suggests that bud banks may help plants respond to interannual variation in
+  climate. For example, it suggests that temporal variability in productivity
+  may be related to availability of belowground bud banks. Even with high
+  interannual variability in precipitation (arid systems), absence of a
+  belowground bud bank precludes plants from responding to variability.
+  Intermediate rainfall sites have greater bud banks and are able to respond to
+  that variability. Make connection of dormant pool of meristems to herbivory
+  tolerance/regrowth after damage. Suggest that maintaining a reserve bud
+  population is a bet hedging strategy for species in which it is costly to do
+  so. \end{quotation}
+
+\bibitem{Prusinkiewicz2007}
+Przemyslaw Prusinkiewicz, Yvette Erasmus, Brendan Lane, L.~D. Harder, and
+  Enrico Coen.
+\newblock June 2007.
+\newblock Evolution and development of inflorescence architectures.
+\newblock {\em Science}, 316(5830):1452--1456.
+ \begin{quotation}\noindent  \footnotesize Models of inflorescence architecture
+  that try to explain diversity of form using various functions for
+  'vegetativeness'. The models are tested using Arabidopsis lines. Of
+  particular interest is Figure 2 and the description in the Appendix, as well
+  as calculation of how different inflorescence architectures are related to
+  fitness. \end{quotation}
+
+\bibitem{Haselhorst2011}
+Monia S~H Haselhorst, Christine~E. Edwards, Matthew~J. Rubin, and Cynthia
+  Weinig.
+\newblock 2011.
+\newblock Genetic architecture of life history traits and environment-specific
+  trade-offs.
+\newblock {\em Molecular Ecology}, 20(19):4042--4058.
+\newblock tex.isbn: 1365-294X tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize "Regardless of the exact mechanism,
+  the range of expressed plant architectures may vary with reproductive timing
+  and differ across seasonal natural or cultivated populations. It is
+  noteworthy that delayed bolting was significantly or marginally associated
+  with increased axillary branching in all environments." Meristem allocation
+  decisions may produce additional life history tradeoffs. \end{quotation}
+
+\bibitem{Johansson2013}
+Jacob Johansson, Kjell Bolmgren, and Niclas Jonzén.
+\newblock 2013.
+\newblock Climate change and the optimal flowering time of annual plants in
+  seasonal environments.
+\newblock {\em Global Change Biology}, 19(1):197--207.
+\newblock tex.isbn: 1365-2486 tex.mendeley-tags: optimal control.
+ \begin{quotation}\noindent  \footnotesize from Lindh 2015: Recently, Johansson
+  et al. (2013) applied a [optimal control] model of this kind to predict how
+  the optimal flowering time should respond to changes in seasonal growth
+  conditions. An interesting finding of that study is that the seasonal
+  distribution of productivity (e.g. temperature and precipitation) can affect
+  the size and even the direction of the optimal response of the flowering time
+  to certain types of environmental change, such as increased productivity or
+  increased season length. energy allocation trade offs are key to interpreting
+  phenological patterns optimal control models typically find the energy
+  allocation schedule that maximizes reproductive output and make predictions
+  that agree with allocation patterns from empirical studies not often applied
+  to understanding variation in response of species shifts in phenology - we
+  ask how plants should optimally change their timing of flowering in response
+  to changes in the seasonal environment. parameters: seasonal production
+  curves, start/end of growing season, peak production date, and temporal slope
+  of production for unimodal production curve, slope of linear production
+  curve, accumulated production emphasize: reproduction is subject to a
+  time/size trade-off and that growth rate undergoes seasonal variation *
+  authors note that comparison to model predictions may require closer
+  inspection of factors affecting productivity (cf. Shitaka \& Hirose 1993);
+  productivity is also included in Schaffer 1977 \end{quotation}
+
+\bibitem{Remington2013}
+David~L. Remington, Päivi~H. Leinonen, Johanna Leppälä, and Outi Savolainen.
+\newblock 2013.
+\newblock Complex genetic effects on early vegetative development shape
+  resource allocation differences between {Arabidopsis} lyrata populations.
+\newblock {\em Genetics}, 195(3):1087--1102.
+\newblock tex.isbn: 1943-2631 (Electronic){\textbackslash}r0016-6731 (Linking)
+  tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize Study with Arabidopsis lyrata
+  looking at genetic basis of resource allocation. Consider 3 models: (1)
+  variation in resource acquisition, (2) a switching mechanism, and (3) one
+  where vegetative development of axillary meristems precludes later
+  reproductive development. Finds relevant QTLs to include ones that have an
+  effect on early vegetative growth, with cascading effects on later vegetative
+  growth and reproductive development. The results support model in which there
+  is a negative relationship between prereproductive branching and the
+  proportion of shoots developing reproductively (consistent with Baker \&
+  Diggle, Kim \& Donohue). Resource allocation was largely independent of FT.
+  Relative timing of vegetative vs. reproductive growth can have big impact.
+  \end{quotation}
+
+\bibitem{Austen2014}
+Emily~Jane Austen.
+\newblock 2014.
+\newblock {\em The nature of selection on flowering time: {Integrating} fitness
+  contributions through male and female function}.
+\newblock PhD thesis.
+\newblock tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize Dissertation that includes Austen et
+  al. 2015. \end{quotation}
+\bibitem{Austen2015}
+Emily~J. Austen and Arthur~E. Weis.
+\newblock 2015.
+\newblock What drives selection on flowering time? {An} experimental
+  manipulation of the inherent correlation between genotype and environment.
+\newblock {\em Evolution}, 69(8):2018--2033.
+\newblock tex.isbn: 1558-5646 (Electronic) 0014-3820 (Linking)
+  tex.mendeley-tags: optimal control.
+ \begin{quotation}\noindent  \footnotesize Experimental study that manipulates
+  the correlation between age at flowering and date of flowering to separate
+  the effects of age at flowering, size at flowering, and environment on
+  fitness. Cites: - papers that model energy production rate as function of
+  size: King \& Roughgarden 1983, Ejsmond et al. 2010, Weis et al. 2014 -
+  papers that model energy production rate as function of environment:
+  Johansson et al. 2013 - papers that incorporate environmental variation by
+  discounting the value of late season reproductive investment: Ejsmond et al.
+  2010 Optimal control models don't consider that modular nature of plant
+  development can impose direct constraints on reproductive output.
+  Experimental study looks at: indirect effect of age at flowering (AAF)
+  through phenotype-environment covariance, by correlation with size/condition
+  whereby condition affects the enviroment experienced during reproduction, and
+  direct selection on age Direct selection on age could be the result of
+  decreasing reproductive capacity with later AAF (decreasing branching
+  probability of axial meristems with age). Propose using results of experiment
+  to guide model development, and point Ejsmond et al. 2010. Relevant features
+  include seasonality, productivity as a function of size, and temporarlly
+  varying returns on reproductive investment. \end{quotation}
+
+\bibitem{Friedman2015}
+Jannice Friedman, Alex~D. Twyford, John~H. Willis, and Benjamin~K. Blackman.
+\newblock 2015.
+\newblock The extent and genetic basis of phenotypic divergence in life history
+  traits in {Mimulus} guttatus.
+\newblock {\em Molecular Ecology}, 24(1):111--122.
+\newblock tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize Demonstrate that genetic trade-off
+  for survival to flowering and fecundity is a consequence of difference among
+  genotypes in transition from vegetative growth to flowering (across
+  populations). For example, plants from populations that flower early produce
+  few or no stolons compared to plants from populations that flower later.
+  Identify QTLs with effect on stolon number and flowering time that suggest
+  plants can not simultaneously produce many stolons and flower - they cite
+  McSteen \& Leyser to indicate that bud activation switches from bottom up to
+  top down across at the floral transition. Genes that impact axillary meristem
+  outgrowth and fate are expected to be key regulators of shoot architecture
+  (eg. MAX3 homologues, FT/TLF1, gibberellins). \end{quotation}
+
+\bibitem{Lindh2016}
+Magnus Lindh, Jacob Johansson, Kjell Bolmgren, Niklas~L.P. Lundström, Åke
+  Brännström, and Niclas Jonzén.
+\newblock 2016.
+\newblock Constrained growth flips the direction of optimal phenological
+  responses among annual plants.
+\newblock {\em New Phytologist}, 209(4):1591--1599.
+\newblock tex.mendeley-tags: optimal control.
+ \begin{quotation}\noindent  \footnotesize Unexplained variation in response of
+  phenology to increased temperature - some species advance, stasis, or delay.
+  Many optimal control models assume that plant growth is porportional to
+  vegetative mass during growing season. But growth is often constrained (see
+  Paine et al. 2012 on saturating nonlinear growth). Reasons given are: self
+  shading, costs of structural tissue, decreasing local nutrient levels.
+  Unconstrained growth example is algae in a chemostat with abundant resources.
+  Reasons for constrained growth: allocation to nonphotosynthetic structural
+  tissue to avoid self-shading, increase seed dispersal, display flowers to
+  pollinators, competition from neighbors. Growth often related to metabolism
+  "investigate how growth constraints affect optimal flowering time responses
+  to changed environmental conditions" 3 different growth functions calendar \&
+  physiological time unconstrained vs. constrained growth flips response of
+  optimal flowering time (delay vs. advance). \end{quotation}
+
+\bibitem{Colautti2017}
+Robert~I. Colautti, Jon Ågren, and Jill~T. Anderson.
+\newblock 2017.
+\newblock Phenological shifts of native and invasive species under climate
+  change: {Insights} from the {Boechera}-{Lythrum} model.
+\newblock {\em Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 372(1712).
+\newblock tex.isbn: 0034-6748 tex.mendeley-tags: optimal control.
+ \begin{quotation}\noindent  \footnotesize Boechera stricta and Lythrum
+  salicaria exhibit opposite phenological shifts in response to changing
+  climate (Bs - earlier, Ls - no effect on phenology). Paramaterize a resource
+  allocation model with data from Boechera stricta and Lythrum salicaria to
+  understand phenological responses. Two core trade-offs are (1) the switch
+  from vegetative to reproductive growth (eg. rosette growth ends when bolting
+  starts, or apical meristem stops leaf production when flowering starts) and
+  (2) between growth rate and susceptibility to herbivores. Here is a summary
+  of the model: "Growth initially follows an exponential curve with a base
+  vegetative growth rate (r) from an initial seed size (V0) until a threshold
+  size at reproduction (u). At the time of reproductive maturity, vegetative
+  size remains constant and seed production increases following a saturation
+  curve with an upper limit determined by u. The optimum size at reproduction
+  for a given growing season is a balance of time between adding additional
+  vegetative growth and maximizing seed production before the end of the
+  growing season." Model the growing season with 2 sine functions for
+  temperature and soil moisture, and a threshold value for each species.
+  Consider plastic (tracking onset of season) and optimum genetic response
+  (proportional to duration of season). Also account for the effect of
+  herbivory by modeling loss of vegetative and reproductive growth proportional
+  to intensity of herbivory. Consider 2 models: loss to herbivory is the same
+  as the level of investement in defense, or a relaxed constraint that allows a
+  small increase in relative growth rate. Find that environmental differences
+  lead to opposite phenological shifts in response to warming climate. Mostly
+  determined by changes in the length of the growing season. Escape from
+  herbivores has minimal effect in the ecological release model because effect
+  of herbivory is constant loss across season. In the relaxed constraint model,
+  effect of herbivory is to delay flowering and incrase optimal size. Emphasize
+  the following as important environmental variables: "what limits growth and
+  development because those are what determine the onset and duration of
+  favorable conditions for growth, maturation, and offspring production." State
+  that growth rate prior to maturity effects the initiation of growth,
+  threshold size of reproduction, timing of reproduction, and total
+  reproductive fitness. Suggest that future work could look at constraints on
+  growth rate. \end{quotation}
+
+\bibitem{Gnan2017}
+Sebastian Gnan, Tom Marsh, and Paula~X. Kover.
+\newblock 2017.
+\newblock Inflorescence photosynthetic contribution to fitness releases
+  {Arabidopsis} thaliana plants from trade-off constraints on early flowering.
+\newblock {\em PLoS ONE}, 12(10):1--13.
+\newblock tex.isbn: 1111111111.
+ \begin{quotation}\noindent  \footnotesize Experiment in which authors removed
+  rosette leaves from 15 A. thaliana accessions. Found variation but even most
+  severely affected accessions were able to maintain 35\% of their fitness with
+  just inflorescences. Contribution of inflorescence photosynthetic activity to
+  plant's reproductive output can decouple commonly assumed trade-off between
+  age of reproduction and fitness. Variation in growth rate is unlikely to
+  decouple size, age at reproduction, and reproductive output. The correlation
+  between flowering time and rosette size is maintained because variation in
+  growth rate is not associated in a way that compensates for early flowering.
+  In contrast, early flowering plants tend to have slower growth rate. This
+  agrees with Weis et al. who find that variation in growth rate has little
+  effect on shape of selection on flowering time. Early flowering does impose a
+  constraint on plant size, but this does not mean it is appropriate to assume
+  a cost of early reproduction because reproductive structures can pay some of
+  their own cost. Smaller vegetative size does not seem to constrain fitness of
+  B. rapa either. \end{quotation}
+
+\bibitem{whipple2017}
+Clinton~J. Whipple.
+\newblock October 2017.
+\newblock Grass inflorescence architecture and evolution: the origin of novel
+  signaling centers.
+\newblock {\em New Phytologist}, 216(2):367--372.
+ \begin{quotation}\noindent  \footnotesize Describes the Kellogg 2000 and
+  Prusinkiewicz et al. 2007 studies and how they are connected. Clear
+  description of the use of modeling of vegetativeness, its relationship to
+  TFL/LFY, and how this is connected to the genetics of development. Focused on
+  grasses. \end{quotation}
+
+\bibitem{Rubin2018a}
+Matthew~J. Rubin, Marcus~T. Brock, Robert~L. Baker, Stephanie Wilcox, Kyle
+  Anderson, Seth~J. Davis, and Cynthia Weinig.
+\newblock 2018.
+\newblock Circadian rhythms are associated with shoot architecture in natural
+  settings.
+\newblock {\em New Phytologist}, 219(1):246--258.
+\newblock tex.mendeley-tags: empirical.
+ \begin{quotation}\noindent  \footnotesize Field experiment with A. thaliana
+  suggesting that circadian rhythms are associated with branching and thus
+  fruit production. Circadian clock integrates abiotic factors (light,
+  temperature) and regulates several genes associated with branching. Meristem
+  fate is an important determinant of plant architecture. Here, the authors
+  show that quantitative clock variation is associated with branching,
+  independent of flowering time. One possible mechanism of action is auxin,
+  which might be regulated by circadian rhythm. Another result is that the
+  association between flowering time and branch number is not consistent
+  between years. For more on how these may be independent, see Austen et al.
+  2015. Both meristem number and fate (quiescent, differentiated) are possible
+  levers. Suggests that difference in fate between cauline and rosette
+  meristems reflects 2 different strategies to increase fitness.
+  \end{quotation}
+
+\bibitem{johansson2019}
+Jacob Johansson and Kjell Bolmgren.
+\newblock October 2019.
+\newblock Is timing of reproduction according to temperature sums an optimal
+  strategy?
+\newblock {\em Ecology and Evolution}, 9(20):11598--11605.
+ \begin{quotation}\noindent  \footnotesize The authors compare the solution
+  from optimal control models with and without temperature sums to understand
+  whether control of development by temperature is optimal. They include an
+  informative table in their appendix that describes the different scenarios of
+  variability that they explore and how biomass changes over the course of the
+  season. \end{quotation}
+
+\end{thebibliography}

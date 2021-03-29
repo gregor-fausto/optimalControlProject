@@ -1,0 +1,71 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[12pt]{article} % use larger type; default would be 10pt
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry,amsmath,amssymb} % to change the page dimensions
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+\usepackage{graphicx} % support the \includegraphics command and options
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Brief Article}
+\author{The Author}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+
+Let $\beta_1(t)$ be the per-capita rate of division by primary meristems, and $\beta_2(t)$ the per-capita
+rate of division by inflorescence meristems. Let $u(t)$ be the fraction of primary meristem divisions 
+producing one primary meristem and one vegetative meristem (type (a) in Figure 1); $1-u(t)$ is the fraction
+of primary meristem divisions that are type (b) in Figure 1. The model is 
+
+\begin{equation}
+\begin{aligned}
+\dot{P} & = -\beta_1(t)(1-u(t))P(t) \\
+\dot{V} & = \beta_1(t)P(t) \\
+\dot{I} & = \beta_1(t)(1-u(t))P(t) - \beta_2(t)I(t)\\
+\dot{F} & = \beta_2(t)I(t) 
+\end{aligned}
+\end{equation}
+
+subject to the constraints 
+\begin{equation}
+\begin{aligned}
+& 0 \le \beta_1(t), \beta_2(t) \le M & \mbox{ Meristem constraint} \\
+& 0 \le \beta_1(t)P(t) + \beta_2(t)I(t) \le V & \mbox{ Resource constraint}\\
+& 0 \le u(t) \le 1
+\end{aligned}
+\end{equation}
+
+The constraints on $\beta_1, \beta_2$ are as shown below. The square is the meristem constraint, the diagonal line is the 
+resource constraint: $(\beta_1, \beta_2)$ needs to be below the line (which has infinite length but I've only drawn 
+part of it). The meristem constraint is constant over time. The resource constraint line moves because it depends on the
+values of $P(t),I(t)$ and $V(t)$. 
+
+\smallskip 
+
+\centerline{\includegraphics[width=5in]{ConstraintDiagram.jpg}}
+
+I predict that when you work through the Hamiltonian etc., you will discover that increasing $\beta_1$ and/or $\beta_2$ is
+always beneficial (i.e., this increases the Hamiltonian). In checking to see if this is true, you can assume that the 
+$\lambda$'s are always positive, because that is implied in this model by their interpretation as shadow prices. 
+
+If my prediction is right, then in Case 1 the optimal $\beta$s are always
+on the portion of the resource constraint line inside the meristem constraint box; and 
+in Case 2 the optimal $\beta$s are $(M,M)$, the top right corner of the meristem constraint. 
+
+
+
+
+
+
+\end{document}
