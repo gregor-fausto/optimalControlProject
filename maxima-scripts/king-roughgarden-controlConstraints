@@ -1,0 +1,44 @@
+/* For inprod */
+load("eigen");
+
+/* Define as functions of time */
+u:u(t);
+x1:x1(t);
+x2:x2(t);
+lambda1:lambda1(t);
+lambda2:lambda2(t);
+phi1:phi1(t);
+phi2:phi2(t);
+
+/* Define ODES for state variables */
+x1dot:u*x1;
+x2dot:(1-u)*x1;
+
+/* Define constraints */
+upper:1-u;
+lower:u;
+
+/* Vectors for ODEs, adjoint, constraint */
+ode:[x1dot,x2dot];
+adjoint:[lambda1,lambda2];
+phi:[phi1,phi2];
+constraints:[lower,upper];
+
+/* Define augmented Hamiltonian */
+L:log(x2)+adjoint.ode+phi.constraints;
+
+/* Necessary conditions */
+/* --------  compute derivative of Hamiltonian wrt states */
+dLdx1:diff(L,x1);
+dLdx2:diff(L,x2);
+
+dLdx:[dLdx1,dLdx2];
+lambdadot:-dLdx;
+
+/* --------  compute derivative of Hamiltonian wrt control */
+dLdu:diff(L,u);
+
+collectterms(expand(L),u);
+
+/* --------  calculate derivative of switching function */
+switch:diff(dHdu,t);

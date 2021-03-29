@@ -1,0 +1,34 @@
+/* For inprod */
+load("eigen");
+
+/* Define as functions of time */
+u:u(t);
+x1:x1(t);
+x2:x2(t);
+lambda1:lambda1(t);
+lambda2:lambda2(t);
+
+/* Define ODES for state variables */
+x1dot:u*x1;
+x2dot:(1-u)*x1;
+
+/* Vectors for ODEs, adjoint */
+ode:[x1dot,x2dot];
+adjoint:[lambda1,lambda2];
+
+/* Define Hamiltonian */
+H:log(x2)+adjoint.ode;
+
+/* Necessary conditions */
+/* --------  compute derivative of Hamiltonian wrt states */
+dHdx1:diff(H,x1);
+dHdx2:diff(H,x2);
+
+dHdx:[dHdx1,dHdx2];
+lambdadot:-dHdx;
+
+/* --------  compute derivative of Hamiltonian wrt control */
+dHdu:diff(H,u);
+
+/* --------  calculate derivative of switching function */
+switch:diff(dHdu,t);

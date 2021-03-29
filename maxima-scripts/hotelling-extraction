@@ -1,0 +1,27 @@
+/* For inprod */
+load("eigen");
+
+/* Define ODES for state variables */
+xdot:-z;
+
+/* Define constraints */
+control:z;
+
+/* Vectors for ODEs, adjoint, constraint */
+ode:[xdot];
+adjoint:[lambda];
+phi:[phi];
+constraints:[control];
+
+/* Define Hamiltonian */
+L:exp(-r*t)*u(z)+adjoint.ode+phi.constraints;
+
+/* Necessary conditions */
+/* --------  compute derivative of Hamiltonian wrt states */
+dLdx:diff(L,x);
+
+/* dLdx:[dLdx]; */
+lambdadot:-dLdx;
+
+/* --------  compute derivative of Hamiltonian wrt control */
+dLdz:diff(L,z);

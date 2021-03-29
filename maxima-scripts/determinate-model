@@ -1,0 +1,28 @@
+/* For inprod */
+load("eigen");
+
+/* Define ODES for state variables */
+Pdot:2*u*P-u*P-(1-u)*P;
+Vdot:u*P+(1-u)*P;
+Idot:(1-u)*P;
+Ldot:(1-u)*P+I;
+
+/* Vectors for ODEs, adjoint */
+ode:[Pdot,Vdot,Idot,Ldot];
+adjoint:[lambda1,lambda2,lambda3,lambda4];
+
+/* Define Hamiltonian */
+H:log(L)+inprod(adjoint,ode);
+
+/* Necessary conditions */
+/* --------  compute derivative of Hamiltonian wrt states */
+dHdP:diff(H,P);
+dHdV:diff(H,V);
+dHdI:diff(H,I);
+dHdL:diff(H,L);
+
+dHdx:[dHdP,dHdV,dHdI,dHdL];
+lambdadot:-dHdx;
+
+/* --------  compute derivative of Hamiltonian wrt control */
+dHdu:diff(H,u);
