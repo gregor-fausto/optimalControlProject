@@ -1,0 +1,538 @@
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits1.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits2.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits3.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits1.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits2.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits3.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits1.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits2.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits3.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits1.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits2.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits3.R")#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+rm(list=ls(all=TRUE)) # clear R environment
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"
+initsFile <- source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits1.R")
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+graphics.off();
+require(deSolve);
+require(minqa);
+topt=seq(0,5,length=11);
+derivs=numeric(6);
+source(controlFile)
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/optim-fun.R")
+source(initsFile)
+# rm(list=ls(all=TRUE)) # clear R environment#
+#
+# controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+# initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits1.R"#
+# source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+# rm(list=ls(all=TRUE)) # clear R environment#
+#
+# controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+# initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits2.R"#
+# source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+# rm(list=ls(all=TRUE)) # clear R environment#
+#
+# controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+# initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits3.R"#
+# source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+# rm(list=ls(all=TRUE)) # clear R environment#
+#
+# controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+# initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits1.R"#
+# source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+# rm(list=ls(all=TRUE)) # clear R environment#
+#
+# controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+# initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits2.R"#
+# source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+# rm(list=ls(all=TRUE)) # clear R environment#
+#
+# controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+# initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-inits3.R"#
+# source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+# NORMAL 1#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normalpt5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normalpt5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+# NORMAL 2#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-1normalpt5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-1normal1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-1normal2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-1normal5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-1normalpt5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-1normal1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-1normal2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-1normal5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+# NORMAL 3#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-2normalpt5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-2normal1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-2normal2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-2normal5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-2normalpt5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-2normal1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-2normal2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-2normal5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normalpt5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normalpt5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normalpt5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normalpt5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-0normal5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+# Uniform#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniformpt1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform10.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniformpt1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform10.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+# Uniform#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniformpt1.R"
+# Uniform#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminate.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniformpt1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+tmp<-strsplit(controlFile,c("-"))
+tmp<-strsplit(controlFile,c("-"))#
+controlName <- strsplit(tmp[[1]][3],"[.]")[[1]][1]#
+#
+tmp<-strsplit(initsFile,c("-"))#
+initsName <- strsplit(tmp[[1]][3],"[.]")[[1]][1]#
+#
+summaryObject <- list(fit=fit,fvals=fvals,#
+                      penVec=penVec,objVec=objVec,#
+                      u.list=u.list,beta1.list=beta1.list,beta2.list=beta2.list,#
+                      inits=c(inits,mParms),#
+                      season = ifelse(exists("mu"),c(mu=mu,sigma=sigma),c()),#
+                      topt = topt,#
+                      iterations=length(fvals),#
+                      model=controlName ,#
+                      initsName = initsName )#
+#
+saveRDS(summaryObject,paste0("~/Dropbox/optimalControlProject/output/",controlName,"-",initsName,".RDS"))
+#####################################
+## Scripts for optimization of unbranched, determinate plant#
+## under resource constraints only#
+## with varying strength of resource constraint#
+#####################################
+#
+## Resource constraint only#
+# unbranched#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script.R")
+#####################################
+## Scripts for optimization of unbranched, determinate plant#
+## under resource constraints only#
+## with varying strength of resource constraint#
+#####################################
+#
+## Resource constraint only#
+# unbranched#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-.5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-.5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-.9.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-4.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")
+controlFile
+initsFile
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-.5.R"
+initsFile
+tmp<-strsplit(initsFile,c("-"))
+tmp=paste(tmp[[1]][3:5],collapse="-")
+initsName
+tmp
+strsplit(tmp,"[.]")[[1]][1]
+strsplit(tmp,"[.R]")[[1]][1]
+strsplit(tmp,"[.R]")
+strsplit(tmp,"[R]")
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-point5.R"
+tmp<-strsplit(initsFile,c("-"))#
+tmp=paste(tmp[[1]][3:5],collapse="-")
+tmp
+initsName <- strsplit(tmp,"[.R]")[[1]][1]
+initsName
+strsplit(tmp,"[.]")[[1]][1]
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-point5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-unbranchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-point75.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")#
+#
+## Resource constraint only#
+# branched#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-1.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-4.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-point5.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")#
+#
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-point75.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-2.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")
+warnings()
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-4.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-4.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")
+warnings()
+bad
+rm(list=ls(all=TRUE)) # clear R environment#
+controlFile = "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/control-branchedDeterminateResource.R"#
+initsFile <- "~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/initialConditions/inits-uniform-1-4.R"#
+source("~/Dropbox/optimalControlProject/discretize-optimize/scriptsBatch/generic-script-resource.R")
