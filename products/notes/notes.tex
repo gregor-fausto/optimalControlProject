@@ -1,0 +1,127 @@
+
+\subsection*{King and Roughgarden 1982}
+
+\noindent King and Roughgarden propose that the long-term, optimal reproductive strategy will maximize the geometric mean of reproductive success. They thus propose that the function that should be optimized is the expectation of the log of fitness, $ J = (1/T) \int_{0}^{T} \mathrm{log}(x_2)$. They had a system of equations 
+
+\begin{align}
+\dot{x_1} & = u(t) x_1 \nonumber \\
+\dot{x_2} & = (1-u(t)) x_1 
+\end{align}
+
+\noindent subject to
+
+\begin{align}
+0 \leq & u(t) \leq 1 \nonumber \\
+0 & < x_1 \nonumber \\
+0 & \leq x_2
+\end{align}
+
+\noindent In this model, $x_1$ and $x_2$ are the weights of the vegetative and reproductive parts of the plant, respectively. Photosynthesis is assumed to be linearly related to the weight of the vegetative part of the plant. The control function $u(t)$ is the proportion of photosynthate that is allocated to the vegetative pool. King and Roughgarden describe that the model can be transformed to include a rate of growth ($r$) by substituting $t' = rt$. The differential equations then become
+
+\begin{align}
+\dot{x_1} & = u(t) r x_1 \nonumber \\
+\dot{x_2} & = (1-u(t)) r x_1 
+\end{align}
+
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=blue!10,draw]    
+   \node [state] (a) { $x_1$ };
+    \node [state] (c) [right of=a] {$x_2$};
+    \path[->] (a) edge node {$(1-u(t))r$} (c);
+    \path (a) edge [loop above] node {$u(t)r$} (a);
+\end{tikzpicture}
+  \caption{State diagram describing the photosynthate allocation model.}
+  \label{fig:birds}
+\end{figure}
+
+\subsection*{Itzkovitz et al. 2012}
+
+\noindent Itzkovitz et al. (2012) propose a model for the development of the mouse intestinal crypt with stem ($n$) and non-stem ($N$) cells. The authors aim of their optimization problem is to minimize the time for traveling between an initial state ($n_0, N_0$) and a final state ($n_T, N_T$). In their model, stem and non-stem cells follow the following system of differential equations:
+
+\begin{align}
+\dot{n} & = \beta_n p(t) n \nonumber \\
+\dot{N} & = \beta_n (1-p(t)) n + (\beta_N - \alpha) N
+\end{align}
+
+\noindent subject to
+
+\begin{align}
+0 \leq & p(t) \leq 1 \nonumber \\
+n_0 & < n_T \nonumber \\
+0 = & N_0  < N_T 
+\end{align}
+
+\noindent In this model, $n$ and $N$ are the stem and non-stem cell populations, respectively. Stem cells divide at a rate $\beta_n$, and non-stem cells divide at a rate $\beta_N$. Non-stem cells are extruded at a rate $\alpha$. The probability that a stem cell divides symmetrically into two stem cells is given by the control function, $p(t)$. The probability that a stem cell divides asymmetrically into one stem and one non-stem cell is given by $1-p(t)$. 
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=blue!10,draw]    
+   \node [state] (a) { $n$ };
+    \node [state] (c) [right of=a] {$N$};
+    \node (d) [right of=c] {};    
+    \path[->] (a) edge node {$(1-p(t))\beta_n$} (c);
+    \path (a) edge [loop above] node {$p(t)\beta_n$} (a);
+    \path (c) edge [loop above] node {$\beta_N$} (c);   
+    \path[->] (c) edge node {$\alpha$} (d);    
+\end{tikzpicture}
+  \caption{State diagram describing the dynamics for developing crypts.}
+  \label{fig:birds}
+\end{figure}
+
+Time can be rescaled as $t=\beta_n t'$ for the equations to be rewritten as:
+
+\begin{align}
+\dot{n} & = p(t) n \nonumber \\
+\dot{N} & =(1-p(t)) n + b N
+\end{align}
+
+\noindent where $ b = (\beta_N - \alpha) / \beta_n $.
+
+\begin{figure}[!h]
+\centering
+% stem cell expansion
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=red,draw=none,text=white,minimum size=.75cm]
+
+  \node[state] 	     (A)                    {};
+  \node[state]         (B) [below left of=A] {};
+  \node[state]         (C) [below right of=A] {};
+
+  \path (A) edge              (B)
+            	edge               (C);
+
+      \end{tikzpicture}
+% stem cell expansion
+      \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2cm,
+                    semithick]
+  %\tikzstyle{every state}=[fill=red,draw=none,text=white]
+
+  \node[state, fill = red, draw = none,minimum size=.75cm] (A)                    {};
+  \node[state, fill = red, draw = none,minimum size=.75cm]         (B) [below left of=A] {};
+  \node[state, fill = blue, draw = none,minimum size=.75cm]         (C) [below right of=A] {};
+
+  \path (A) edge              (B)
+            	edge               (C);
+
+      \end{tikzpicture}
+      % stem cell expansion
+      \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2cm,
+                    semithick]
+  %\tikzstyle{every state}=[fill=red,draw=none,text=white]
+
+  \node[state, fill = blue, draw = none,minimum size=.75cm] (A)                    {};
+  \node[state, fill = blue, draw = none,minimum size=.75cm]         (B) [below left of=A] {};
+  \node[state, fill = blue, draw = none,minimum size=.75cm]         (C) [below right of=A] {};
+
+  \path (A) edge              (B)
+            	edge               (C);
+
+      \end{tikzpicture}
+\end{figure}

@@ -1,0 +1,142 @@
+\begin{thebibliography}{21}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Bartlett and Thompson(2014)}]{bartlett2014}
+Bartlett, M.~E. and B.~Thompson. 2014.
+\newblock Meristem identity and phyllotaxis in inflorescence development.
+\newblock Frontiers in Plant Science, {\bf 5}.
+
+\bibitem[{Bonser and Aarssen(2006)}]{bonser2006}
+Bonser, S.~P. and L.~W. Aarssen. 2006.
+\newblock Meristem allocation and life-history evolution in herbaceous plants.
+\newblock Canadian Journal of Botany, {\bf 84}:143--150.
+
+\bibitem[{Bradley(1997)}]{bradley1997a}
+Bradley, D. 1997.
+\newblock Inflorescence {Commitment} and {Architecture} in {Arabidopsis}.
+\newblock Science, {\bf 275}:80--83.
+
+\bibitem[{Cohen(1971)}]{cohen1971}
+Cohen, D. 1971.
+\newblock Maximizing final yield when growth is limited by time or by limiting
+  resources.
+\newblock Journal of Theoretical Biology, {\bf 33}:299--307.
+\newblock Tex.isbn: 0022-5193 tex.mendeley-tags: optimal control.
+
+\bibitem[{Cole(1954)}]{Cole1954}
+Cole, L.~C. 1954.
+\newblock The population consequences of life history phenomena.
+\newblock The Quarterly review of biology, {\bf 29}:103--137.
+\newblock Tex.isbn: 00335770.
+
+\bibitem[{Fox(1992)}]{Fox1992}
+Fox, G.~A. 1992.
+\newblock Annual plant life histories and the paradigm of resource allocation.
+\newblock Evolutionary Ecology, {\bf 6}:482--499.
+\newblock Tex.mendeley-tags: optimal control.
+
+\bibitem[{Geber(1990)}]{Geber1990}
+Geber, M.~A. 1990.
+\newblock The cost of meristem limitation in polygonum arenastrum: {Negative}
+  genetic correlations between fecundity and growth.
+\newblock Evolution, {\bf 44}:799--819.
+\newblock Tex.mendeley-tags: empirical.
+
+\bibitem[{Itzkovitz et~al.(2012)Itzkovitz, Blat, Jacks, Clevers, and
+  van Oudenaarden}]{itzkovitz2012}
+Itzkovitz, S., I.~Blat, T.~Jacks, H.~Clevers, and A.~van Oudenaarden. 2012.
+\newblock Optimality in the {Development} of {Intestinal} {Crypts}.
+\newblock Cell, {\bf 148}:608--619.
+
+\bibitem[{Kellogg(2000)}]{kellogg2000}
+Kellogg, E.~A. 2000.
+\newblock A model of inflorescence development.
+\newblock In K.~L. Wilson and D.~A. Morrison, editors, Monocots: {Systematics}
+  and {Evolution}, pages 84--88. CSIRO Publishing, Collingwood, VIC, Australia.
+
+\bibitem[{King and Roughgarden(1982)}]{King1982a}
+King, D. and J.~Roughgarden. 1982.
+\newblock Graded allocation between vegetative and reproductive growth for
+  annual plants in growing seasons of random length.
+\newblock Theoretical Population Biology, {\bf 22}:1--16.
+\newblock Tex.isbn: Alphabetical tex.mendeley-tags: optimal control.
+
+\bibitem[{Körner(2015)}]{korner2015}
+Körner, C. 2015.
+\newblock Paradigm shift in plant growth control.
+\newblock Current Opinion in Plant Biology, {\bf 25}:107--114.
+
+\bibitem[{Lande and Arnold(1983)}]{Lande1983}
+Lande, R. and S.~J. Arnold. 1983.
+\newblock The measurement of selection on correlated characters.
+\newblock Evolution, {\bf 37}:1210--1226.
+
+\bibitem[{Lin et~al.(2014)Lin, Loxton, Lay~Teo, {,Department of Mathematics and
+  Statistics, Curtin University, GPO Box U1987 Perth, Western Australia 6845},
+  and {,Department of Mathematics and Statistics, Curtin University of
+  Technology, GPO Box U 1987, Perth, W.A. 6845}}]{lin2014}
+Lin, Q., R.~Loxton, K.~Lay~Teo, {,Department of Mathematics and Statistics,
+  Curtin University, GPO Box U1987 Perth, Western Australia 6845}, and
+  {,Department of Mathematics and Statistics, Curtin University of Technology,
+  GPO Box U 1987, Perth, W.A. 6845}. 2014.
+\newblock The control parameterization method for nonlinear optimal control:
+  {A} survey.
+\newblock Journal of Industrial \& Management Optimization, {\bf 10}:275--309.
+
+\bibitem[{McSteen and Leyser(2005)}]{Ward2004}
+McSteen, P. and O.~Leyser. 2005.
+\newblock {SHOOT} {BRANCHING}.
+\newblock Annual Review of Plant Biology, {\bf 56}:353--374.
+\newblock Tex.isbn: 1543-5008 (Print){\textbackslash}r1543-5008 (Linking)
+  tex.mendeley-tags: empirical.
+
+\bibitem[{Park et~al.(2012)Park, Jiang, Schatz, and Lippman}]{Park2012}
+Park, S.~J., K.~Jiang, M.~C. Schatz, and Z.~B. Lippman. 2012.
+\newblock Rate of meristem maturation determines inflorescence architecture in
+  tomato.
+\newblock Proceedings of the National Academy of Sciences, {\bf 109}:639--644.
+\newblock Tex.isbn: 1091-6490 (Electronic){\textbackslash}r0027-8424 (Linking).
+
+\bibitem[{Prusinkiewicz et~al.(2007)Prusinkiewicz, Erasmus, Lane, Harder, and
+  Coen}]{Prusinkiewicz2007}
+Prusinkiewicz, P., Y.~Erasmus, B.~Lane, L.~D. Harder, and E.~Coen. 2007.
+\newblock Evolution and development of inflorescence architectures.
+\newblock Science, {\bf 316}:1452--1456.
+
+\bibitem[{Salomonson et~al.(1994)Salomonson, Ohlson, and
+  Ericson}]{salomonson1994}
+Salomonson, A., M.~Ohlson, and L.~Ericson. 1994.
+\newblock Meristem activity and biomass production as response mechanisms in
+  two forest herbs.
+\newblock Oecologia, {\bf 100-100}:29--37.
+
+\bibitem[{Schaffer et~al.(1982)Schaffer, Inouye, and Whittam}]{schaffer1982}
+Schaffer, W.~M., R.~S. Inouye, and T.~S. Whittam. 1982.
+\newblock Energy allocation by an annual plant when the effects of seasonality
+  on growth and reproduction are decoupled.
+\newblock The American Naturalist, {\bf 120}:787--815.
+
+\bibitem[{Wang et~al.(2018)Wang, Smith, and Li}]{Wang2018}
+Wang, B., S.~M. Smith, and J.~Li. 2018.
+\newblock Genetic regulation of shoot architecture.
+\newblock Annual Review of Plant Biology, {\bf 69}:437--468.
+\newblock Tex.isbn: 1545-2123 (Electronic) 1543-5008 (Linking)
+  tex.mendeley-tags: empirical.
+
+\bibitem[{Watson(1984)}]{Watson1984a}
+Watson, M.~A. 1984.
+\newblock Developmental constraints: {Effect} on population growth and patterns
+  of resource allocation in a clonal plant.
+\newblock The American Naturalist, {\bf 123}:411--426.
+\newblock Tex.mendeley-tags: empirical.
+
+\bibitem[{White et~al.(2016)White, Rogers, Rees, and Osborne}]{white2016}
+White, A.~C., A.~Rogers, M.~Rees, and C.~P. Osborne. 2016.
+\newblock How can we make plants grow faster? {A} source–sink perspective on
+  growth rate.
+\newblock Journal of Experimental Botany, {\bf 67}:31--45.
+
+\end{thebibliography}

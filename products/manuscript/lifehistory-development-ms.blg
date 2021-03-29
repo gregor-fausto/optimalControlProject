@@ -1,0 +1,83 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: lifehistory-development-ms.aux
+Case mismatch error between cite keys Cohen1971 and cohen1971
+---line 45 of file lifehistory-development-ms.aux
+ : \citation{Cohen1971
+ :                    }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys fox1992 and Fox1992
+---line 62 of file lifehistory-development-ms.aux
+ : \citation{fox1992
+ :                  }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys fox1992 and Fox1992
+---line 63 of file lifehistory-development-ms.aux
+ : \citation{fox1992
+ :                  }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys fox1992 and Fox1992
+---line 64 of file lifehistory-development-ms.aux
+ : \citation{fox1992
+ :                  }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys fox1992 and Fox1992
+---line 67 of file lifehistory-development-ms.aux
+ : \citation{fox1992
+ :                  ,kellogg2000,Prusinkiewicz2007,itzkovitz2012}
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys Cohen1971 and cohen1971
+---line 124 of file lifehistory-development-ms.aux
+ : \citation{Cohen1971
+ :                    }
+I'm skipping whatever remains of this command
+The style file: /Users/gregor/Dropbox/bibliography/styleFiles/ecology.bst
+Database file #1: /Users/gregor/Dropbox/bibliography/optimal-control-lit.bib
+Repeated entry---line 3669 of file /Users/gregor/Dropbox/bibliography/optimal-control-lit.bib
+ : @article{fox1992
+ :                 ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "fox199b"
+Warning--I didn't find a database entry for "rees2016"
+You've used 21 entries,
+            2706 wiz_defined-function locations,
+            759 strings with 9869 characters,
+and the built_in function-call counts, 10986 in all, are:
+= -- 1094
+> -- 526
+< -- 14
++ -- 183
+- -- 152
+* -- 880
+:= -- 1971
+add.period$ -- 94
+call.type$ -- 21
+change.case$ -- 166
+chr.to.int$ -- 21
+cite$ -- 21
+duplicate$ -- 485
+empty$ -- 760
+format.name$ -- 210
+if$ -- 2168
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 21
+newline$ -- 121
+num.names$ -- 86
+pop$ -- 178
+preamble$ -- 1
+purify$ -- 134
+quote$ -- 0
+skip$ -- 282
+stack$ -- 0
+substring$ -- 743
+swap$ -- 59
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 189
+warning$ -- 0
+while$ -- 105
+width$ -- 0
+write$ -- 298
+(There were 7 error messages)

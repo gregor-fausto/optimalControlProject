@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: resource-allocation.aux
+The style file: /Users/gregor/Dropbox/bibliography/styleFiles/ecology.bst
+Database file #1: /Users/gregor/Dropbox/bibliography/optimal-control-lit.bib
+You've used 2 entries,
+            2706 wiz_defined-function locations,
+            598 strings with 5198 characters,
+and the built_in function-call counts, 978 in all, are:
+= -- 102
+> -- 33
+< -- 2
++ -- 11
+- -- 9
+* -- 71
+:= -- 178
+add.period$ -- 10
+call.type$ -- 2
+change.case$ -- 15
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 46
+empty$ -- 70
+format.name$ -- 15
+if$ -- 190
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 2
+newline$ -- 19
+num.names$ -- 8
+pop$ -- 13
+preamble$ -- 1
+purify$ -- 11
+quote$ -- 0
+skip$ -- 28
+stack$ -- 0
+substring$ -- 67
+swap$ -- 5
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 18
+warning$ -- 0
+while$ -- 10
+width$ -- 0
+write$ -- 36

@@ -1,0 +1,1121 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 DEC 2020 10:05
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**literature-hypotheses.tex
+(./literature-hypotheses.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen103
+\extrarowheight=\dimen104
+\NC@list=\toks14
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\TX@col@width=\dimen105
+\TX@old@table=\dimen106
+\TX@old@col=\dimen107
+\TX@target=\dimen108
+\TX@delta=\dimen109
+\TX@cols=\count87
+\TX@ftn=\toks15
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen110
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen111
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen112
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks17
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks18
+\eqnshift@=\dimen113
+\alignsep@=\dimen114
+\tagshift@=\dimen115
+\tagwidth@=\dimen116
+\totwidth@=\dimen117
+\lineht@=\dimen118
+\@envbody=\toks19
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 96.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip48
+\f@ncyO@elh=\skip49
+\f@ncyO@erh=\skip50
+\f@ncyO@olh=\skip51
+\f@ncyO@orh=\skip52
+\f@ncyO@elf=\skip53
+\f@ncyO@erf=\skip54
+\f@ncyO@olf=\skip55
+\f@ncyO@orf=\skip56
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2016/02/27 v1.2a Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+LaTeX Info: Redefining \bm on input line 208.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks22
+\SOUL@lasttoken=\toks23
+\SOUL@cmds=\toks24
+\SOUL@buffer=\toks25
+\SOUL@token=\toks26
+\SOUL@spaceskip=\skip57
+\SOUL@ttwidth=\dimen121
+\SOUL@uldp=\dimen122
+\SOUL@ulht=\dimen123
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+LaTeX Info: Redefining \cite on input line 441.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+
+
+Package natbib Warning: The `cite' package should not be used
+(natbib)                with natbib. Use option `sort' instead.
+
+\bibhang=\skip58
+\bibsep=\skip59
+LaTeX Info: Redefining \cite on input line 694.
+LaTeX Info: Redefining \citenum on input line 708.
+\c@NAT@ctr=\count101
+) (./literature-hypotheses.aux)
+\openout1 = `literature-hypotheses.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 37.
+
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count102
+\scratchdimen=\dimen124
+\scratchbox=\box28
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen125
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks28
+) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+Package natbib Warning: Citation `wyatt1982' on page 1 undefined on input line 
+48.
+
+
+Underfull \hbox (badness 1077) in paragraph at lines 48--48
+[]|\OT1/cmr/m/n/12 "On a more gen-eral level,
+ []
+
+
+Underfull \hbox (badness 2846) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 shaped in-flo-res-cence ar-chi-
+ []
+
+
+Underfull \hbox (badness 1147) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 the flo-ral dis-play of Bras-
+ []
+
+
+Underfull \hbox (badness 1077) in paragraph at lines 48--48
+[]|\OT1/cmr/m/n/12 "On a more gen-eral level,
+ []
+
+
+Underfull \hbox (badness 2846) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 shaped in-flo-res-cence ar-chi-
+ []
+
+
+Underfull \hbox (badness 1147) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 the flo-ral dis-play of Bras-
+ []
+
+
+Package natbib Warning: Citation `schemske1980' on page 1 undefined on input li
+ne 48.
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 to later in the sea-son se-
+ []
+
+
+Underfull \hbox (badness 3250) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 tive de-lays are as-so-ci-ated
+ []
+
+
+Package natbib Warning: Citation `stebbins1974' on page 1 undefined on input li
+ne 48.
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 48--48
+[]|\OT1/cmr/m/n/12 Advantage of raceme over
+ []
+
+
+Underfull \hbox (badness 1472) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 com-pound cyme: as with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 soli-tary ax-il-lary flow-ers,
+ []
+
+
+Underfull \hbox (badness 3068) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 pro-duc-tion of many, few-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 flowered ax-il-lary racemes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 dis-tributes re-pro-duc-tion
+ []
+
+
+Underfull \hbox (badness 7722) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 of a few, many-flowered
+ []
+
+
+Package natbib Warning: Citation `stebbins1974' on page 1 undefined on input li
+ne 48.
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 48--48
+[]|\OT1/cmr/m/n/12 Advantage of raceme over
+ []
+
+
+Package natbib Warning: Citation `stebbins1974' on page 1 undefined on input li
+ne 48.
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 48--48
+[]|\OT1/cmr/m/n/12 Advantage of raceme over
+ []
+
+
+Underfull \hbox (badness 1968) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 kind of in-flo-res-cence in a
+ []
+
+
+Package natbib Warning: Citation `stebbins1974' on page 1 undefined on input li
+ne 48.
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 48--48
+\OT1/cmr/m/n/12 veg-e-ta-tive growth pre-vents
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 48--49
+[][] 
+ []
+
+[1
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \vbox (348.60497pt too high) has occurred while \output is active []
+
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+[]|\OT1/cmr/m/n/12 In an-nual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 plants,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 branch-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 max-i-mizes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 plant size
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 and the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 num-ber of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 re-pro-duc-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 the end of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+[]|\OT1/cmr/m/n/12 responses
+ []
+
+
+Underfull \hbox (badness 7704) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 in meris-tem
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 al-lo-ca-tion
+ []
+
+
+Underfull \hbox (badness 3907) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 at an early
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 re-source
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 en-vi-ron-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 ments, this
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 max-i-mizes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 the num-ber
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 of grow-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 stems ac-cu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 and meris-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 de-vel-op-ment,
+ []
+
+
+Underfull \hbox (badness 6032) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 re-source en-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 vi-ron-ments
+ []
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 there should
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 be strong
+ []
+
+
+Underfull \hbox (badness 2582) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 api-cal dom-i-
+ []
+
+
+Overfull \hbox (25.08499pt too wide) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 nance/suppression
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 of ax-il-lary
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 meris-tems
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 early to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 max-i-mize
+ []
+
+
+Package natbib Warning: Citation `scheepens2011' on page 3 undefined on input l
+ine 60.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 hy-poth-e-sized
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 that the in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 de-ter-mi-nate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 flow-er-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 in C.*
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 carniolica
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 ver-sus the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 de-ter-mi-nate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 flow-er-ing in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 C.* thyr-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 to adap-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 ta-tion to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 sub-mediter-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 ranean
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 mi-nate flow-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 carniolica,
+ []
+
+
+Underfull \hbox (badness 3884) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 be-cause this
+ []
+
+
+Underfull \hbox (badness 7888) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 would al-low
+ []
+
+
+Underfull \hbox (badness 4752) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 er-ing pe-riod
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 through-out
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 the long
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 sum-mer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 un-til en-vi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 ron-men-tal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 con-di-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 would de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 te-ri-o-rate,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 whereas de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 ter-mi-nate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 er-ing would
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 be more
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 short grow-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 where seed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 pro-duc-tion
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 must be se-
+ []
+
+
+Underfull \hbox (badness 2582) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 cured be-fore
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 tem-per-a-tures
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+[]|\OT1/cmr/m/n/12 plants may
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 have higher
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 al-lo-ca-tion
+ []
+
+
+Underfull \hbox (badness 6032) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 re-source en-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 vi-ron-ments
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 vs. high
+ []
+
+
+Underfull \hbox (badness 6032) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 re-source en-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 vi-ron-ments;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 this is im-
+ []
+
+
+Underfull \hbox (badness 1515) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 R meris-tems
+ []
+
+
+Underfull \hbox (badness 2941) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 pro-duce sin-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 gle fruits
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 rather than
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 60--61
+[][] 
+ []
+
+[3]
+Overfull \vbox (779.75938pt too high) has occurred while \output is active []
+
+
+[4]
+Underfull \hbox (badness 1248) in paragraph at lines 76--76
+\OT1/cmr/m/n/12 re-source en-vi-ron-ments; al-lo-ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+\OT1/cmr/m/n/12 tem ac-tiv-ity helps ex-plain
+ []
+
+
+Underfull \hbox (badness 2351) in paragraph at lines 76--76
+\OT1/cmr/m/n/12 plant's abil-ity to re-spond to
+ []
+
+
+Underfull \hbox (badness 4954) in paragraph at lines 76--76
+[]|\OT1/cmr/m/n/12 Biomass does not de-ter-mine
+ []
+
+
+Underfull \hbox (badness 4954) in paragraph at lines 76--76
+[]|\OT1/cmr/m/n/12 Biomass does not de-ter-mine
+ []
+
+
+Underfull \hbox (badness 4954) in paragraph at lines 76--76
+[]|\OT1/cmr/m/n/12 Biomass does not de-ter-mine
+ []
+
+
+Underfull \hbox (badness 1917) in paragraph at lines 76--76
+\OT1/cmr/m/n/12 from growth to re-pro-duc-tion;
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 76--76
+\OT1/cmr/m/n/12 time or with plant size; eg.
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 76--77
+[][] 
+ []
+
+
+Overfull \vbox (3.44421pt too high) has occurred while \output is active []
+
+
+[5]
+Underfull \hbox (badness 1253) in paragraph at lines 85--85
+\OT1/cmr/m/n/12 se-lec-tion against al-lo-ca-tion to
+ []
+
+
+Underfull \hbox (badness 1112) in paragraph at lines 85--85
+\OT1/cmr/m/n/12 a-tive trade-off be-tween growth
+ []
+
+
+Underfull \hbox (badness 1642) in paragraph at lines 85--85
+\OT1/cmr/m/n/12 to re-pro-duce bc slow growth
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
+[]|\OT1/cmr/m/n/12 meristem al-lo-ca-tion pat-terns
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 85--86
+[][] 
+ []
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 93--93
+[]|\OT1/cmr/m/n/12 high al-lo-ca-tion to G and R
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 93--93
+\OT1/cmr/m/n/12 ca-tion to G and R in small
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 93--93
+[]|\OT1/cmr/m/n/12 in fa-vor-able re-source en-vi-ron-
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 93--93
+\OT1/cmr/m/n/12 new branches/G meris-tems is
+ []
+
+
+Underfull \hbox (badness 6001) in paragraph at lines 93--93
+\OT1/cmr/m/n/12 pos-i-tively cor-re-lated with R
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
+\OT1/cmr/m/n/12 meris-tems/negatively with I
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 93--94
+[][] 
+ []
+
+[6]
+Underfull \hbox (badness 4060) in paragraph at lines 103--103
+\OT1/cmr/m/n/12 re-source avail-abil-ity, while
+ []
+
+
+Underfull \hbox (badness 7151) in paragraph at lines 103--103
+\OT1/cmr/m/n/12 mesic grass-lands main-tain
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 103--103
+\OT1/cmr/m/n/12 a meris-tem bud bank and
+ []
+
+
+Underfull \hbox (badness 3623) in paragraph at lines 103--103
+\OT1/cmr/m/n/12 are able to in-crease pro-
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 103--103
+\OT1/cmr/m/n/12 duc-tion in re-sponse to re-
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 103--103
+\OT1/cmr/m/n/12 con-tributes to evo-lu-tion of
+ []
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 103--103
+[]|\OT1/cmr/m/n/12 Tissue growth/meristem as
+ []
+
+
+Underfull \hbox (badness 4927) in paragraph at lines 103--103
+\OT1/cmr/m/n/12 sink is more con-strain-ing
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 103--104
+[][] 
+ []
+
+[7]
+
+Package natbib Warning: Citation `stebbins1974' on page 8 undefined on input li
+ne 114.
+
+
+Package natbib Warning: Citation `stebbins1974' on page 8 undefined on input li
+ne 114.
+
+
+Package natbib Warning: Citation `stebbins1974' on page 8 undefined on input li
+ne 114.
+
+
+Package natbib Warning: Citation `wyatt1982' on page 8 undefined on input line 
+114.
+
+
+Package natbib Warning: Citation `Prusinkiewicz2007' on page 8 undefined on inp
+ut line 114.
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 114--115
+[][] 
+ []
+
+[8]
+No file literature-hypotheses.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[9] (./literature-hypotheses.aux) ) 
+Here is how much of TeX's memory you used:
+ 3754 strings out of 493014
+ 49884 string characters out of 6133351
+ 119601 words of memory out of 5000000
+ 7227 multiletter control sequences out of 15000+600000
+ 11367 words of font info for 42 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 38i,8n,43p,1130b,175s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb>
+Output written on literature-hypotheses.pdf (9 pages, 40658 bytes).
+PDF statistics:
+ 42 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
