@@ -1,0 +1,283 @@
+---
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+rm(list=ls(all=TRUE))
+knitr::opts_chunk$set(echo = TRUE, fig.path="figures/")
+```
+
+## Required packages
+
+```{r}
+library(deSolve)
+```
+
+# Ordinary differential equations
+
+## Resource allocation
+
+```{r}
+controlResource=function(t,y,parms,controlFunction) {
+  P=y[1]; V=y[2]; I=y[3]; L=y[4];  
+  
+  beta1=parms[1]; 
+  beta2=parms[2];
+  
+  pt = controlFunction(t)
+  
+  derivs[1]= 2*beta1*pt*P - beta1*pt*P - (1-pt)*beta1*P;
+  derivs[2]= beta1*pt*P + (1-pt)*beta1*P;
+  derivs[3]= 0;
+  derivs[4]= (1-pt)*beta1*V;
+  return(list(derivs));
+}
+```
+
+## Determinate inflorescence 
+
+Write the ordinary differential equations for determinate inflorescences.
+
+```{r}
+controlDeterminate=function(t,y,parms,controlFunction) {
+  P=y[1]; V=y[2]; I=y[3]; L=y[4];  
+  
+  beta1=parms[1]; 
+  beta2=parms[2];
+  
+  pt = controlFunction(t)
+  
+  derivs[1]=2*beta1*pt*P - beta1*pt*P - (1-pt)*beta1*P;
+  derivs[2]=beta1*pt*P + (1-pt)*beta1*P;
+  derivs[3]=(1-pt)*beta1*P;
+  derivs[4]=(1-pt)*beta1*P + beta2*I;
+  return(list(derivs));
+}
+```
+
+## Indeterminate inflorescence 
+
+Write the ordinary differential equations for indeterminate inflorescences.
+
+```{r}
+controlIndeterminate=function(t,y,parms,controlFunction) {
+  P=y[1]; V=y[2]; I=y[3]; L=y[4];
+
+  beta1=parms[1];
+  beta2=parms[2];
+
+    pt = controlFunction(t)[1]
+    qt = controlFunction(t)[2]
+
+  derivs[1]= 2*beta1*(pt-qt)*P - beta1*(pt-qt)*P - beta1*qt*P;
+  derivs[2]= beta1*(pt-qt)*P + beta1*(1-pt-qt)*P + beta1*qt*P ;
+  derivs[3]= beta1*(1-pt-qt)*P+2*qt*beta1*P
+  derivs[4]= beta2*I;
+  return(list(derivs));
+}
+```
+
+# Initial conditions
+
+```{r }
+# Vector to hold the derivatives
+derivs=numeric(4); 
+
+# starting values of both state variables
+y0=c(P=0.5,V=0,I=0,L=0); 
+# time sequence
+times=seq(0,8,length=200)
+# controls
+parms=c( beta1=1, 
+         beta2=1);
+```
+
+# Function to plot solutions 
+
+```{r}
+plotSolutions = function(ode1=odeSolutionDeterminate,ode2=odeSolutionIndeterminate){
+
+par(mfrow=c(1,2))
+
+# plot(ode1$time,ifelse(ode1$time<4,1,0),type="l",col="black",bty="n",
+#      main="Optimal growth and reproduction for an annual\n with a determinate inflorescence.",
+#      xlab="Time (t)",
+#      ylab="Control",
+#      ylim=c(0,1))
+
+plot(ode1$time,ode1$P,type="l",col="red",bty="n",
+     #main="Meristem dynamics for annuals\n with a determinate inflorescence (solid)\n and indeterminate inflorescence (dotted).",
+     xlab="Time (t)",
+     ylab="Available meristems",
+     ylim=c(0,max(ode1$I,ode2$I)  ), 
+     cex.lab=.5, cex.axis=.5, cex.main=.75, cex.sub=.5)
+
+lines(ode1$time,ode1$I,col="blue")
+lines(ode2$time,ode2$I,col="blue",lty='dotted')
+lines(ode2$time,ode2$P,col="red",lty='dotted')
+
+legend(x = 0, y = max(ode1$I,ode2$I) , 
+       legend = c("Primary meristems (P)", "Inflorescence meristems (I)"), 
+       col = c('red', 'blue') ,
+       lty = c(1,1), 
+       cex = .25)
+
+plot(ode1$time,ode1$V,type="l",col="red",bty="n",
+     #main="Growth and reproduction for annuals\n with a determinate inflorescence (solid)\n and indeterminate inflorescence (dotted).",
+     xlab="Time (t)",
+     ylab="Biomass ",
+     ylim=c(0,max(ode1$L,ode2$L)) , 
+     cex.lab=.5, cex.axis=.5, cex.main=.75, cex.sub=.5)
+
+lines(ode1$time,ode1$L,col="blue")
+
+lines(ode2$time,ode2$V,col="red",lty='dotted')
+lines(ode2$time,ode2$L,col="blue",lty='dotted')
+
+legend(x = 0, y = max(ode1$L,ode2$L),
+       legend = c("Vegetative biomass (V)", "Reproductive biomass (F)"),
+       col = c('red', 'blue') ,
+       lty = c(1,1),
+       cex = .25)
+}
+
+```
+
+# Instantaneous switch
+
+```{r instant-switch}
+instantSwitch = function(t){
+  if ( t <= 4)
+    tmp <- 1
+  else
+    tmp <- 0
+  
+  return(tmp)
+  }
+
+odeSolutionDeterminate=ode(y0,times,controlDeterminate,parms,controlFunction=instantSwitch);
+odeSolutionDeterminate = data.frame(odeSolutionDeterminate);
+
+instantSwitch = function(t){
+  
+  tmp = c() # tmp[1] = pt, tmp[2] = qt
+  
+  if ( t <= 4)
+    {tmp[1] <- 1
+    tmp[2] <- 0}
+  else 
+  {tmp[1] <- 0
+   tmp[2] <- 1}
+  
+  return(tmp)
+  }
+
+odeSolutionIndeterminate=ode(y0,times,controlIndeterminate,parms,controlFunction=instantSwitch);
+odeSolutionIndeterminate = data.frame(odeSolutionIndeterminate)
+
+plotSolutions(odeSolutionDeterminate,odeSolutionIndeterminate)
+```
+
+# Graded switch
+
+```{r graded-switch}
+gradedSwitch = function(t){
+  if ( t <= 2)
+    tmp <- 1
+  else if (t <= 4)
+    tmp <- .5
+  else
+    tmp <- 0
+  
+  return(tmp)
+  }
+
+odeSolutionDeterminate=ode(y0,times,controlDeterminate,parms,controlFunction=gradedSwitch);
+odeSolutionDeterminate = data.frame(odeSolutionDeterminate);
+
+gradedSwitch = function(t){
+  
+  tmp = c() # tmp[1] = pt, tmp[2] = qt
+  
+  if ( t <= 2)
+    {tmp[1] <- 1
+    tmp[2] <- 0}
+  else if ( t <= 4)
+  {tmp[1] <- .5
+    tmp[2] <- 0}
+  else 
+  {tmp[1] <- 0
+   tmp[2] <- 1}
+  
+  return(tmp)
+  }
+
+odeSolutionIndeterminate=ode(y0,times,controlIndeterminate,parms,controlFunction=gradedSwitch);
+odeSolutionIndeterminate = data.frame(odeSolutionIndeterminate)
+
+plotSolutions(odeSolutionDeterminate,odeSolutionIndeterminate)
+```
+
+# Graded switch
+
+```{r}
+gradedSwitch = function(t){
+  if ( t <= 2)
+    tmp <- .75
+  else if (t <= 4)
+    tmp <- .5
+  else
+    tmp <- 0
+  
+  return(tmp)
+  }
+
+odeSolutionDeterminate=ode(y0,times,controlDeterminate,parms,controlFunction=gradedSwitch);
+odeSolutionDeterminate = data.frame(odeSolutionDeterminate);
+
+gradedSwitch = function(t){
+  
+  tmp = c() # tmp[1] = pt, tmp[2] = qt
+  
+  if ( t <= 2)
+    {tmp[1] <- .75
+    tmp[2] <- 0}
+  else if ( t <= 4)
+  {tmp[1] <- .5
+    tmp[2] <- 0}
+  else 
+  {tmp[1] <- 0
+   tmp[2] <- 1}
+  
+  return(tmp)
+  }
+
+odeSolutionIndeterminate=ode(y0,times,controlIndeterminate,parms,controlFunction=gradedSwitch);
+odeSolutionIndeterminate = data.frame(odeSolutionIndeterminate)
+
+plotSolutions(odeSolutionDeterminate,odeSolutionIndeterminate)
+```
+
+## Instantaneous switch with resources
+
+```{r}
+instantSwitch = function(t){
+  if ( t <= 4)
+    tmp <- 1
+  else
+    tmp <- 0
+  
+  return(tmp)
+  }
+
+odeSolutionDeterminate=ode(y0,times,controlDeterminate,parms,controlFunction=instantSwitch);
+odeSolutionDeterminate = data.frame(odeSolutionDeterminate);
+
+odeSolutionResource=ode(y0,times,controlResource,parms,controlFunction=instantSwitch);
+odeSolutionResource = data.frame(odeSolutionResource)
+
+plotSolutions(odeSolutionDeterminate,odeSolutionResource)
+```
