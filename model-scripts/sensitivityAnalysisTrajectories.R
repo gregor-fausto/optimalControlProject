@@ -12,6 +12,7 @@ odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values
 
 # Read in list of files
 outputVec <- list.files("model-scripts/analysisX")
+outputVec <- outputVec[grep("5-0-1-0.1",outputVec)]
 
 # Order files 
 index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec),
@@ -36,7 +37,7 @@ j = length(runList[[1]]$beta1.list)
 par(mfrow=c(2,2))
 
 # Axis limits
-ylim.p = c(0,1)
+ylim.p = c(0,.5)
 xlim.p = c(0,5)
 
 # Colors
@@ -112,6 +113,15 @@ for(i in 1:n){
         lty=i,  lwd = 2,
         col=colors[i])
 }
+# legend(x=0,y=1,c("Baseline","Relax alpha", "Relax m", "Relax alpha & m"),
+#        lty = c(1:4),col=colors,cex=.5)
+
+# yellow: baseline
+# red: relax alpha, resource constraint
+# green: relax m1, meristem constraint
+# orange: relax both constraints simultaneously
+colors <- c("#ffffbf","#fc8d59","#91bfdb","#fdae61")
+
 
 # Floral meristem trajectory
 plot(NA,NA,xlim=xlim.p,ylim=ylim.p,

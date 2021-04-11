@@ -72,8 +72,8 @@ control <- function(t,y,parms,f1,f2,f3) {
   derivs[3] = (beta1t) * ((1 - ut2) * P) - (beta2t) * ( I )
   derivs[4] = (beta2t) * I
   derivs[5] = bad
-   derivs[6] = log(L); # SPE: season's end is Uniform(2,5). 
-  # derivs[6] = ifelse(t>=1,log(L),0); # SPE: season's end is Uniform(2,5). 
+  # derivs[6] = log(L); # SPE: season's end is Uniform(2,5). 
+   derivs[6] = ifelse(t>=2.5,log(L),0); # SPE: season's end is Uniform(2,5). 
   # derivs[6] = dnorm(t,mean=mu,sd=sigma)*log(L)
   
   return(list(derivs));

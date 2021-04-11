@@ -12,6 +12,7 @@ odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values
 
 # Read in list of files
 outputVec <- list.files("model-scripts/analysisX")
+outputVec <- outputVec[grep("5-1-1-1",outputVec)]
 
 # Order files 
 index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec),
