@@ -12,7 +12,7 @@ odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values
 
 # Read in list of files
 outputVec <- list.files("model-scripts/analysisX")
-outputVec <- outputVec[grep("5-0-1-0.1",outputVec)]
+outputVec <- outputVec[grep("5-0-0.1-0.1",outputVec)]
 
 # Order files 
 index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec),
@@ -37,7 +37,7 @@ j = length(runList[[1]]$beta1.list)
 par(mfrow=c(2,2))
 
 # Axis limits
-ylim.p = c(0,.5)
+ylim.p = c(0,2)
 xlim.p = c(0,5)
 
 # Colors
