@@ -15,14 +15,14 @@ P = c(1)
 V = c(1)
 I = c(0)
 L = c(0)
-m = seq(.1,1,by=.25)
-alpha = seq(.1,1,by=.25)
+m = seq(.5,1.5,by=.25)
+alpha = seq(.5,1.5,by=.25)
 seasonDistribution = c("uniform")
 mu = c(NA)
 sd = c(NA)
 max = c(5)
 min = c(2.5)
-gamma = c(0)
+gamma = c(1)
 
 df<-data.frame(expand.grid(model=model,
                        P=P,V=V,I=I,L=L,

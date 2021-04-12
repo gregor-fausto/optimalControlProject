@@ -1,7 +1,6 @@
 # I optimized fitness for a combination of initial conditions and constraints
 # I then relaxed the resource constraint by taking alpha/.9
 # I then relaxed the meristem constraint by taking m1/.9 and m2/.9
-# I then relaxed both the meristem and resource constraint by relaxing both by 10%
 
 # Load libraries 
 library(deSolve)
@@ -12,7 +11,7 @@ odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values
 
 # Read in list of files
 outputVec <- list.files("model-scripts/analysisX")
-outputVec <- outputVec[grep("5-1-1-1",outputVec)]
+outputVec <- outputVec[grep("5-0-0.75-0.5",outputVec)]
 
 # Order files 
 index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec),
@@ -40,11 +39,10 @@ for(i in 1:length(runList)){
 }
 
 # Colors
-# yellow: baseline
-# red: relax alpha, resource constraint
-# green: relax m1, meristem constraint
-# orange: relax both constraints simultaneously
-colors <- c("#ffffbf","#fc8d59","#91bfdb","#fdae61")
+# Gray: baseline
+# Red: relax alpha, resource constraint
+# orange: relax m1, meristem constraint
+colors <- c("gray75","red","purple")
 
 par(mfrow=c(1,3))
 t = seq(0,5,by=0.01)
@@ -58,6 +56,9 @@ for(i in 1:length(ut)){
         col=colors[i])
 }
 
+legend(0,1,
+       c("Baseline","Relax resource constraint","Relax meristem constraint"),
+       lty=1,col=c("gray90","red","purple"),cex=.5)
 
 plot(t,t,type='n',ylim=c(0,1.1),xlim=c(0,5),
      xlab="Time (t)",
@@ -79,6 +80,7 @@ for(i in 1:length(beta2)){
                    ifelse(grepl("Meristem",runList[[i]]$model),3,1)),
         col=colors[i])
 }
+
 
 
 

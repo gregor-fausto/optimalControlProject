@@ -207,21 +207,49 @@ saveRDS(summaryObject,paste0("model-scripts/",analysisName,"/",controlName,"-",i
 ##############################################################
 # Sensitivity analysis: reduce alpha
 ##############################################################
-pwt=10; lambda=1; 
+pwt=1; lambda=1; 
 
 initsList = buildInits(tmp)
 inits=initsList[[1]]
 other=initsList[[2]]
 mParms=initsList[[3]]
 
-mParms[["alpha"]]=mParms[["alpha"]]/.8
+mParms[["alpha"]]=mParms[["alpha"]]/.9
 
 mMax = rep(c(1,mParms[1:2]),each=length(topt))
 fit$par[fit$par>mMax] = mMax[fit$par>mMax]
 
-for(j in 3) {
+for(j in 2) {
   
   fit.sens = optim(fit$par, fn=optim_fun, method="Nelder-Mead",control = list(maxit=2500,trace=4,REPORT=1));
+  
+  # minimum on u and betas
+  fit.sens$par[fit.sens$par<mMin] = mMin[fit.sens$par<mMin]
+  # maximum on u and betas
+  fit.sens$par[fit.sens$par>mMax] = mMax[fit.sens$par>mMax]
+  
+  fit.sens = optim(fit.sens$par, fn=optim_fun, method="BFGS",control = list(maxit=1000,trace=4,REPORT=1)); 
+  cat("+++++++++++++++ Finished fit ", j, "   ",fit.sens$fval,"\n");  
+  
+  lambda=lambda/2; 
+  
+  tMat.list[[j]] = tMat = matrix(fit.sens$par,ncol=3); 
+  u.list[[j]] = f1 = approxfun(topt,tMat[,1],rule=2);
+  beta1.list[[j]] = f2 = approxfun(topt,tMat[,2],rule=2); 
+  beta2.list[[j]] = f3 = approxfun(topt,tMat[,3],rule=2); 
+  fvals[j]=fit.sens$value; # replace fit$fvals with fit$value
+  outMat = ode(y=c(inits,other),times=seq(0,seasonEnd,by=0.1), control, method=odemethod,parms=mParms,f1=f1,f2=f2,f3=f3);
+  penVec[j] = outMat[nrow(outMat),"pen"]; # integrated constraint violation penalty 
+  objVec[j] = outMat[nrow(outMat),"obj"]; 
+}
+
+
+# step 2
+pwt=10; lambda=1; 
+
+for(j in 3) {
+  
+  fit.sens = optim(fit.sens$par, fn=optim_fun, method="Nelder-Mead",control = list(maxit=2500,trace=4,REPORT=1));
   
   # minimum on u and betas
   fit.sens$par[fit.sens$par<mMin] = mMin[fit.sens$par<mMin]
@@ -292,22 +320,48 @@ saveRDS(summaryObject,paste0("model-scripts/",analysisName,"/",controlName,"-",i
 ##############################################################
 # Sensitivity analysis: relax m
 ##############################################################
-pwt=10; lambda=1; 
+pwt=1; lambda=1; 
 
 initsList = buildInits(tmp)
 inits=initsList[[1]]
 other=initsList[[2]]
 mParms=initsList[[3]]
 
-mParms[["m1"]]=mParms[["m1"]]/.8
-mParms[["m2"]]=mParms[["m2"]]/.8
+mParms[["m1"]]=mParms[["m1"]]/.9
+mParms[["m2"]]=mParms[["m2"]]/.9
 
 mMax = rep(c(1,mParms[1:2]),each=length(topt))
 fit$par[fit$par>mMax] = mMax[fit$par>mMax]
 
-for(j in 3) {
+for(j in 2) {
   
   fit.sens = optim(fit$par, fn=optim_fun, method="Nelder-Mead",control = list(maxit=2500,trace=4,REPORT=1));
+  
+  # minimum on u and betas
+  fit.sens$par[fit.sens$par<mMin] = mMin[fit.sens$par<mMin]
+  # maximum on u and betas
+  fit.sens$par[fit.sens$par>mMax] = mMax[fit.sens$par>mMax]
+  
+  fit.sens = optim(fit.sens$par, fn=optim_fun, method="BFGS",control = list(maxit=1000,trace=4,REPORT=1)); 
+  cat("+++++++++++++++ Finished fit ", j, "   ",fit.sens$fval,"\n");  
+  
+  lambda=lambda/2; 
+  
+  tMat.list[[j]] = tMat = matrix(fit.sens$par,ncol=3); 
+  u.list[[j]] = f1 = approxfun(topt,tMat[,1],rule=2);
+  beta1.list[[j]] = f2 = approxfun(topt,tMat[,2],rule=2); 
+  beta2.list[[j]] = f3 = approxfun(topt,tMat[,3],rule=2); 
+  fvals[j]=fit.sens$value; # replace fit$fvals with fit$value
+  outMat = ode(y=c(inits,other),times=seq(0,seasonEnd,by=0.1), control, method=odemethod,parms=mParms,f1=f1,f2=f2,f3=f3);
+  penVec[j] = outMat[nrow(outMat),"pen"]; # integrated constraint violation penalty 
+  objVec[j] = outMat[nrow(outMat),"obj"]; 
+}
+
+pwt=10; lambda=1; 
+
+for(j in 3) {
+  
+  fit.sens = optim(fit.sens$par, fn=optim_fun, method="Nelder-Mead",control = list(maxit=2500,trace=4,REPORT=1));
   
   # minimum on u and betas
   fit.sens$par[fit.sens$par<mMin] = mMin[fit.sens$par<mMin]

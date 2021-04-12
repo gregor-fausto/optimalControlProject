@@ -1,7 +1,6 @@
 # I optimized fitness for a combination of initial conditions and constraints
 # I then relaxed the resource constraint by taking alpha/.9
 # I then relaxed the meristem constraint by taking m1/.9 and m2/.9
-# I then relaxed both the meristem and resource constraint by relaxing both by 10%
 
 # Load libraries 
 library(deSolve)
@@ -12,11 +11,10 @@ odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values
 
 # Read in list of files
 outputVec <- list.files("model-scripts/analysisX")
-outputVec <- outputVec[grep("5-0-0.1-0.1",outputVec)]
+outputVec <- outputVec[grep("5-0-1-0.5",outputVec)]
 
 # Order files 
-index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec),
-        grep("relaxAlphaMeristem",outputVec))
+index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec))
 
 # Number of files
 n = length(outputVec)
@@ -41,11 +39,11 @@ ylim.p = c(0,2)
 xlim.p = c(0,5)
 
 # Colors
-# yellow: baseline
-# red: relax alpha, resource constraint
-# green: relax m1, meristem constraint
+# Gray: baseline
+# Red: relax alpha, resource constraint
+# Purple: relax m1, meristem constraint
 # orange: relax both constraints simultaneously
-colors <- c("#ffffbf","#fc8d59","#91bfdb","#fdae61")
+colors <- c("gray75","red","purple")
 
 # Primary meristem trajectory
 plot(NA,NA,xlim=xlim.p,ylim=ylim.p,
@@ -91,6 +89,10 @@ for(i in 1:n){
         col=colors[i])
 }
 
+# Axis limits
+ylim.p = c(0,.5)
+xlim.p = c(0,5)
+
 # Inflorescence meristem trajectory
 plot(NA,NA,xlim=xlim.p,ylim=ylim.p,
      type='n',
@@ -116,12 +118,10 @@ for(i in 1:n){
 # legend(x=0,y=1,c("Baseline","Relax alpha", "Relax m", "Relax alpha & m"),
 #        lty = c(1:4),col=colors,cex=.5)
 
-# yellow: baseline
-# red: relax alpha, resource constraint
-# green: relax m1, meristem constraint
-# orange: relax both constraints simultaneously
-colors <- c("#ffffbf","#fc8d59","#91bfdb","#fdae61")
 
+# Axis limits
+ylim.p = c(0,1)
+xlim.p = c(0,5)
 
 # Floral meristem trajectory
 plot(NA,NA,xlim=xlim.p,ylim=ylim.p,
