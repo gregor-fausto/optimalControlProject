@@ -2,7 +2,7 @@
 ## Define analysis
 ####################################
 
-analysisName = c("analysisX")
+analysisName = c("analysisGammaOne")
 
 ####################################
 ## Write inits into table of parameters
