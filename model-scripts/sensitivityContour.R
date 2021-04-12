@@ -6,50 +6,116 @@
 library(deSolve)
 library(RColorBrewer)
 
+# ------------------------------------------------------------------------------
+# Function
+# ------------------------------------------------------------------------------
+f = function(x=filename){
+  source(paste0("model-scripts/models/control-",x$model,".R"))
+  derivs=numeric(6); 
+  
+  inits=x$inits[1:4]
+  mParms=x$inits[5:8]
+  other=c(pen=0,obj=0)
+  dist = c(distribution=as.character(x$seasonDistribution))
+  seasonParms = c(max=x$max,min=x$min)
+  
+  initVals = c(inits,other) 
+  outMat = ode(y=initVals,times=seq(0,5,by=0.1),control,method=odemethod,parms=mParms,f1=x$u.list[[j]],f2=x$beta1.list[[j]],f3=x$beta2.list[[j]]);
+  outDataFrame = data.frame(time=seq(0,5,by=0.1),alpha=x$inits[7],m1=x$inits[5],L=data.frame(outMat)$L)
+  return(outDataFrame)
+}
+
+# ------------------------------------------------------------------------------
+# Get files for analysis
+# ------------------------------------------------------------------------------
 # Set ODE method to use
 odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values 
 
 # Read in list of files
 outputVec <- list.files("model-scripts/analysisX")
-outputVec <- outputVec[grep("5-0-0.75-0.5",outputVec)]
 
-# Order files 
-index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec))
+outputAlpha = outputVec[grep('relaxAlpha',outputVec)]
+outputMeristem = outputVec[grep('relaxMeristem',outputVec)]
 
+outputBaseline=gsub("-relaxAlpha", "",outputVec)
+outputBaseline=gsub("-relaxMeristem", "",outputBaseline)
+outputBaseline=unique(outputBaseline)
+
+# ------------------------------------------------------------------------------
+# Put files in list
+# ------------------------------------------------------------------------------
 # Number of files
-n = length(outputVec)
+n = length(outputMeristem)
 
 # Create list of outputs
-runList <- list()
+runListBaseline <- list()
+runListMeristem <- list()
+runListAlpha <- list()
 for(i in 1:n){
-  runList[[i]] <- readRDS(paste0("model-scripts/analysisX/",outputVec[index[i]]))
+  runListBaseline[[i]] <- readRDS(paste0("model-scripts/analysisX/",outputBaseline[[i]]))
+  runListAlpha[[i]] <- readRDS(paste0("model-scripts/analysisX/",outputAlpha[[i]]))
+  runListMeristem[[i]] <- readRDS(paste0("model-scripts/analysisX/",outputMeristem[[i]]))
 }
 
-# empty vector of derivatives
-derivs=numeric(6); 
 
-# number of grid points
-j = length(runList[[1]]$beta1.list)
+# ------------------------------------------------------------------------------
+# Run analysis
+# ------------------------------------------------------------------------------
+baseline = lapply(runListBaseline,f)
+relaxAlpha = lapply(runListAlpha,f)
+relaxMeristem = lapply(runListMeristem,f)
 
-outMat.list = list()
+baselineFinal = do.call(rbind,baseline) %>% dplyr::filter(time==5)
+alphaFinal = do.call(rbind,relaxAlpha) %>% dplyr::filter(time==5)
+meristemFinal = do.call(rbind,relaxMeristem) %>% dplyr::filter(time==5)
 
-for(i in 1:n){
-  source(paste0("model-scripts/models/control-",runList[[i]]$model,".R"))
-  derivs=numeric(6); 
-  
-  tmp=runList[[i]]
-  
-  inits=tmp$inits[1:4]
-  mParms=tmp$inits[5:8]
-  other=c(pen=0,obj=0)
-  dist = c(distribution=as.character(tmp$seasonDistribution))
-  seasonParms = c(max=tmp$max,min=tmp$min)
-  
-  initVals = c(inits,other) 
-  outMat = ode(y=initVals,times=seq(0,5,by=0.1),control,method=odemethod,parms=mParms,f1=runList[[i]]$u.list[[j]],f2=runList[[i]]$beta1.list[[j]],f3=runList[[i]]$beta2.list[[j]]);
-  outMat.list[[i]] = outMat
-}
+baselineFinal$L.base = baselineFinal$L
+baselineFinal$L.alpha = alphaFinal$L
+baselineFinal$L.meristem = meristemFinal$L
 
-data.frame(outMat.list[[2]])$L/data.frame(outMat.list[[1]])$L
-data.frame(outMat.list[[3]])$L/data.frame(outMat.list[[1]])$L
+# ------------------------------------------------------------------------------
+# Relative fitness at end
+# ------------------------------------------------------------------------------
+baselineFinal = baselineFinal %>%
+  dplyr::mutate(resourceConstraint = L.alpha/L.base,
+                meristemConstraint = L.meristem/L.base)
+
+library(plotly)
+# plot_ly(data=baselineFinal, x=~alpha, y=~m1, z=~L.base, type = 'contour',colorscale='Viridis')
+# plot_ly(data=baselineFinal, x=~alpha, y=~m1, z=~resourceConstraint, type = 'contour',colorscale='Viridis')
+# plot_ly(data=baselineFinal, x=~alpha, y=~m1, z=~meristemConstraint, type = 'contour',colorscale='Viridis')
+
+baselineFinal=baselineFinal[with(baselineFinal,order(alpha,m1)),]
+
+contour(x=baselineFinal$alpha,y=baselineFinal$m1,z=baselineFinal$L.base)
+
+library(ggplot2)
+
+
+
+g1 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=L.base)) +
+  geom_contour_filled(color='white') +
+  geom_point(aes(x=alpha,y=m1),alpha=.5) +
+  theme_bw() + guides(fill = guide_legend(title = "Fitnes") ) +
+  ggtitle("Fitness; P=1, V=1; Uniform season length [2.5,5]")
+
+g2 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=meristemConstraint)) +
+  geom_contour_filled(color='white') +
+  geom_point(aes(x=alpha,y=m1),alpha=.5) +
+  theme_bw() + guides(fill = guide_legend(title = "Increase in fitness") ) +
+  ggtitle("Meristem constraint")
+
+g3 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=resourceConstraint)) +
+  geom_contour_filled(color='white') +
+  geom_point(aes(x=alpha,y=m1),alpha=.5) +
+  theme_bw() + guides(fill = guide_legend(title = "Increase in fitness") ) +
+  ggtitle("Resource constraint")
+
+pdf(file="/Users/gregor/Documents/optimalControlProject/products/figures/gammaZero.pdf",width=6,height=6)
+g1
+g2
+g3
+dev.off()
+
+
 

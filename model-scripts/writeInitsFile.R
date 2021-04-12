@@ -38,10 +38,10 @@ df<-data.frame(expand.grid(model=model,
   # theme_bw()
 
 # write out file with all parameters
-saveRDS(df,paste0("model-scripts/",analysisName,"-parameterFile.RDS"))
-
-write.csv(df,paste0("model-scripts/",analysisName,"-parameterTable.csv"),row.names=F)
-write.csv(df[-c(1:(dim(df)[1])),],paste0("model-scripts/",analysisName,"-exitTable.csv"),row.names=F)
+# saveRDS(df,paste0("model-scripts/",analysisName,"-parameterFile.RDS"))
+# 
+# write.csv(df,paste0("model-scripts/",analysisName,"-parameterTable.csv"),row.names=F)
+# write.csv(df[-c(1:(dim(df)[1])),],paste0("model-scripts/",analysisName,"-exitTable.csv"),row.names=F)
 
 ####################################
 ## Build inits object
