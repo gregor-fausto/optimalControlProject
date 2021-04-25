@@ -2,7 +2,7 @@
 ## Define analysis
 ####################################
 
-analysisName = c("analysisGammaOne")
+analysisName = c("analysis-P2-V1")
 
 ####################################
 ## Write inits into table of parameters
@@ -11,18 +11,18 @@ analysisName = c("analysisGammaOne")
 library(tidyverse)
 
 model = c('determinate')
-P = c(1)
+P = c(2)
 V = c(1)
 I = c(0)
 L = c(0)
-m = seq(.5,1.5,by=.25)
-alpha = seq(.5,1.5,by=.25)
+m = seq(.25,1,by=.25)
+alpha = seq(.25,1,by=.25)
 seasonDistribution = c("uniform")
 mu = c(NA)
 sd = c(NA)
 max = c(5)
 min = c(2.5)
-gamma = c(1)
+gamma = c(0,1)
 
 df<-data.frame(expand.grid(model=model,
                        P=P,V=V,I=I,L=L,
@@ -38,10 +38,10 @@ df<-data.frame(expand.grid(model=model,
   # theme_bw()
 
 # write out file with all parameters
-# saveRDS(df,paste0("model-scripts/",analysisName,"-parameterFile.RDS"))
-# 
-# write.csv(df,paste0("model-scripts/",analysisName,"-parameterTable.csv"),row.names=F)
-# write.csv(df[-c(1:(dim(df)[1])),],paste0("model-scripts/",analysisName,"-exitTable.csv"),row.names=F)
+saveRDS(df,paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"-parameterFile.RDS"))
+
+write.csv(df,paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"-parameterTable.csv"),row.names=F)
+write.csv(df[-c(1:(dim(df)[1])),],paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"-exitTable.csv"),row.names=F)
 
 ####################################
 ## Build inits object
@@ -59,21 +59,21 @@ buildInits <-function(tmp){
 
 # function runs optimization on a row of the parameter table
 runOptimization <- function(tmp){
-  controlFile = paste0("model-scripts/models/control-",tmp$model,".R")
+  controlFile = paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/models/control-",tmp$model,".R")
   source(controlFile)
   initsList=buildInits(tmp)
-  source("model-scripts/models/generic-script-all.R")
+  source("/Users/gregor/Documents/optimalControlProject/model-scripts/models/generic-script-all.R")
 }
 
 for(i in 1:dim(df)[1]){
-  a1=read.csv(paste0("model-scripts/",analysisName,"-parameterTable.csv"))
-  a2=read.csv(paste0("model-scripts/",analysisName,"-exitTable.csv"))
+  a1=read.csv(paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"-parameterTable.csv"))
+  a2=read.csv(paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"-exitTable.csv"))
   a2$model = as.factor(a2$model)
   a2$seasonDistribution = as.factor(a2$seasonDistribution)
   subDF = setdiff(a1,a2)
   tmp=subDF[1,]
   write.table( tmp,  
-               file=paste0("model-scripts/",analysisName,"-exitTable.csv"), 
+               file=paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"-exitTable.csv"), 
                append = T, 
                sep=',', 
                row.names=F, 

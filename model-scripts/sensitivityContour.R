@@ -10,7 +10,7 @@ library(RColorBrewer)
 # Function
 # ------------------------------------------------------------------------------
 f = function(x=filename){
-  source(paste0("model-scripts/models/control-",x$model,".R"))
+  source(paste0("models/control-",x$model,".R"))
   derivs=numeric(6); 
   
   inits=x$inits[1:4]
@@ -20,7 +20,7 @@ f = function(x=filename){
   seasonParms = c(max=x$max,min=x$min)
   
   initVals = c(inits,other) 
-  outMat = ode(y=initVals,times=seq(0,5,by=0.1),control,method=odemethod,parms=mParms,f1=x$u.list[[j]],f2=x$beta1.list[[j]],f3=x$beta2.list[[j]]);
+  outMat = ode(y=initVals,times=seq(0,5,by=0.1),control,method=odemethod,parms=mParms,f1=x$u.list[[1]],f2=x$beta1.list[[2]],f3=x$beta2.list[[3]]);
   outDataFrame = data.frame(time=seq(0,5,by=0.1),alpha=x$inits[7],m1=x$inits[5],L=data.frame(outMat)$L)
   return(outDataFrame)
 }
@@ -32,7 +32,8 @@ f = function(x=filename){
 odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values 
 
 # Read in list of files
-outputVec <- list.files("model-scripts/analysisX")
+outputVec <- list.files("analysisTwo")
+outputVec <- outputVec[grep("determinate-uniform-5-1",outputVec)]
 
 outputAlpha = outputVec[grep('relaxAlpha',outputVec)]
 outputMeristem = outputVec[grep('relaxMeristem',outputVec)]
@@ -52,15 +53,17 @@ runListBaseline <- list()
 runListMeristem <- list()
 runListAlpha <- list()
 for(i in 1:n){
-  runListBaseline[[i]] <- readRDS(paste0("model-scripts/analysisX/",outputBaseline[[i]]))
-  runListAlpha[[i]] <- readRDS(paste0("model-scripts/analysisX/",outputAlpha[[i]]))
-  runListMeristem[[i]] <- readRDS(paste0("model-scripts/analysisX/",outputMeristem[[i]]))
+  runListBaseline[[i]] <- readRDS(paste0("analysisTwo/",outputBaseline[[i]]))
+  runListAlpha[[i]] <- readRDS(paste0("analysisTwo/",outputAlpha[[i]]))
+  runListMeristem[[i]] <- readRDS(paste0("analysisTwo/",outputMeristem[[i]]))
 }
 
 
 # ------------------------------------------------------------------------------
 # Run analysis
 # ------------------------------------------------------------------------------
+derivs=numeric(6); 
+
 baseline = lapply(runListBaseline,f)
 relaxAlpha = lapply(runListAlpha,f)
 relaxMeristem = lapply(runListMeristem,f)
@@ -111,7 +114,7 @@ g3 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=resourceConstraint)) +
   theme_bw() + guides(fill = guide_legend(title = "Increase in fitness") ) +
   ggtitle("Resource constraint")
 
-pdf(file="/Users/gregor/Documents/optimalControlProject/products/figures/gammaZero.pdf",width=6,height=6)
+pdf(file="/Users/gregor/Documents/optimalControlProject/products/figures/gammaOne-2.pdf",width=6,height=6)
 g1
 g2
 g3

@@ -23,7 +23,7 @@ topt=seq(0,seasonEnd,length=11);
 derivs=numeric(6); 
 
 # source control()
-  controlFile = paste0("model-scripts/models/control-",tmp$model,".R")
+  controlFile = paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/models/control-",tmp$model,".R")
   source(controlFile)
 
 ##############################################################
@@ -31,7 +31,7 @@ derivs=numeric(6);
 ##############################################################
 
 # source optim_fun()
-source("model-scripts/utils/optim-fun.R")
+source("/Users/gregor/Documents/optimalControlProject/model-scripts/utils/optim-fun.R")
 
 ##############################################################
 # Initial conditions for control problem
@@ -201,8 +201,8 @@ summaryObject <- list(fit=fit,fvals=fvals,
                       initsName = initsName )
 
 
-dir.create(file.path(paste0("model-scripts/",analysisName,"/")), showWarnings=FALSE)
-saveRDS(summaryObject,paste0("model-scripts/",analysisName,"/",controlName,"-",initsName,".RDS"))
+dir.create(file.path(paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"/")), showWarnings=FALSE)
+saveRDS(summaryObject,paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"/",controlName,"-",initsName,".RDS"))
 
 ##############################################################
 # Sensitivity analysis: reduce alpha
@@ -314,8 +314,8 @@ summaryObject <- list(fit=fit.sens,fvals=fvals,
                       model=controlName ,
                       initsName = initsName )
 
-dir.create(file.path(paste0("model-scripts/",analysisName,"/")), showWarnings=FALSE)
-saveRDS(summaryObject,paste0("model-scripts/",analysisName,"/",controlName,"-",initsName,"-relaxAlpha.RDS"))
+dir.create(file.path(paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"/")), showWarnings=FALSE)
+saveRDS(summaryObject,paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"/",controlName,"-",initsName,"-relaxAlpha.RDS"))
 
 ##############################################################
 # Sensitivity analysis: relax m
@@ -428,6 +428,6 @@ summaryObject <- list(fit=fit.sens,fvals=fvals,
                       initsName = initsName )
 
 
-dir.create(file.path(paste0("model-scripts/",analysisName,"/")), showWarnings=FALSE)
-saveRDS(summaryObject,paste0("model-scripts/",analysisName,"/",controlName,"-",initsName,"-relaxMeristem.RDS"))
+dir.create(file.path(paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"/")), showWarnings=FALSE)
+saveRDS(summaryObject,paste0("/Users/gregor/Documents/optimalControlProject/model-scripts/",analysisName,"/",controlName,"-",initsName,"-relaxMeristem.RDS"))
 
