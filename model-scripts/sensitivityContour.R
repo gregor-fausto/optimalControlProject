@@ -10,7 +10,7 @@ library(RColorBrewer)
 # Function
 # ------------------------------------------------------------------------------
 f = function(x=filename){
-  source(paste0("models/control-",x$model,".R"))
+  source(paste0("model-scripts/models/control-",x$model,".R"))
   derivs=numeric(6); 
   
   inits=x$inits[1:4]
@@ -20,7 +20,7 @@ f = function(x=filename){
   seasonParms = c(max=x$max,min=x$min)
   
   initVals = c(inits,other) 
-  outMat = ode(y=initVals,times=seq(0,5,by=0.1),control,method=odemethod,parms=mParms,f1=x$u.list[[1]],f2=x$beta1.list[[2]],f3=x$beta2.list[[3]]);
+  outMat = ode(y=initVals,times=seq(0,5,by=0.1),control,method=odemethod,parms=mParms,f1=x$u.list[[3]],f2=x$beta1.list[[3]],f3=x$beta2.list[[3]]);
   outDataFrame = data.frame(time=seq(0,5,by=0.1),alpha=x$inits[7],m1=x$inits[5],L=data.frame(outMat)$L)
   return(outDataFrame)
 }
@@ -32,8 +32,8 @@ f = function(x=filename){
 odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values 
 
 # Read in list of files
-outputVec <- list.files("analysisTwo")
-outputVec <- outputVec[grep("determinate-uniform-5-1",outputVec)]
+outputVec <- list.files("model-scripts/analysisTwo")
+outputVec <- outputVec[grep("determinate-uniform-5-0",outputVec)]
 
 outputAlpha = outputVec[grep('relaxAlpha',outputVec)]
 outputMeristem = outputVec[grep('relaxMeristem',outputVec)]
@@ -53,9 +53,9 @@ runListBaseline <- list()
 runListMeristem <- list()
 runListAlpha <- list()
 for(i in 1:n){
-  runListBaseline[[i]] <- readRDS(paste0("analysisTwo/",outputBaseline[[i]]))
-  runListAlpha[[i]] <- readRDS(paste0("analysisTwo/",outputAlpha[[i]]))
-  runListMeristem[[i]] <- readRDS(paste0("analysisTwo/",outputMeristem[[i]]))
+  runListBaseline[[i]] <- readRDS(paste0("model-scripts/analysisTwo/",outputBaseline[[i]]))
+  runListAlpha[[i]] <- readRDS(paste0("model-scripts/analysisTwo/",outputAlpha[[i]]))
+  runListMeristem[[i]] <- readRDS(paste0("model-scripts/analysisTwo/",outputMeristem[[i]]))
 }
 
 
@@ -100,7 +100,7 @@ g1 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=L.base)) +
   geom_contour_filled(color='white') +
   geom_point(aes(x=alpha,y=m1),alpha=.5) +
   theme_bw() + guides(fill = guide_legend(title = "Fitnes") ) +
-  ggtitle("Fitness; P=1, V=1; Uniform season length [2.5,5]")
+  ggtitle("Fitness; P=2, V=1; Uniform season length [2.5,5]")
 
 g2 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=meristemConstraint)) +
   geom_contour_filled(color='white') +
@@ -114,7 +114,7 @@ g3 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=resourceConstraint)) +
   theme_bw() + guides(fill = guide_legend(title = "Increase in fitness") ) +
   ggtitle("Resource constraint")
 
-pdf(file="/Users/gregor/Documents/optimalControlProject/products/figures/gammaOne-2.pdf",width=6,height=6)
+pdf(file="/Users/gregor/Documents/optimalControlProject/products/figures/analysisTwo-gammaOne.pdf",width=6,height=6)
 g1
 g2
 g3
