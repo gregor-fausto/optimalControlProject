@@ -1,0 +1,5 @@
+"model","P","V","I","L","m1","alpha","seasonDistribution","mu","sd","max","min","m2","gamma"
+"determinate",1,1,0,0,1,1,"uniform",NA,NA,5,2.5,1,0
+"determinate",1,1,0,0,2,1,"uniform",NA,NA,5,2.5,2,0
+"determinate",1,1,0,0,3,1,"uniform",NA,NA,5,2.5,3,0
+"determinate",1,1,0,0,4,1,"uniform",NA,NA,5,2.5,4,0
