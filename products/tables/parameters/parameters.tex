@@ -1,0 +1,131 @@
+\documentclass[12pt, oneside, titlepage]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                     
+\usepackage{amsmath}                      
+\usepackage{amssymb}                       
+\usepackage{bm}   
+\usepackage{tabularx}   
+\usepackage{caption}          
+ \captionsetup[table]{labelfont=sc}
+
+\usepackage{booktabs}
+\usepackage{xfrac}
+\usepackage{graphicx}
+
+\usepackage{rotating}
+\usepackage{soul}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% begin document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\footnotesize
+
+\begin{center}
+\captionof{table}{ Parameters used in the models. } \label{tab:title1} 
+ \begin{tabularx}{\linewidth}{l X l} 
+ 
+
+ \hline
+ \hline
+\multicolumn{1}{ l }{ Symbol } & 
+\multicolumn{1}{ c }{ Description } &
+\multicolumn{1}{ c }{ Units } \\
+
+ \hline
+%%%% STATE VARIABLES
+\multicolumn{3}{ l }{ \sc{State variables }} \\
+
+ $V(t)$   & Vegetative meristem population size & number of vegetative meristems \\ 
+ $L(t)$   & Leaf population size & number of leaves \\ 
+ $I(t)$   & Inflorescence meristem population size & number of inflorescence meristems \\ 
+ $F(t)$   & Flower population size & number of flowers \\ 
+ 
+   \hline
+   
+%%%% time DERIVATIVES
+\multicolumn{3}{ l }{ \sc{time derivatives of state variables }} \\
+
+ $\dot{V}$   & time derivative of vegetative meristems: change in vegetative meristem population size over a short time interval & vegetative meristems/time \\ 
+ $\dot{L}$   & time derivative of leaves: change in leaf population size over a short time interval & leaves/time \\ 
+ $\dot{I}$   & time derivative of inflorescence meristems: change in inflorescence meristem population size over a short time interval & inflorescence meristems/time \\ 
+ $\dot{F}$   & time derivative of flowers: change in flower population size over a short time interval & flowers/time \\ 
+ 
+   \hline
+   
+%%%% PARAMETERS
+\multicolumn{3}{ l }{ \sc{ Parameters }} \\
+
+ $\beta_1(t)$   & Per-capita rate rate of vegetative meristem growth & meristems/(meristem $\times$ time) \\
+ $\beta_2(t)$   & Per-capita rate rate of inflorescence meristem growth & meristems/(meristem $\times$ time) \\
+ 
+ \hline
+   
+%%%% CONTROL
+\multicolumn{3}{ l }{ \sc{ Control variables }} \\
+
+ $u(t)$   & Proportion of vegetative meristem divisions that produce a vegetative meristem and a leaf & unitless $\in [0,1]$ \\
+ $1-u(t)$   & Proportion of vegetative meristem divisions that produce an inflorescence meristem and a leaf & unitless $\in [0,1]$  \\
+ 
+ \hline
+    
+%%%% CONSTRAINTS
+\multicolumn{3}{ l }{ \sc{ Control variables }} \\
+
+ $M$   & Maximum per-capita rate of meristem growth & (meristems)/(meristem $\times$ time) \\
+ $\alpha$   & Conversion rate for standing leaf biomass & (meristems)/(leaf $\times$ time) \\
+
+   \hline
+   
+\end{tabularx}
+\end{center}
+
+\newpage
+\clearpage
+
+
+\begin{center}
+\captionof{table}{ Literature for parameterizing model. } \label{tab:title2} 
+ \begin{tabularx}{\linewidth}{l X l} 
+ 
+
+ \hline
+ \hline
+\multicolumn{1}{ l }{ Symbol } & 
+\multicolumn{1}{ c }{ Description } &
+\multicolumn{1}{ c }{ Units } \\
+
+ \hline
+
+%%%% PARAMETERS
+\multicolumn{3}{ l }{ \sc{ Parameters }} \\
+
+ $\beta_1(t)$   & Per-capita rate rate of vegetative meristem growth & meristems/(meristem $\times$ time) \\
+ $\beta_2(t)$   & Per-capita rate rate of inflorescence meristem growth & meristems/(meristem $\times$ time) \\
+ 
+ \hline
+    
+%%%% CONSTRAINTS
+\multicolumn{3}{ l }{ \sc{ Control variables }} \\
+
+ $M$   & Maximum per-capita rate of meristem growth & (meristems)/(meristem $\times$ time) \\
+ $\alpha$   & Conversion rate for standing leaf biomass & (meristems)/(leaf $\times$ time) \\
+
+   \hline
+   
+\end{tabularx}
+\end{center}
+
+Figure 3 in Geber (1990) plots vegetative and reproductive meristems versus age in weeks. Does the plot show the number of \hl{vegetative and reproductive metamers}, or does it show the number of \hl{vegetative and reproductive meristems}? The text says that age-specific growth is the number of new metamers added to a plant each week, so I assume that each point is showing $N(t+1)-N(t)$ where $N$ is the number of metamers. The plot thus shows the change in the number of leaves (since each metamer would have one leaf). But how does this connect to the number of apical meristems that could be adding metamers? Age-specific fecundity is the number of metamers whose axillary meristems commit to flowering each week.
+
+I drew out 3 scenarios: (1) a plant with no branching, and a single apical meristem; (2) a plant in which all divisions result in branching; (3) a plant in which half of all divisions branch. Without branching, there is no variation in the number of shoot apical meristems and all variation is in leaf number. As the proportion of divisions that branch increases, the ratio of leaf number to vegetative meristems becomes closer to 1:1. 
+
+We should look at these drawings and agree on what counts as a vegetative meristem. In my mind, vegetative meristems are those that have the potential to divide and produce another vegetative meristem, either on the primary shoot axis or in an axillary position. In this sense, quiescent axillary meristems are determined by the proportion of meristem divisions that branch. Also, the proportion of meristem divisions that branch do not determine the position of those divisions; the model is agnostic about whether branching happens at positions close to or far from the shoot apical meristem.
+
+The issue is that meristems are discrete units. So for a plant that does not have branching and starts with a single vegetative meristem, the possible fates should only be a switch from vegetative to inflorescence meristems. Fractional meristem numbers do not really make sense. I wonder if it's possible to impose this on the continuous model by fixing the parameters $\beta_\dot$ to be whole numbers.
+
+\end{document}
