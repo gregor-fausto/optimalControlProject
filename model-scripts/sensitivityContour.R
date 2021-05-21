@@ -10,7 +10,7 @@ library(RColorBrewer)
 # Function
 # ------------------------------------------------------------------------------
 f = function(x=filename){
-  source(paste0("models/control-",x$model,".R"))
+  source(paste0("model-scripts/models/control-",x$model,".R"))
   derivs=numeric(6); 
   
   inits=x$inits[1:4]
@@ -32,8 +32,8 @@ f = function(x=filename){
 odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values 
 
 # Read in list of files
-outputVec <- list.files("analysisTwo")
-outputVec <- outputVec[grep("determinate-uniform-5-0.5-",outputVec)]
+outputVec <- list.files("model-scripts/analysisThree")
+outputVec <- outputVec[grep("determinate-uniform-5-0-",outputVec)]
 
 outputAlpha = outputVec[grep('relaxAlpha',outputVec)]
 outputMeristem = outputVec[grep('relaxMeristem',outputVec)]
@@ -53,9 +53,9 @@ runListBaseline <- list()
 runListMeristem <- list()
 runListAlpha <- list()
 for(i in 1:n){
-  runListBaseline[[i]] <- readRDS(paste0("analysisTwo/",outputBaseline[[i]]))
-  runListAlpha[[i]] <- readRDS(paste0("analysisTwo/",outputAlpha[[i]]))
-  runListMeristem[[i]] <- readRDS(paste0("analysisTwo/",outputMeristem[[i]]))
+  runListBaseline[[i]] <- readRDS(paste0("model-scripts/analysisThree/",outputBaseline[[i]]))
+  runListAlpha[[i]] <- readRDS(paste0("model-scripts/analysisThree/",outputAlpha[[i]]))
+  runListMeristem[[i]] <- readRDS(paste0("model-scripts/analysisThree/",outputMeristem[[i]]))
 }
 
 
@@ -99,24 +99,24 @@ library(ggplot2)
 
 
 
-g1 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=L.base)) +
+g1 = ggplot(data=baselineFinal%>% dplyr::filter(m1%in%c(1,2,4,10)),aes(x=alpha,y=m1,z=L.base)) +
   geom_contour_filled(color='white') +
   geom_point(aes(x=alpha,y=m1),alpha=.5) +
   theme_bw() + guides(fill = guide_legend(title = "Fitnes") ) +
   ggtitle("Fitness; P=1, V=1; Uniform season length [2.5,5]")
 
-# g2 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=meristemConstraint)) +
-#   geom_contour_filled(color='white') +
-#   geom_point(aes(x=alpha,y=m1),alpha=.5) +
-#   theme_bw() + guides(fill = guide_legend(title = "Increase in fitness") ) +
-#   ggtitle("Meristem constraint")
-# 
-# g3 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=resourceConstraint)) +
-#   geom_contour_filled(color='white') +
-#   geom_point(aes(x=alpha,y=m1),alpha=.5) +
-#   theme_bw() + guides(fill = guide_legend(title = "Increase in fitness") ) +
-#   ggtitle("Resource constraint")
-# 
+g2 = ggplot(data=baselineFinal %>% dplyr::filter(m1%in%c(1,2,4,10)),aes(x=alpha,y=m1,z=meristemConstraint)) +
+  geom_contour_filled(color='white') +
+  geom_point(aes(x=alpha,y=m1),alpha=.5) +
+  theme_bw() + guides(fill = guide_legend(title = "Increase in fitness") ) +
+  ggtitle("Meristem constraint")
+
+g3 = ggplot(data=baselineFinal,aes(x=alpha,y=m1,z=resourceConstraint)) +
+  geom_contour_filled(color='white') +
+  geom_point(aes(x=alpha,y=m1),alpha=.5) +
+  theme_bw() + guides(fill = guide_legend(title = "Increase in fitness") ) +
+  ggtitle("Resource constraint")
+
 # #pdf(file="/Users/gregor/Documents/optimalControlProject/products/figures/Ppt5-V2-gammaZero.pdf",width=6,height=6)
 # g1
 # g2
@@ -164,10 +164,10 @@ py = baselineFinal$m1[order(unique(baselineFinal$m1))]
 
 ## Matrix image from Data-driven models for structured populations 
 ## prints from top to bottom
-pdf(file="/Users/gregor/Documents/optimalControlProject/products/figures/P1-V1-gamma05.pdf",width=6,height=6)
+#pdf(file="/Users/gregor/Documents/optimalControlProject/products/figures/P1-V1-gamma05.pdf",width=6,height=6)
 matrix.image(mat.fitness,px,px,xlab="alpha (divisions/unit biomass)",ylab="m1 (divisions/meristem)",main="Fitness",do.contour=TRUE,do.legend=TRUE);
 matrix.image(mat.meristemConstraint,px,px,xlab="alpha (divisions/unit biomass)",ylab="m1 (divisions/meristem)",main="Meristem constraint (relax m1)",do.contour=TRUE,do.legend=TRUE);
 matrix.image(mat.resourceConstraint,px,px,xlab="alpha (divisions/unit biomass)",ylab="m1 (divisions/meristem)",main="Resource constraint (relax alpha)",do.contour=TRUE,do.legend=TRUE);
 matrix.image(mat.ratio,px,px,xlab="alpha (divisions/unit biomass)",ylab="m1 (divisions/meristem)",main="Ratio of meristem constraint:resource constraint",do.contour=TRUE,do.legend=TRUE);
 
-dev.off()
+#dev.off()
