@@ -10,8 +10,8 @@ library(RColorBrewer)
 odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values 
 
 # Read in list of files
-outputVec <- list.files("model-scripts/analysisX")
-outputVec <- outputVec[grep("5-0-0.75-0.5",outputVec)]
+outputVec <- list.files("model-scripts/analysisThree")
+outputVec <- outputVec[grep("5-0-20-20",outputVec)]
 
 # Order files 
 index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec),
@@ -23,7 +23,7 @@ n = length(outputVec)
 # Create list of outputs
 runList <- list()
 for(i in 1:n){
-  runList[[i]] <- readRDS(paste0("model-scripts/analysisX/",outputVec[index[i]]))
+  runList[[i]] <- readRDS(paste0("model-scripts/analysisThree/",outputVec[index[i]]))
 }
 
 j = length(runList[[2]]$beta1.list)
@@ -60,7 +60,7 @@ legend(0,1,
        c("Baseline","Relax resource constraint","Relax meristem constraint"),
        lty=1,col=c("gray90","red","purple"),cex=.5)
 
-plot(t,t,type='n',ylim=c(0,1.1),xlim=c(0,5),
+plot(t,t,type='n',ylim=c(0,10),xlim=c(0,5),
      xlab="Time (t)",
      ylab=c(expression(paste(beta[1],"(t)"))));
 abline(h=c(0),lty=1,col='gray')
@@ -70,7 +70,7 @@ for(i in 1:length(beta1)){
 }
 
 
-plot(t,t,type='n',ylim=c(0,1.1),xlim=c(0,5),
+plot(t,t,type='n',ylim=c(0,10),xlim=c(0,5),
      xlab="Time (t)",
      ylab=c(expression(paste(beta[2],"(t)"))));
 abline(h=c(0),lty=1,col='gray')

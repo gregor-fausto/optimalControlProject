@@ -10,8 +10,8 @@ library(RColorBrewer)
 odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values 
 
 # Read in list of files
-outputVec <- list.files("model-scripts/analysisX")
-outputVec <- outputVec[grep("5-0-1-0.5",outputVec)]
+outputVec <- list.files("model-scripts/analysisThree")
+outputVec <- outputVec[grep("5-0-50-1",outputVec)]
 
 # Order files 
 index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec))
@@ -22,7 +22,7 @@ n = length(outputVec)
 # Create list of outputs
 runList <- list()
 for(i in 1:n){
-  runList[[i]] <- readRDS(paste0("model-scripts/analysisX/",outputVec[index[i]]))
+  runList[[i]] <- readRDS(paste0("model-scripts/analysisThree/",outputVec[index[i]]))
 }
 
 # empty vector of derivatives
@@ -35,7 +35,7 @@ j = length(runList[[1]]$beta1.list)
 par(mfrow=c(2,2))
 
 # Axis limits
-ylim.p = c(0,2)
+ylim.p = c(0,1.5)
 xlim.p = c(0,5)
 
 # Colors
@@ -45,10 +45,10 @@ xlim.p = c(0,5)
 # orange: relax both constraints simultaneously
 colors <- c("gray75","red","purple")
 
-# Primary meristem trajectory
+# Vegetative meristem trajectory
 plot(NA,NA,xlim=xlim.p,ylim=ylim.p,
      type='n',
-     xlab="Time",ylab="State",main="Primary meristems")
+     xlab="Time",ylab="State",main="Vegetative meristems")
 for(i in 1:n){
   source(paste0("model-scripts/models/control-",runList[[i]]$model,".R"))
   derivs=numeric(6); 
@@ -66,10 +66,10 @@ for(i in 1:n){
         col=colors[i])
 }
 
-# Vegetative biomass trajectory
-plot(NA,NA,xlim=xlim.p,ylim=ylim.p,
+# Leaf number trajectory
+plot(NA,NA,xlim=xlim.p,ylim=ylim.p*2,
      type='n',
-     xlab="Time",ylab="State",main="Vegetative biomass")
+     xlab="Time",ylab="State",main="Leaf number")
 for(i in 1:n){
   source(paste0("model-scripts/models/control-",runList[[i]]$model,".R"))
   derivs=numeric(6); 
@@ -88,10 +88,6 @@ for(i in 1:n){
         lty=i, lwd = 2,
         col=colors[i])
 }
-
-# Axis limits
-ylim.p = c(0,.5)
-xlim.p = c(0,5)
 
 # Inflorescence meristem trajectory
 plot(NA,NA,xlim=xlim.p,ylim=ylim.p,
@@ -119,15 +115,12 @@ for(i in 1:n){
 #        lty = c(1:4),col=colors,cex=.5)
 
 
-# Axis limits
-ylim.p = c(0,1)
-xlim.p = c(0,5)
 
-# Floral meristem trajectory
+# Flower number trajectory
 plot(NA,NA,xlim=xlim.p,ylim=ylim.p,
      type='n',
      xlab="Time",ylab="State",
-     main="Floral meristems")
+     main="Flower numbers")
 
 for(i in 1:n){
   source(paste0("model-scripts/models/control-",runList[[i]]$model,".R"))

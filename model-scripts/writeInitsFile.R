@@ -2,7 +2,7 @@
 ## Define analysis
 ####################################
 
-analysisName = c("analysis-P2-V1")
+analysisName = c("analysisThree")
 
 ####################################
 ## Write inits into table of parameters
@@ -11,18 +11,18 @@ analysisName = c("analysis-P2-V1")
 library(tidyverse)
 
 model = c('determinate')
-P = c(2)
-V = c(1)
+P = c(1)
+V = c(.1)
 I = c(0)
 L = c(0)
-m = seq(.25,1,by=.25)
-alpha = seq(.25,1,by=.25)
+m = c(25,50,75)
+alpha = c(1)
 seasonDistribution = c("uniform")
 mu = c(NA)
 sd = c(NA)
 max = c(5)
 min = c(2.5)
-gamma = c(0,1)
+gamma = c(0)
 
 df<-data.frame(expand.grid(model=model,
                        P=P,V=V,I=I,L=L,
