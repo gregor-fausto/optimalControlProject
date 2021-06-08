@@ -128,7 +128,7 @@
  
        \vspace{1.5cm}
  
-      % Gregor-Fausto Siegmund 
+       Gregor-Fausto Siegmund, Stephen Ellner, Monica Geber
  
    	Last updated: \today
  
@@ -144,15 +144,19 @@ Plants grow and reproduce via meristems, tissues that are made up of undifferent
 
 In plants where reproduction is fatal (monocarpic plants), plants must balance their investment in and the timing of growth and reproduction because both processes draw on a shared set of resources. Theoretical models of life history evolution typically represent this as a trade-off in energetic investment. However, plant development is modular and can constrain future energetic allocation to growth or reproduction.
 
-\hl{The hypotheses I've written turn explicitly to developmental patterns. I think that the question has become more about the relationship between development and the environment than it was when I originally wrote this introduction. It would be helpful to have theory about the relationship of development, evolution, and ecology (e.g. Dahlem Konferenz 1981) and empirical examples from other systems/organs (Sultan? toads?)}
+%\hl{The hypotheses I've written turn explicitly to developmental patterns. I think that the question has become more about the relationship between development and the environment than it was when I originally wrote this introduction. It would be helpful to have theory about the relationship of development, evolution, and ecology (e.g. Dahlem Konferenz 1981) and empirical examples from other systems/organs (Sultan? toads?)}
 
-\subsection{Optimal control}
+Fox 1990 (Components of flowering time variation) discusses experiments with Eriogonum demonstrating that patterns of reproduction are the product of growth and development. 
+
+\subsection{Dynamic optimization}
 
 \hl{Overview of model types that address connection of life history and timing or reproduction. Specific benefits of optimal control. Original models have been extended and enriched. I think this should be reduced to 1-2 concise paragraphs that also address other modeling approaches that have been used to study this kind of problem (e.g. Ackerly and Wong?) and why we chose to use optimal control theory}
 
+A shared assumption of reproductive allocation models, dynamic optimization models, and evolutionary demographic theory is that demographic parameters are themselves parts of organisms (\hl{Fox 1990, p 1420}). However, the representation of organisms in these models is nonetheless an abstraction. In particular, they treat growth and reproduction as independent components of an organism's life history to which some fraction of a limiting resource can be allocated. \hl{Fox 1990, p. 1407} outlines three key points to why its important that development couples reproduction and growth for understanding how plants respond to drought. First, the models above assume that the reproduction and growth are independent. Second, developmental coupling is invariant among populations suggesting similar responses to the environment. 
+
 Modifications to original models include varying functions for productivity and reproduction (e.g. seasonal pattern, overlap or not), tissue loss and maintenance costs, multiple organs, allocation to storage, different types of survivorship curves, allometric relationships of reproductive to vegetative mass, and environmental stochasticity. The value in these models comes from an ability to explore how allocation decisions respond to different assumptions about variables such as resource use or variability in season length. 
 
-Since early papers that used optimal control theory to study life history evolution, authors have suggested incorporating development into the models \cite{cohen1971,schaffer1982,fox199b}. However, no such models have yet been developed. 
+%Since early papers that used optimal control theory to study life history evolution, authors have suggested incorporating development into the models \cite{cohen1971,schaffer1982,fox199b}. However, no such models have yet been developed. 
 
 A key assumption of the classic models is that plants are making allocation decisions about carbon, which is assumed to be the limiting resource. Although this assumption has been extended to include other nutrients, plant development complicates the picture. Because plants have modular structures, vegetative and reproductive growth are coupled insofar as plant architecture limits the total potential number of flowers or inflorescences. More generally, whether a plant is in a vegetative or reproductive phase is the product of decisions about the fate of primary or axillary meristems. This perspective aligns with a source-sink perspective on plant growth that suggests potential photosynthesis is not the sole determinant of plant growth but that plant growth is instead a balance of source (photosynthate) and sinks (maintenance, organ production, etc.) \cite{korner2015,rees2016}.
 
@@ -160,6 +164,7 @@ Some of the models have also been empirically tested, and have helped inform int
 
 Here, we apply these ideas to develop a system of ordinary differential equations that describes the dynamics of plant development and constrains growth by the availability of photosynthate. This approach places the allocation decisions at the level of meristems (decisions about meristem fate) and leaves flexibility about much these decisions are limited by photosynthate. In classic models, any quantity of vegetative biomass can support unlimited primary meristem divisions which can in turn  contribute to unlimited number of floral meristems.
 
+\iffalse
 \begin{itemize}
 
 \item Cohen 1971: derives bang-bang control; maximizes arithmetic mean yield; does not derive analytical solution for maximizing geometric mean
@@ -177,10 +182,12 @@ Here, we apply these ideas to develop a system of ordinary differential equation
 
 \end{itemize}
 
+
 Right now, I'm working with a model in which the reproductive meristem develops into a single flower. In one variant of the model, there is only growth along the primary axis (no side branches). In a second variant of the model, there is growth both along the primary axis as well as via axillary meristems. The next step would be to analyze models for which reproductive meristems develop into an inflorescence. The goal of analyzing this set of models is to ask how development patterns relating to meristem allocation contribute to life history strategies. 
 
-(1) I expect that longer seasons favor branching \cite{Geber1990}. (2) As the end of the season becomes more unpredictable, it might become advantageous to have multiple branches, some of which can produce flowers and others which might still be producing leaves \cite{Geber1990}. (3) I also expect this effect to be less pronounced for plants which produce inflorescences than single flowers \cite{bonser2006}, as inflorescences should provide additional flexibility in how many flowers to produce per reproductive meristem \cite{bonser2006,salomonson1994}.
-
+(1) I expect that longer seasons favor branching \cite{Geber1990}. 
+(2) As the end of the season becomes more unpredictable, it might become advantageous to have multiple branches, some of which can produce flowers and others which might still be producing leaves \cite{Geber1990}. 
+(3) I also expect this effect to be less pronounced for plants which produce inflorescences than single flowers \cite{bonser2006}, as inflorescences should provide additional flexibility in how many flowers to produce per reproductive meristem \cite{bonser2006,salomonson1994}.
 (4) "a particular plant morphology is the product of developmental decisions about the number and types of metamers, and thus branches produced. Is carbon availability critical to such decisions, and if so, at what level of morphological organization is its availability assessed?" (Casper and Watson 1984). Developmental decisions are made so as to maintain a positive carbon balance within a physiological  unit (CW 1984). When reproductive and vegetative branch formation compete for the same meristems, the development of reproductive branches will reduce the number of vegetative branches that can form (Watson 1980). Even if reproductive branches may be able to support themselves, forming them may reduce ultimate carbon balance because they are unlikely to contribute excess assimilate. Life history theory for animals does not apply to plants - the assumptions are not valid for plants where elaborating the aboveground structure can pay for its own cost. "predictions about a plant's behavior in different environments will vary according to the time period in which carbon availability acts as a developmental constraint, the degree to which translocation of assimilate is architecturally constrained, and the extent to which structures differ in their capacity to be carbon-autonomous." (CW 1984).
 
 Flowering in plants is correlated with rosette size - does this reflect the availability of stored assimilate to support maturation of the inflorescence OR does it reflect the development of sufficient leaves to support the inflorescence with current assimilate?
@@ -190,7 +197,7 @@ Are reproductive or vegetative branches more expensive?
 (Torstensson and Telenius 1986) 
 
 Patterns of development involving branching are found in land plants, brown and green algae, modular marine colonies, 
-
+\fi
 
 \subsection{Questions}
 
@@ -200,7 +207,7 @@ Resource limitation generates negative correlations between growth and fecundity
 
 Meristem limitation generates positive correlations between growth and fecundity within a life stage because both depend on meristem production. In a situation where meristems are limited, we might expect to see trade-offs that are the result of meristem allocation decisions (we wouldn't see these decisions when meristems are not limited). 
 
-I will address the following questions. \textbf{First}, I will use the models to determine whether including differentiation and growth of meristems reduces the likelihood of obtaining a strategy with an instantaneous switch \cite{Cohen1971}. Put another way, are graded allocation strategies optimal when vegetative and reproductive growth are coupled \cite{Fox1992}? \textbf{Second}, I will look at the control strategies of decisions (e.g. meristem division) and the cumulative impact on control of resource budget. Do the control strategies of meristem decisions (e.g. bang-bang) translate to resource budgets (also being bang-bang?) \cite{Fox1992}? \textbf{Third}, I will ask when plants are more likely to be resource versus meristem limited. Specifically, I will focus on how the optimal strategy changes with increasing levels of environmental variation; are plants likely to be meristem limited in scenarios with high levels of uncertainty about season length in order to maintain the ability to capitalize on those longer seasons? Wyatt, Schemske, Stebbins, Salomonson 1994 
+I will address the following questions. \textbf{First}, I will use the models to determine whether including differentiation and growth of meristems reduces the likelihood of obtaining a strategy with an instantaneous switch \cite{cohen1971}. Put another way, are graded allocation strategies optimal when vegetative and reproductive growth are coupled \cite{Fox1992}? \textbf{Second}, I will look at the control strategies of decisions (e.g. meristem division) and the cumulative impact on control of resource budget. Do the control strategies of meristem decisions (e.g. bang-bang) translate to resource budgets (also being bang-bang?) \cite{Fox1992}? \textbf{Third}, I will ask when plants are more likely to be resource versus meristem limited. Specifically, I will focus on how the optimal strategy changes with increasing levels of environmental variation; are plants likely to be meristem limited in scenarios with high levels of uncertainty about season length in order to maintain the ability to capitalize on those longer seasons? Wyatt, Schemske, Stebbins, Salomonson 1994 
 
 % One way of using these models would be to ask about the optimal strategies under different allocation rules. What is the best strategy when there are no meristems? What is the best strategy when the rates are the same but there are meristems? A model of resource allocation decisions will inevitably produce trade-offs that are the result of resource limitation. Will a model of meristem allocation decisions inevitably produce trade-offs that are the result of meristem limitation? 
 
@@ -382,6 +389,7 @@ In plants with determinate inflorescences, the shoot apical meristem forms a ter
 
 I describe the developmental decisions in a plant with determinate inflorescences using three types of divisions (Figure \ref{fig:transitions-determinate}) \cite{itzkovitz2012}. First, a primary meristem can divide at the shoot apical meristem to give rise to two primary meristems: the main branch and an axillary bud. These divisions generate a vegetative, branching architecture. Second, a primary meristem can divide at the shoot apical meristem to give rise to an inflorescence meristem and a floral meristem. These divisions end vegetative growth and mark the transition from vegetative to reproductive growth along an axis. Third, an inflorescence meristem can divide into an inflorescence meristem and a floral meristem. These divisions are the only possible fate for inflorescence meristems. Using these categories assumes that there is no terminal division into two floral meristems. The end of season terminates flowering. This assumption is somewhat unrealistic because some plants do stop flowering. 
 
+
 \begin{figure}[hbt!]
   \begin{subfigure}{.25\textwidth}
   \centering
@@ -390,9 +398,67 @@ I describe the developmental decisions in a plant with determinate inflorescence
   \tikzstyle{every state}=[draw=none]
 
   \node[state, fill=darkspringgreen,minimum size=.5cm] 	     (A)                    {};
-  \node[state, fill=red,minimum size=.5cm]         (B) [below left of=A] {};
-  \node[state, fill=darkspringgreen,minimum size=.5cm]         (C) [below right of=A] {};
-  \node[state, fill=darkspringgreen,minimum size=.5cm] 	     (D) [below = .9cm of A]                   {};
+  \node[state, fill=red,minimum size=.5cm]         (B) [above left of=A] {};
+  \node[state, fill=darkspringgreen,minimum size=.5cm] 	     (D) [above = .9cm of A]                   {};
+
+  \path[dotted] (A) edge              (D);
+  \path[->] (A) edge (B);
+
+      \end{tikzpicture}
+          \caption{Primary meristem transitioning to one vegetative meristem and generating two primary meristems.} 
+  \end{subfigure}
+              \hspace{\fill}
+             \begin{subfigure}{.25\textwidth}
+    \centering
+    \centering
+
+      \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2cm,
+                    semithick]
+  %\tikzstyle{every state}=[fill=red,draw=none,text=white]
+
+  \node[state, fill = darkspringgreen, draw = none,minimum size=.5cm] (A)                    {};
+  \node[state, fill = red, draw = none,minimum size=.5cm]         (B) [above left of=A] {};
+  \node[state, fill=green, draw = none,minimum size=.5cm] 	     (D) [above =.9cm of A]                   {};
+
+  \path[dotted] (A) edge              (D);
+  \path[->] (A) edge (B);
+
+      \end{tikzpicture}
+    \caption{Primary meristem transitioning to one vegetative meristem, and generating inflorescence and floral meristems.}
+      \end{subfigure}
+          \hspace{\fill}
+      \begin{subfigure}{.25\textwidth}
+% stem cell expansion
+\centering
+% stem cell expansion
+      \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2cm,
+                    semithick]
+  %\tikzstyle{every state}=[fill=red,draw=none,text=white]
+
+  \node[state, fill = green, draw = none,minimum size=.5cm] (A)                    {};
+  \node[state, fill = orange, draw = none,minimum size=.5cm]         (C) [above =.9cm of A] {};
+
+  \path[dotted] (A) edge              (C);
+
+      \end{tikzpicture}
+    \caption{Inflorescence meristem remaining an inflorescence meristem and generating a floral meristem}
+  \end{subfigure}
+        \caption{Meristem transitions in plants with determinate inflorescences.}
+    \label{fig:transitions-determinate}
+\end{figure}
+
+% new figure
+\begin{figure}[hbt!]
+  \begin{subfigure}{.25\textwidth}
+  \centering
+    \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2cm,
+                    semithick]
+  \tikzstyle{every state}=[draw=none]
+
+  \node[state, fill=darkspringgreen,minimum size=.5cm] 	     (A)                    {};
+  \node[state, fill=red,minimum size=.5cm]         (B) [above left of=A] {};
+  \node[state, fill=darkspringgreen,minimum size=.5cm]         (C) [above right of=A] {};
+  \node[state, fill=darkspringgreen,minimum size=.5cm] 	     (D) [above = .9cm of A]                   {};
 
   \path[dashed] (A) edge              (D)
             	edge               (C);
@@ -411,9 +477,9 @@ I describe the developmental decisions in a plant with determinate inflorescence
   %\tikzstyle{every state}=[fill=red,draw=none,text=white]
 
   \node[state, fill = darkspringgreen, draw = none,minimum size=.5cm] (A)                    {};
-  \node[state, fill = red, draw = none,minimum size=.5cm]         (B) [below left of=A] {};
-  \node[state, fill = orange, draw = none,minimum size=.5cm]         (C) [below right of=A] {};
-  \node[state, fill=green, draw = none,minimum size=.5cm] 	     (D) [below =.9cm of A]                   {};
+  \node[state, fill = red, draw = none,minimum size=.5cm]         (B) [above left of=A] {};
+  \node[state, fill = orange, draw = none,minimum size=.5cm]         (C) [above right of=A] {};
+  \node[state, fill=green, draw = none,minimum size=.5cm] 	     (D) [above =.9cm of A]                   {};
 
   \path[dotted] (A) edge              (D)
             	edge               (C);
@@ -432,8 +498,8 @@ I describe the developmental decisions in a plant with determinate inflorescence
   %\tikzstyle{every state}=[fill=red,draw=none,text=white]
 
   \node[state, fill = green, draw = none,minimum size=.5cm] (A)                    {};
-  \node[state, fill = green, draw = none,minimum size=.5cm]         (B) [below left of=A] {};
-  \node[state, fill = orange, draw = none,minimum size=.5cm]         (C) [below right of=A] {};
+  \node[state, fill = green, draw = none,minimum size=.5cm]         (B) [above left of=A] {};
+  \node[state, fill = orange, draw = none,minimum size=.5cm]         (C) [above right of=A] {};
 
   \path[dotted] (A) edge              (C);
   \path (A) edge		     (B);

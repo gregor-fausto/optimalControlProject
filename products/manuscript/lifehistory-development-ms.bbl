@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{18}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -8,11 +8,6 @@
 Bartlett, M.~E. and B.~Thompson. 2014.
 \newblock Meristem identity and phyllotaxis in inflorescence development.
 \newblock Frontiers in Plant Science, {\bf 5}.
-
-\bibitem[{Bonser and Aarssen(2006)}]{bonser2006}
-Bonser, S.~P. and L.~W. Aarssen. 2006.
-\newblock Meristem allocation and life-history evolution in herbaceous plants.
-\newblock Canadian Journal of Botany, {\bf 84}:143--150.
 
 \bibitem[{Bradley(1997)}]{bradley1997a}
 Bradley, D. 1997.
@@ -105,19 +100,6 @@ Park, S.~J., K.~Jiang, M.~C. Schatz, and Z.~B. Lippman. 2012.
 Prusinkiewicz, P., Y.~Erasmus, B.~Lane, L.~D. Harder, and E.~Coen. 2007.
 \newblock Evolution and development of inflorescence architectures.
 \newblock Science, {\bf 316}:1452--1456.
-
-\bibitem[{Salomonson et~al.(1994)Salomonson, Ohlson, and
-  Ericson}]{salomonson1994}
-Salomonson, A., M.~Ohlson, and L.~Ericson. 1994.
-\newblock Meristem activity and biomass production as response mechanisms in
-  two forest herbs.
-\newblock Oecologia, {\bf 100-100}:29--37.
-
-\bibitem[{Schaffer et~al.(1982)Schaffer, Inouye, and Whittam}]{schaffer1982}
-Schaffer, W.~M., R.~S. Inouye, and T.~S. Whittam. 1982.
-\newblock Energy allocation by an annual plant when the effects of seasonality
-  on growth and reproduction are decoupled.
-\newblock The American Naturalist, {\bf 120}:787--815.
 
 \bibitem[{Wang et~al.(2018)Wang, Smith, and Li}]{Wang2018}
 Wang, B., S.~M. Smith, and J.~Li. 2018.
