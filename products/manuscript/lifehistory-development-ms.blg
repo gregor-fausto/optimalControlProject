@@ -1,33 +1,28 @@
 This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: lifehistory-development-ms.aux
-Case mismatch error between cite keys Cohen1971 and cohen1971
----line 45 of file lifehistory-development-ms.aux
- : \citation{Cohen1971
- :                    }
-I'm skipping whatever remains of this command
 Case mismatch error between cite keys fox1992 and Fox1992
----line 62 of file lifehistory-development-ms.aux
+---line 54 of file lifehistory-development-ms.aux
  : \citation{fox1992
  :                  }
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys fox1992 and Fox1992
----line 63 of file lifehistory-development-ms.aux
+---line 55 of file lifehistory-development-ms.aux
  : \citation{fox1992
  :                  }
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys fox1992 and Fox1992
----line 64 of file lifehistory-development-ms.aux
+---line 56 of file lifehistory-development-ms.aux
  : \citation{fox1992
  :                  }
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys fox1992 and Fox1992
----line 67 of file lifehistory-development-ms.aux
+---line 59 of file lifehistory-development-ms.aux
  : \citation{fox1992
  :                  ,kellogg2000,Prusinkiewicz2007,itzkovitz2012}
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys Cohen1971 and cohen1971
----line 124 of file lifehistory-development-ms.aux
+---line 117 of file lifehistory-development-ms.aux
  : \citation{Cohen1971
  :                    }
 I'm skipping whatever remains of this command
@@ -37,47 +32,46 @@ Repeated entry---line 3669 of file /Users/gregor/Dropbox/bibliography/optimal-co
  : @article{fox1992
  :                 ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "fox199b"
 Warning--I didn't find a database entry for "rees2016"
-You've used 21 entries,
+You've used 18 entries,
             2706 wiz_defined-function locations,
-            759 strings with 9869 characters,
-and the built_in function-call counts, 10986 in all, are:
-= -- 1094
-> -- 526
-< -- 14
-+ -- 183
-- -- 152
-* -- 880
-:= -- 1971
-add.period$ -- 94
-call.type$ -- 21
-change.case$ -- 166
-chr.to.int$ -- 21
-cite$ -- 21
-duplicate$ -- 485
-empty$ -- 760
-format.name$ -- 210
-if$ -- 2168
+            736 strings with 9234 characters,
+and the built_in function-call counts, 9398 in all, are:
+= -- 938
+> -- 442
+< -- 13
++ -- 156
+- -- 128
+* -- 742
+:= -- 1688
+add.period$ -- 82
+call.type$ -- 18
+change.case$ -- 143
+chr.to.int$ -- 18
+cite$ -- 18
+duplicate$ -- 416
+empty$ -- 654
+format.name$ -- 175
+if$ -- 1857
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 21
-newline$ -- 121
-num.names$ -- 86
-pop$ -- 178
+missing$ -- 18
+newline$ -- 106
+num.names$ -- 74
+pop$ -- 149
 preamble$ -- 1
-purify$ -- 134
+purify$ -- 114
 quote$ -- 0
-skip$ -- 282
+skip$ -- 244
 stack$ -- 0
-substring$ -- 743
-swap$ -- 59
+substring$ -- 641
+swap$ -- 49
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 189
+type$ -- 162
 warning$ -- 0
-while$ -- 105
+while$ -- 90
 width$ -- 0
-write$ -- 298
-(There were 7 error messages)
+write$ -- 259
+(There were 6 error messages)
