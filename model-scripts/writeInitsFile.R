@@ -29,7 +29,7 @@ df<-data.frame(expand.grid(model=model,
                        m1=m,alpha=alpha,
                        seasonDistribution=seasonDistribution,
                        mu=mu,sd=sd,max=max,min=min,gamma=gamma)) %>%
-  dplyr::mutate(m2=m1) %>%
+  dplyr::mutate(m2=100*m1) %>%
   dplyr::select(model,P,V,I,L,m1,alpha,seasonDistribution,mu,sd,max,min,m2,gamma)
 
 # ggplot(df) +
