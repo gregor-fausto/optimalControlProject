@@ -30,9 +30,11 @@ control <- function(t,y,parms,f1,f2,f3) {
   ut2 = min(ut,1) ; bad = bad + abs(ut-ut2)^1.25; 
   
   if (m1*P + m2*I <= alpha*V) {
+ # if (beta1t*P + beta2t*I <= alpha*V) {
     beta1t2 = min(beta1t, m1); bad = bad + abs(beta1t-beta1t2)^1.25; beta1t = beta1t2;
     beta2t2 = min(beta2t, m2); bad = bad + abs(beta2t-beta2t2)^1.25; beta2t = beta2t2;
   } else if (m1*P + m2*I > alpha*V) {
+  #} else if (beta1t*P + beta2t*I > alpha*V) {
     # apply constraint beta1*P+beta2*I=V, penalize if violated  
     Vtot = (1/alpha)*(beta1t*P + beta2t*I); 
     if (Vtot >= alpha*V) {
@@ -56,7 +58,7 @@ control <- function(t,y,parms,f1,f2,f3) {
       }
       
     } else {
-      beta1t2= beta1t;
+      beta1t2 = beta1t;
       beta2t2 = beta2t;
     }
     
@@ -73,7 +75,8 @@ control <- function(t,y,parms,f1,f2,f3) {
   derivs[4] = (beta2t) * I
   derivs[5] = bad
   # derivs[6] = log(L); # SPE: season's end is Uniform(2,5). 
-   derivs[6] = ifelse(t>=2.5,log(L),0); # SPE: season's end is Uniform(2,5). 
+  # Uniform probability of season end over second half
+   derivs[6] = ifelse(t>=seasonEnd-seasonEnd/2,log(L),0); # SPE: season's end is Uniform(2,5). 
   # derivs[6] = dnorm(t,mean=mu,sd=sigma)*log(L)
   
   return(list(derivs));

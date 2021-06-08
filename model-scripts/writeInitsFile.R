@@ -2,7 +2,7 @@
 ## Define analysis
 ####################################
 
-analysisName = c("analysisThree")
+analysisName = c("analysisTimescale-2")
 
 ####################################
 ## Write inits into table of parameters
@@ -12,16 +12,16 @@ library(tidyverse)
 
 model = c('determinate')
 P = c(1)
-V = c(.1)
+V = c(1)
 I = c(0)
 L = c(0)
-m = c(25,50,75)
-alpha = c(1)
+m = c(.4)
+alpha = c(.4)
 seasonDistribution = c("uniform")
 mu = c(NA)
 sd = c(NA)
-max = c(5)
-min = c(2.5)
+max = c(60)
+min = c(30)
 gamma = c(0)
 
 df<-data.frame(expand.grid(model=model,

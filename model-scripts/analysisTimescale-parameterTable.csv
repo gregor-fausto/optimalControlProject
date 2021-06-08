@@ -1,0 +1,13 @@
+"model","P","V","I","L","m1","alpha","seasonDistribution","mu","sd","max","min","m2","gamma"
+"determinate",1,1,0,0,0.3,0.4,"uniform",NA,NA,60,30,0.3,0
+"determinate",1,1,0,0,0.4,0.4,"uniform",NA,NA,60,30,0.4,0
+"determinate",1,1,0,0,0.5,0.4,"uniform",NA,NA,60,30,0.5,0
+"determinate",1,1,0,0,0.3,0.4,"uniform",NA,NA,60,30,0.3,0.1
+"determinate",1,1,0,0,0.4,0.4,"uniform",NA,NA,60,30,0.4,0.1
+"determinate",1,1,0,0,0.5,0.4,"uniform",NA,NA,60,30,0.5,0.1
+"determinate",1,1,0,0,0.3,0.4,"uniform",NA,NA,60,30,0.3,0.2
+"determinate",1,1,0,0,0.4,0.4,"uniform",NA,NA,60,30,0.4,0.2
+"determinate",1,1,0,0,0.5,0.4,"uniform",NA,NA,60,30,0.5,0.2
+"determinate",1,1,0,0,0.3,0.4,"uniform",NA,NA,60,30,0.3,0.3
+"determinate",1,1,0,0,0.4,0.4,"uniform",NA,NA,60,30,0.4,0.3
+"determinate",1,1,0,0,0.5,0.4,"uniform",NA,NA,60,30,0.5,0.3
