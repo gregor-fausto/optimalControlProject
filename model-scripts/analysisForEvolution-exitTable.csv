@@ -1,2 +1,3 @@
 "model","Ve","Le","In","Fl","m1","alpha","seasonDistribution","mu","sd","max","min","m2","gamma"
 "determinate",1,1,0,0,1,1,"uniform",NA,NA,60,30,1,0.4
+"determinate",1,1,0,0,1,1,"uniform",NA,NA,60,30,1,0.6

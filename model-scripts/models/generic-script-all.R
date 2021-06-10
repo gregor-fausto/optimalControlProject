@@ -11,7 +11,7 @@ seasonEnd = buildInits(tmp)$seasonParms["max"]
 #####################################################################
 ## Time points for optimization
 #####################################################################
-topt=seq(0,seasonEnd,length=121); 
+topt=seq(0,seasonEnd,length=21); 
 
 #####################################################################
 ## Function that computes values of derivatives in the ODE system
