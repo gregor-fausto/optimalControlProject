@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Lin et~al.(2014)Lin, Loxton, Lay~Teo, {,Department of Mathematics and
+  Statistics, Curtin University, GPO Box U1987 Perth, Western Australia 6845},
+  and {,Department of Mathematics and Statistics, Curtin University of
+  Technology, GPO Box U 1987, Perth, W.A. 6845}}]{lin2014}
+Lin, Q., R.~Loxton, K.~Lay~Teo, {,Department of Mathematics and Statistics,
+  Curtin University, GPO Box U1987 Perth, Western Australia 6845}, and
+  {,Department of Mathematics and Statistics, Curtin University of Technology,
+  GPO Box U 1987, Perth, W.A. 6845}. 2014.
+\newblock The control parameterization method for nonlinear optimal control:
+  {A} survey.
+\newblock Journal of Industrial \& Management Optimization, {\bf 10}:275--309.
+
+\end{thebibliography}

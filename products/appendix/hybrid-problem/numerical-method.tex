@@ -1,0 +1,303 @@
+\documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set up packages, geometry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry, textcomp, amsmath, graphicx, amssymb,fancyhdr,subcaption,bm}                
+	
+\geometry{letterpaper, marginparwidth=60pt}                   		
+\usepackage[superscript,noadjust]{cite} % puts dash in citations to abbreviate
+%\usepackage [autostyle, english = american]{csquotes} % sets US-style quotes
+%\MakeOuterQuote{"} % sets quote style
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\small}
+
+\usepackage{float,color}
+\usepackage{soul}
+
+\usepackage{pgf, tikz, eqnarray}
+\usetikzlibrary{arrows, automata}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}                                                      %%
+%%%%%%%%%% EXAFT 1in MARGINS %%%%%%%                                   %%
+\setlength{\textwidth}{6.5in}     %%                                   %%
+\setlength{\oddsidemargin}{0in}   %% (It is recommended that you       %%
+\setlength{\evensidemargin}{0in}  %%  not change these parameters,     %%
+\setlength{\textheight}{8.5in}    %%  at the risk of having your       %%
+\setlength{\topmargin}{0in}       %%  proposal dismissed on the basis  %%
+\setlength{\headheight}{0in}      %%  of incorrect formatting!!!)      %%
+\setlength{\headsep}{0in}         %%                                   %%
+\setlength{\footskip}{.5in}       %%                                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   %%		
+
+%%%%%%%%%%%%%
+% DEFINE CODE BLOCK
+%%%%%%%%%%%%%
+\usepackage{listings}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+ % keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  otherkeywords={0,1,2,3,4,5,6,7,8,9},
+  deletekeywords={data,frame,length,as,character,dunif,ps},
+}
+
+
+\usepackage{natbib}
+%\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={(},close={)}}
+
+
+%%%%%%%%%%%%%
+% PLOTS
+%%%%%%%%%%%%%
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots,fillbetween}
+\usepackage{animate}
+
+
+\begin{document} 
+
+   	Last updated: \today
+
+\section*{Numerical Approach}
+
+Problems that involve a combination of discrete and continuous controls fall under the umbrella of mixed integer linear programming. We used a few properties of the problem that make it different from others to make it tractable. First, the developmental pattern is by definition unbranched. There is only a single axis of growth, and growth happens by addition of nodes with leaves. Once a plant produces an inflorescence meristem, the plant does not go back to producing vegetative meristems. 
+
+The problem needs to be scaled properly so that the time derivative of vegetative meristems can deplete the vegetative meristem pool over a single time step. If $\dot{V}=-beta_1 \times u(t) \times V$, then integrating over one unit step should deplete the pool.
+
+Thinking about this more, just because the control $u(t)$ is binary doesn't mean that the state variable $V(t)$ will only take on values of 0 or 1. Even if there is an instantaneous switch in the type of divisions, depleting the pool of vegetative meristems will be a gradual process. Do we really need to work with difference equations if we want to represent the vegetative meristems as being 0 or 1? Or maybe I'm still missing the point. But it's not the control that needs to be 0 or 1 if we want to avoid fractional meristems, it's the states themselves.
+
+We attempted to solve the optimal control problem using the methods described in \hl{Sager et al. 2006}. The control variable that determines whether vegetative meristem divisions produce vegetative meristems or inflorescence meristems is binary. In terms of the control variable, $u(t)$, it can take on values of $0$ or $1$. 
+
+Because the plant can only undergo one transition from vegetative to reproductive growth, we know that the system starts with the control $u(t)=0$ and ends with $u(t)=1$. The problem then becomes one of finding the optimal switch time $t$. 
+
+We passed the optimization routine an initial guess in the interval $(0,T)$ where $T$ is the end of the season. This guess was used to divide the season into an initial interval where $u(t)=0$ and a final interval where $u(t)=1$. The optimization script found the time $t$ that optimized switching alongside the values that optimized the per-capita meristem division rates. We then applied a form of the `control parameterization method` described by \cite{lin2014}.
+ 
+Strategies I am trying:
+
+\begin{itemize}
+
+\item Rather than discretize and optimize the control $u(t)$, reduce this to a single decision about the time of switch from 0 to 1. Pass a variable for this switch to the control function, and use that variable to divide the time horizon into two intervals, an initial one with the control set to 0 and a second interval with the control set to 1. This is based on the 'switching time' strategy in Sager et al. 2006. 
+
+\item Change $\dot{V} = - \beta_1(t) u(t) V(t)$ so that the rate of change is very fast once the switch to producing inflorescence meristems happens. I tried to do this by introducing a constant in the equation. For example: $\dot{V} = - 100 \beta_1(t) u(t) V(t)$. Optimization works for this but it doesn't seem to give qualitatively different answers than without this constant.
+
+\item 
+
+\end{itemize} 
+
+Some thoughts on the interpretation of a fractional meristem. When the control $u$ is constrained to be 0 or 1, the vegetative meristem state starts at 1 and ends at a small number close to 0. The only way that I can think for this not to happen is to use a difference equation rather than a differential equation. 
+
+
+We wrote the function `control`, which computes values of derivatives for state variables in the ODE system, the accumulated penalty for violating constraints, and the accumulated objective function. We solved our ordinary differential equations using the R package \textbf{deSolve} \hl{(sotaert 2014)}. Our equations exhibited stiffness so we applied the Adams methods \hl{(Sotaert)}. Although \textbf{deSolve}'s default integration method (lsoda) detects stiffness properties, we followed the suggestion in \hl{Sotaert et al.} and selected the Adams method. We penalized values of the control that violated constraints by raising the absolute value of the difference of control values that lie outside the supported region to the power of 1.25. Originally, we squared this difference but this penalty is shallow for small errors and thus not differentiable. The code snippet below outlines the general structure of the control function.
+
+\begin{lstlisting}
+derivs = numeric(3);
+
+control <- function(t,y,parms,f1,f2,f3) {
+  
+  ## entries in y (system of ODEs)
+  X = y[1];
+  
+  ## Control intervals
+  u <- f(t);
+  
+  ## Apply positivity constraints, penalize if violated
+  ut = max(u,0); bad = abs(u-ut)^1.25; u = ut;
+  
+  ## Apply upper bound constraint, penalize if violated
+  ut = min(u,1); bad = bad + abs(u-ut)^1.25; 
+  
+  ## Derivative of state variable
+  derivs[1] =  u * X;
+  
+  ## Cumulative penalty
+  derivs[2] = bad;
+  
+  ## Cumulative objective function
+  derivs[3] = log(X);
+  
+  return(list(derivs));
+}
+
+\end{lstlisting}
+
+
+\cite{lin2014} provide an overview of the control parameterization method. In this approach, the control is approximated by a "linear combination of basis functions" which are often "piecewise-constant basis functions." In practice, this means that we divide our time horizon into an evenly spaced grid with $n$ points that has $n-1$ intervals. The control function is approximated by $n-1$ control intervals. The value on these intervals is optimized. The grid points remain fixed during optimization. In practice, we divide up our time horizon with grid points and generate a function that performs constant interpolation on the interval between the grid points. The code below demonstrates this procedure in R:
+
+\begin{lstlisting}
+## Generate grid points
+topt=seq(0,5,length=11); 
+
+## Generate random set of control values
+par = runif(length(topt),0.01,0.05); 
+
+## Generate function for interpolation
+f = approxfun(topt,par,rule=2);
+\end{lstlisting}
+
+We use the control intervals in our optimization routine. We write a function to be optimized. This function (optimfun) takes values for the control $\theta$ as its only argument. The control is used to generate the control intervals. The control intervals are used in combination with the initial conditions and model parameters to solve the differential equation that governs the evolution of the state variables (control). The function containing the differential equation also calculates an integrated constraint violation penalty, which sums across all violations of the state and parameter constraints. The function containing the differential equation also calculates the value of the objective function. The final value maximizes the objective function, and introduces a penalty for constraint violations and solutions with instability (oscillation).
+
+\begin{lstlisting}
+optim_fun = function(theta){
+  
+  ## Generate function for interpolation
+  f = approxfun(topt, theta, rule=2);
+  
+  ## Vectorize initial conditions and parameters
+  y0 = c(inits,other) 
+  
+  ## Solve ODE
+  out = ode(y=y0, times=seq(0,5,by=0.1), control, method=odemethod, parms=mParms, f=f);
+  
+  ## Get final value of constraint penalty
+  pen = out[nrow(out),"pen"]; # integrated constraint violation penalty 
+  
+  ## Get final value of objective function
+  obj = out[nrow(out),"obj"]; 
+  
+  ## Calculate penalty for instability
+  wiggly = diff(diff(tMat[,1])) + diff(diff(tMat[,2])) + diff(diff(tMat[,3])); 
+  
+  ## Sum up the value function
+  val = obj - pwt*pen - lambda*sum(wiggly^2)  ## SPE: sum instead of mean on wiggliness
+  return(-val)
+}
+\end{lstlisting}
+
+We initially considered a quadratic loss function to impose penalties for constraint violations. The quadratic loss function is added on to the objective function for optimization. We weight the penalty to deal with sharp changes in slope of the value function. The quadratic loss function is relatively shallow at small values, so we turned to a modified loss function, $\mathrm{abs}( f(x) - x )^{1.25} $. The function has a greater slope at small values but is smooth. The figure below shows the quadratic and modified loss function over large constraint violations, $(-3,3)$, and small constraint violations, $(-.1,.1)$. The solid lines are the unweighted loss functions (weight=1; quadratic is blue, modified is red). The dashed lines are the loss functions weighted by a constant of 10. 
+
+We started optimization with a smaller penalty for constraint violations (penalty = 1), which is similar to a penalty weight of 10 for a quadratic loss function at small values. After a first round of optimization, we imposed a larger penalty for constraint violation (penalty = 10).
+
+%%%%%%%%%%%%%
+% LOSS FUNCTIONS
+%%%%%%%%%%%%%
+\pgfmathdeclarefunction{quadraticloss}{1}{%
+  \pgfmathparse{#1*(x)^2}%
+}
+
+\pgfmathdeclarefunction{alternateloss}{1}{%
+  \pgfmathparse{#1*abs(x)^1.25}%
+}
+
+ \begin{tikzpicture}
+    \begin{groupplot}[
+        group style={group size=2 by 1,
+                     %horizontal sep=2cm,
+			ylabels at = edge left,
+                     },
+                     %customaxis2,
+                     legend pos=north east,
+                   width=.4\textwidth,
+                           scale only axis,
+                     ]
+
+ \nextgroupplot[
+  no markers, domain=-3:3, 
+  axis lines*=left, %xlabel=$x$, ylabel=$y$,
+        axis line style={draw=black},
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west}
+  ]
+  \addplot [very thick,cyan!50!black] {quadraticloss(1)};
+  \addplot [dashed,cyan!50!black] {quadraticloss(10)};
+  \addplot [very thick,red!50!black] {alternateloss(1)};
+  \addplot [dashed,red!50!black] {alternateloss(10)};
+  %
+ \nextgroupplot[
+  no markers, domain=-.1:.1, 
+  axis lines*=left, %xlabel=$x$, ylabel=$y$,
+        axis line style={draw=black},
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  %xtick=\empty, ytick=\empty, %{4,6.5}
+  enlargelimits=true, clip=false, axis on top
+  ]
+  \addplot [very thick,cyan!50!black] {quadraticloss(1)};
+  \addplot [dashed,cyan!50!black] {quadraticloss(10)};
+  \addplot [very thick,red!50!black] {alternateloss(1)};
+  \addplot [dashed,red!50!black] {alternateloss(10)};
+    \end{groupplot}
+
+\end{tikzpicture}
+
+
+Finally, we initialize our optimization routine. \hl{In general, we use a combination of strategies to initialize the optimization routine. For some parameters, we randomly generate values on the support of the control functions (e.g. $0\leq u(t) \leq 1$). In other cases, we initialize our optimization with values from the analysis of unconstrained versions of our optimal control problem. We then set weights for the penalty we apply for constraint violations and instability. We choose to start with large penalties that decrease with each iteration of optimization; this has the effect of penalizing constraint violations early in the routine when the control is likely to be further from the optimum and reducing the weight of subsequent, smaller violations to the constraints.}
+
+\begin{lstlisting}
+
+## Randomly generate initial values for control
+par0 = runif(2*length(topt),0.01,0.05); 
+
+## Generate initial values for control from analysis of unconstrained problem
+# beta2 is maxed-out at the end in the unconstrained problem (from analysis of adjoint equations)   
+# so start with the max first
+par0 = c(par0, mParms[2]*seq(0,1,length=length(topt))^2) 
+
+## optimize: start with a large lambda, and decrease it with each iteration. 
+# pwt=1; lambda=0.2; fvals = numeric(5);  
+# SPE: large penalty weight, and large lambda at first 
+pwt=10; lambda=1; fvals = numeric(40);  
+
+\end{lstlisting}
+
+Once all of this machinery is in place, we proceed to iteratively solve our control problem. We take the following approach:
+
+\begin{itemize}
+\item Use the Runge-Kutta-4 method (rk4) for ODEs and Nelder-Mead for optimization (1 iteration).
+\item Reset the controls to lie within their constraints.
+\item Use the implicit Adams method (impAdams or impAdamsd) for ODEs and BFGS for optimization (1 iteration).
+\item \hl{Reset the controls to lie within their constraints. - do I do this here as well?}
+\item Enter an optimization loop. Within the loop:
+\subitem Use the implicit Adams method (impAdams or impAdamsd) for ODEs and Nelder-Mead for optimization.
+\subitem Reset the controls to lie within their constraints.
+\subitem Use the implicit Adams method (impAdams or impAdamsd) for ODEs and BFGS for optimization (1 iteration).
+\subitem Reduce the weight for lambda by half.
+\subitem \hl{Reduce the weight for constraint violation by half.} (?)
+
+\hl{What's the particular logic of this procedure - need to write a bit about this. }
+
+\end{itemize}
+
+\begin{lstlisting}
+
+fit = optim(par0, fn=optim_fun, method="Nelder-Mead",control = list(maxit=5000,trace=4,REPORT=1));
+
+\end{lstlisting}
+
+
+\clearpage
+% \section*{References}
+
+\clearpage
+\bibliographystyle{/Users/gregor/Dropbox/bibliography/styleFiles/ecology} 
+\bibliography{/Users/gregor/Dropbox/bibliography/optimal-control-lit}
+
+\end{document}

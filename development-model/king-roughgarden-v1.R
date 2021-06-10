@@ -7,7 +7,7 @@
 # clear history
 rm(list=ls(all=TRUE))
 
-setwd("~/Dropbox/projects/meristem-limitation/king-roughgarden") #### Edit as needed 
+setwd("~/Documents/optimalControlProject/development-model/") #### Edit as needed 
 
 # load deSolve
 library(deSolve)
@@ -15,7 +15,7 @@ library(compiler)
 library(BB) # for projectLinear 
 
 # for rate constraints
- source("king-roughgarden-funs.R"); 
+ source("king-roughgarden-funs-lowerBound.R"); 
 
 ################################################## 
 # Construct the constraint matrix 

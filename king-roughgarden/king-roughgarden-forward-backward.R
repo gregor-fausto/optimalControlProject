@@ -7,7 +7,7 @@
 # clear history
 # rm(list=ls(all=TRUE))
 
-setwd("~/Dropbox/optimalControlProject/king-roughgarden") #### Edit as needed 
+setwd("~/Documents/optimalControlProject/king-roughgarden") #### Edit as needed 
 
 # load deSolve
 library(deSolve)

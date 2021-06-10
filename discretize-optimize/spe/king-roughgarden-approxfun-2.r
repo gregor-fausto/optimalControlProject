@@ -86,5 +86,5 @@ matplot(topt,cbind(dx1+dx2,out[,"x1"]));
 
 dev.new(); 
 uMat = matrix(fit$par,ncol=2); u1 = uMat[,1]/apply(uMat,1,sum); 
-plot(topt,u1,type="b",lty=1,col=c("red","blue")); 
+plot(topt,u1,type="b",lty=1,col=c("red","blue"));
 
