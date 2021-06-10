@@ -1,3 +1,6 @@
+################################################################################
+# Plots designed to work through the logic of energetic arguments for trade-offs
+#################################################################################
 
 rm(list=ls(all=TRUE)) # clear R environment
 par()  
