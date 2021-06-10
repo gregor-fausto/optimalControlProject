@@ -10,8 +10,8 @@ library(RColorBrewer)
 odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values 
 
 # Read in list of files
-outputVec <- list.files("model-scripts/analysisTimescale")
-outputVec <- outputVec[grep("60-0-1-1",outputVec)]
+outputVec <- list.files("model-scripts/analysisForEvolution")
+outputVec <- outputVec[grep("60-0.4-1-1",outputVec)]
 
 # Order files 
 index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec),
@@ -23,10 +23,10 @@ n = length(outputVec)
 # Create list of outputs
 runList <- list()
 for(i in 1:n){
-  runList[[i]] <- readRDS(paste0("model-scripts/analysisTimescale/",outputVec[index[i]]))
+  runList[[i]] <- readRDS(paste0("model-scripts/analysisForEvolution/",outputVec[index[i]]))
 }
 
-j = length(runList[[2]]$beta1.list)
+j = length(runList[[1]]$beta1.list)
 
 ut <- list()
 beta1 <- list()
