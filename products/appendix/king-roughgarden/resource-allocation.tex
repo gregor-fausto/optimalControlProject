@@ -119,9 +119,11 @@
 
 \section*{Resource allocation models}
 
-The plant growth model developed by \cite{cohen1971} and later elaborated by \cite{King1982a} represents resources allocated to vegetative and reproductive pools. I summarize the model in equations \ref{eqn:de-resource} and \ref{eqn:constraints-resource} and state diagram \ref{fig:state-resource}. In the model, $x_1$ and $x_2$ are the weights of the vegetative and reproductive parts of the plant, respectively. Photosynthesis is assumed to be linearly related to the weight of the vegetative part of the plant. The control function $u(t)$ is the proportion of photosynthate that is allocated to the vegetative pool.
+The plant growth model developed by \cite{cohen1971} and later elaborated by \cite{King1982a} represents resources allocated to vegetative and reproductive pools. I summarize the model in equations \ref{eqn:de-resource} and \ref{eqn:constraints-resource} and state diagram \ref{fig:state-resource}. In the model, $x_1$ and $x_2$ are the weights of the vegetative and reproductive parts of the plant, respectively. Photosynthesis is assumed to be linearly related to the weight of the vegetative part of the plant. The control function $u(t)$ is the proportion of photosynthate that is allocated to the vegetative pool. 
 
-\cite{King1982a} propose that the long-term, optimal reproductive strategy will maximize the geometric mean of reproductive success. They propose that the function that should be optimized is the expectation of the log of fitness, $ J = (1/T) \int_{0}^{T} \mathrm{log}(x_2) \dd {t}$. They used the following system of equations:
+An assumption that underlies this formulation is that resource allocation decisions are sufficient to describe life history (\cite{fox1990}). However, as pointed out in several relevant studies, plants are modular and development couples growth and reproduction (\cite{watson1984,geber1990,fox1990}). 
+
+\cite{King1982a} propose that the long-term, optimal reproductive strategy will maximize the geometric mean of reproductive success. Correspondingly, the function that should be optimized is the expectation of the log of fitness, $ J = (1/T) \int_{0}^{T} \mathrm{log}(x_2) \dd {t}$. They used the following system of equations:
 %
 \begin{align}
 \dot{x_1} & = u(t) x_1 \nonumber \\
