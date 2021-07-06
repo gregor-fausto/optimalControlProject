@@ -10,10 +10,10 @@ library(RColorBrewer)
 odemethod=rkMethod("rk4");  # should be safe to use with bad parameter values 
 
 # Read in list of files
-outputVec <- list.files("model-scripts/analysisTimescale")
-outputVec <- outputVec[grep("60-0-0.4-0.4",outputVec)]
+outputVec <- list.files("model-scripts/analysisForEvolution")
+outputVec <- outputVec[grep("5-0.4-1-1",outputVec)]
 
-seasonEnd=60
+seasonEnd=5
 
 # Order files 
 index=c(grep("relax",outputVec,invert=TRUE),grep("relaxAlpha.RDS",outputVec),grep("relaxMeristem.RDS",outputVec))
@@ -24,7 +24,7 @@ n = length(outputVec)
 # Create list of outputs
 runList <- list()
 for(i in 1:n){
-  runList[[i]] <- readRDS(paste0("model-scripts/analysisTimescale/",outputVec[index[i]]))
+  runList[[i]] <- readRDS(paste0("model-scripts/analysisForEvolution/",outputVec[index[i]]))
 }
 
 # empty vector of derivatives
@@ -38,7 +38,7 @@ par(mfrow=c(2,2))
 
 # Axis limits
 ylim.p = c(0,3)
-xlim.p = c(0,60)
+xlim.p = c(0,5)
 
 # Colors
 # Gray: baseline
@@ -62,7 +62,7 @@ for(i in 1:n){
   dist = c(distribution=as.character(tmp$seasonDistribution))
   seasonParms = c(max=tmp$max,min=tmp$min)
   
-  outMat = ode(y=c(inits,other),times=seq(0,60,by=0.1),control,method=odemethod,parms=mParms,f1=runList[[i]]$u.list[[j]],f2=runList[[i]]$beta1.list[[j]],f3=runList[[i]]$beta2.list[[j]]);
+  outMat = ode(y=c(inits,other),times=seq(0,5,by=0.1),control,method=odemethod,parms=mParms,f1=runList[[i]]$u.list[[j]],f2=runList[[i]]$beta1.list[[j]],f3=runList[[i]]$beta2.list[[j]]);
   lines(outMat[,1],outMat[,2],
         lty=i, lwd = 2,
         col=colors[i])
@@ -85,7 +85,7 @@ for(i in 1:n){
   seasonParms = c(max=tmp$max,min=tmp$min)
   
   initVals = c(inits,other) 
-  outMat = ode(y=initVals,times=seq(0,60,by=0.1),control,method=odemethod,parms=mParms,f1=runList[[i]]$u.list[[j]],f2=runList[[i]]$beta1.list[[j]],f3=runList[[i]]$beta2.list[[j]]);
+  outMat = ode(y=initVals,times=seq(0,5,by=0.1),control,method=odemethod,parms=mParms,f1=runList[[i]]$u.list[[j]],f2=runList[[i]]$beta1.list[[j]],f3=runList[[i]]$beta2.list[[j]]);
   lines(outMat[,1],outMat[,3],
         lty=i, lwd = 2,
         col=colors[i])
@@ -108,7 +108,7 @@ for(i in 1:n){
   seasonParms = c(max=tmp$max,min=tmp$min)
   
   initVals = c(inits,other) 
-  outMat = ode(y=initVals,times=seq(0,60,by=0.1),control,method=odemethod,parms=mParms,f1=runList[[i]]$u.list[[j]],f2=runList[[i]]$beta1.list[[j]],f3=runList[[i]]$beta2.list[[j]]);
+  outMat = ode(y=initVals,times=seq(0,5,by=0.1),control,method=odemethod,parms=mParms,f1=runList[[i]]$u.list[[j]],f2=runList[[i]]$beta1.list[[j]],f3=runList[[i]]$beta2.list[[j]]);
   lines(outMat[,1],outMat[,4],
         lty=i,  lwd = 2,
         col=colors[i])
@@ -137,7 +137,7 @@ for(i in 1:n){
   seasonParms = c(max=tmp$max,min=tmp$min)
   
   initVals = c(inits,other) 
-  outMat = ode(y=initVals,times=seq(0,60,by=0.1),control,method=odemethod,parms=mParms,f1=runList[[i]]$u.list[[j]],f2=runList[[i]]$beta1.list[[j]],f3=runList[[i]]$beta2.list[[j]]);
+  outMat = ode(y=initVals,times=seq(0,5,by=0.1),control,method=odemethod,parms=mParms,f1=runList[[i]]$u.list[[j]],f2=runList[[i]]$beta1.list[[j]],f3=runList[[i]]$beta2.list[[j]]);
   lines(outMat[,1],outMat[,5],
         lty=i,  lwd = 2,
         col=colors[i])

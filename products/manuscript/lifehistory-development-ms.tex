@@ -1,4 +1,4 @@
-\documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\documentclass[12pt, oneside,titlepage]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
 
 \usepackage{graphicx}
 \graphicspath{ {\string} }
@@ -59,7 +59,11 @@
 
 \usepackage{natbib}
 %\bibliographystyle{abbrvnat}
-\setcitestyle{authoryear,open={(},close={)}}
+\setcitestyle{authoryear}
+
+% Adds parentheses around year
+%\setcitestyle{authoryear,open={(},close={)}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -119,12 +123,14 @@
 
 \begin{document} 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{titlepage}
    \begin{center}
        \vspace*{1cm}
  
-       \textbf{Optimal control project}
+       \textbf{Resources and development jointly shape life history evolution in plants}
  
        \vspace{1.5cm}
  
@@ -134,82 +140,156 @@
  
    \end{center}
 \end{titlepage}
-%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INTRODUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-Life history theory is a framework for understanding how evolution generates and responds to tradeoffs among growth, survival, and reproduction over the course of an organisms? life cycle. A central tenet of life history theory is that selection maximizes fitness by favoring trait combinations that optimally balance different parts of the life cycle \cite{Cole1954,Lande1983}. Theoretical and empirical studies typically assume that organisms must allocate a limited pool of resources to competing functions such as growth versus survival. While this may be an appropriate assumption for animals, plants are modular organisms.
-
-Plants grow and reproduce via meristems, tissues that are made up of undifferentiated cells and are analogous to stem cells in animals (reviewed in \cite{Ward2004,Wang2018}). Individual meristems can grow vegetatively, become an inflorescence meristem, or remain undifferentiated. Each vegetative meristem may generate additional meristems with the potential to differentiate into one of these three types. A meristem that differentiates into an inflorescence can no longer grow vegetatively. The onset of flowering thus prevents future vegetative growth at the level of individual meristems. Limiting the number of meristems available for differentiation and reproduction can thus produce tradeoffs: a plant with that allocates most of its meristems to reproduction now will not be able to allocate those meristems to reproduction later \cite{Watson1984a,Geber1990}.
-
-In plants where reproduction is fatal (monocarpic plants), plants must balance their investment in and the timing of growth and reproduction because both processes draw on a shared set of resources. Theoretical models of life history evolution typically represent this as a trade-off in energetic investment. However, plant development is modular and can constrain future energetic allocation to growth or reproduction.
-
-%\hl{The hypotheses I've written turn explicitly to developmental patterns. I think that the question has become more about the relationship between development and the environment than it was when I originally wrote this introduction. It would be helpful to have theory about the relationship of development, evolution, and ecology (e.g. Dahlem Konferenz 1981) and empirical examples from other systems/organs (Sultan? toads?)}
-
-Fox 1990 (Components of flowering time variation) discusses experiments with Eriogonum demonstrating that patterns of reproduction are the product of growth and development. 
-
-\subsection{Dynamic optimization}
-
-\hl{Overview of model types that address connection of life history and timing or reproduction. Specific benefits of optimal control. Original models have been extended and enriched. I think this should be reduced to 1-2 concise paragraphs that also address other modeling approaches that have been used to study this kind of problem (e.g. Ackerly and Wong?) and why we chose to use optimal control theory}
-
-A shared assumption of reproductive allocation models, dynamic optimization models, and evolutionary demographic theory is that demographic parameters are themselves parts of organisms (\hl{Fox 1990, p 1420}). However, the representation of organisms in these models is nonetheless an abstraction. In particular, they treat growth and reproduction as independent components of an organism's life history to which some fraction of a limiting resource can be allocated. \hl{Fox 1990, p. 1407} outlines three key points to why its important that development couples reproduction and growth for understanding how plants respond to drought. First, the models above assume that the reproduction and growth are independent. Second, developmental coupling is invariant among populations suggesting similar responses to the environment. 
-
-Modifications to original models include varying functions for productivity and reproduction (e.g. seasonal pattern, overlap or not), tissue loss and maintenance costs, multiple organs, allocation to storage, different types of survivorship curves, allometric relationships of reproductive to vegetative mass, and environmental stochasticity. The value in these models comes from an ability to explore how allocation decisions respond to different assumptions about variables such as resource use or variability in season length. 
-
-%Since early papers that used optimal control theory to study life history evolution, authors have suggested incorporating development into the models \cite{cohen1971,schaffer1982,fox199b}. However, no such models have yet been developed. 
-
-A key assumption of the classic models is that plants are making allocation decisions about carbon, which is assumed to be the limiting resource. Although this assumption has been extended to include other nutrients, plant development complicates the picture. Because plants have modular structures, vegetative and reproductive growth are coupled insofar as plant architecture limits the total potential number of flowers or inflorescences. More generally, whether a plant is in a vegetative or reproductive phase is the product of decisions about the fate of primary or axillary meristems. This perspective aligns with a source-sink perspective on plant growth that suggests potential photosynthesis is not the sole determinant of plant growth but that plant growth is instead a balance of source (photosynthate) and sinks (maintenance, organ production, etc.) \cite{korner2015,rees2016}.
-
-Some of the models have also been empirically tested, and have helped inform intuition about things like seasonal variation in photosynthesis or storage. Yet many models continue to predict a bang-bang allocation strategy which is not observed in many natural systems.  However, no such models have been written.
-
-Here, we apply these ideas to develop a system of ordinary differential equations that describes the dynamics of plant development and constrains growth by the availability of photosynthate. This approach places the allocation decisions at the level of meristems (decisions about meristem fate) and leaves flexibility about much these decisions are limited by photosynthate. In classic models, any quantity of vegetative biomass can support unlimited primary meristem divisions which can in turn  contribute to unlimited number of floral meristems.
-
-\iffalse
+\singlespace
 \begin{itemize}
 
-\item Cohen 1971: derives bang-bang control; maximizes arithmetic mean yield; does not derive analytical solution for maximizing geometric mean
-\item Cohen 1976: constant environment, maximize arithmetic mean, ... [what are key conclusions here?]; also considers describing survival by a decreasing function and finds bang-bang
-\item Vincent and Pulliam 1980: analyzes Cohen 1971, generalizes the model; considers 2 photosynthate production functions (linear + nonlinear, saturating), both predict bang-bang; also analyzes optimal leaf toxin allocation
-\item Schaffer, Inouye, Whittam 1982: seasonal variation in photosynthesis/storage
-\item King and Roughgarden 1982: introduces random variation in season length; maximizes geometric mean fitness; builds on C71; obtains graded control, basis for Fox 92, Lindh 16
-\item King and Roughgarden 1982: includes tissue loss (herbivory); Rathcke and Lacey (84) claim as accurate
-\item Chiariello and Roughgarden 1982: includes tissue loss (herbivory), seasonal variation in assimilation/storage
-\item Fox 1992: modifies photosynthate production function to be time-varying (with a peak) and looks at different survivorship curves
-\item Fox 1992: reviews assumptions of resource allocation models; develops allometric model (cf Lindh 2016); suggests development needs to be incorporated
-\item Shitaka and Hirose 1993:
-\item Johansson et al. 2013: "the seasonal distribution of productivity (e.g. temperature and precipitation) can affect the size and even the direction of the optimal response of the flowering time to certain types of environmental change, such as increased productivity or increased season length" (Lindh et al. 2016), "assumed that plant growth rate is proportional to the vegetative mass during the growth season" (Lindh et al. 2016)
-\item Lindh et al. 2016: modifies KR82 by making growth exponential, logistic, or WBE (general constrained or allometric); also in appendix shows bang-bang control with exponentially decreasing survival corresponding to constant mortality
+\item The interplay between development and ecology is the basis for evolutionary change [evolution is the control of development by ecology (van Valen)]
 
+\begin{itemize}
+\item A central tenet of life history theory is that selection maximizes fitness by favoring trait combinations that optimally balance different parts of the life cycle (\cite{cole1954,lande1983}). 
+\item Theoretical and empirical studies typically assume that organisms must allocate a limited pool of resources to competing functions such as growth versus survival. \cite{fox1990} states this assumption is shared by approaches of reproductive effort, dynamic optimization, and evolutionary demography. Quantitative genetics assumes that there are correlations among components of life history but focuses on genetic and phenotypic correlations.
+\item From early papers that used optimal control theory to study life history evolution, authors have suggested incorporating development into the models (\cite{cohen1971,schaffer1982,fox1992a}). However, no such models have yet been developed. 
+\end{itemize}
+
+\item Multiple lines of evidence support the association between life history and architecture
+
+\begin{itemize}
+\item Adaptive radiations on oceanic and sky islands demonstrate association between life history and morphology in shift from annual/herbaceous to perennial/secondary woodiness \cite{nurk2019}
+\item Developmental biology: studies demonstrate how maintenance of active apical or axillary meristems changes architecture and life history. Includes comparisons such as mutant lines of model plants, comparisons of genes between annual/perennial relatives (\cite{remington2015,ponraj2020})
+\item Evolutionary ecology studies in the field demonstrate the role of branching in life history as well; examples include ecotypes of Mimulus guttatus (\cite{baker2011,baker2014,friedman2015a}), Erysimum populations across an elevation gradient (\cite{kim2011})
+\item \hl{Identify studies that demonstrate the presence of heritable genetic variation in bud differentiation/organ identity}. For example, potentially could include \cite{bonser1996,bonser2003,doust2006,baker2012,huang2013,baker2014,rubin2018}. Could also cite crop studies (e.g. \cite{hardy1998})
+\end{itemize}
+
+\item Various lines of evidence exist that point to constraints of development on life history evolution that should inform optimization studies 
+
+\begin{itemize}
+\item Experiments that show genetic covariance/correlation of flowering time and meristem number/tiller number. We have data from plants from different habitats (e.g. \cite{geber1990a,schmitt1993}), from RILs (e.g. \cite{haselhorst2011}), from the result of selection experiments (e.g. Mitchell-Olds 199x?). Also \cite{watson1984a,vantienderen1996,duffy1999,kudoh2002,friedman2015a} Diggle 1993, Gardner and Latta 2008, Latta and Gardner 2009, Austen et al.  2014, Rubin et al. 2018
+\item Studies of development with mutants/knock-outs in Arabidopsis that show that modifying flowering time genes (e.g. tfl) has an effect on the number of meristems, establishing that there is pleiotropy (\cite{bradley1997,karami2020}, Melzer et al. 2008, Baumann et al. 2015)
+\item We have studies focusing on developmental stages (e.g. \cite{baker2011}). 
+\item \cite{parker1990} describe how comparative studies and quantitative genetics can be used in conjunction with optimization to understand phenotypes. Specifically, they suggest that quantitative genetics can be used to identify constraints that are relevant for optimization models. Comparative methods can then  be used to test the predictions of those models. Here's a quote: "discovery of a genetic covariance can indicate presence of a developmental constraint that must be taken into account when formulating an optimization model". Experiments and interspecies comparisons can also help discover these constraints. 
+\end{itemize}  
+
+\item Plant growth and development
+
+\begin{itemize}
+\item Plants grow and reproduce via meristems, tissues that are made up of undifferentiated cells and are analogous to stem cells in animals (reviewed in \cite{mcsteen2005,wang2018}).
+\item Individual meristems can grow vegetatively, become an inflorescence meristem, or remain undifferentiated. Each vegetative meristem may generate additional meristems with the potential to differentiate into one of these three types. A meristem that differentiates into an inflorescence can no longer grow vegetatively. The onset of flowering thus prevents future vegetative growth at the level of individual meristems.
+\item Limiting the number of meristems available for differentiation and reproduction can thus produce tradeoffs: a plant with that allocates most of its meristems to reproduction now will not be able to allocate those meristems to reproduction later (\cite{watson1984a,geber1990a,schmitt1993}).
+\end{itemize}
+
+\item Theory and models identify consequences of variation in season length on resource allocation decisions
+
+\begin{itemize}
+\item For a fixed season length (no variability), a bang-bang control maximizes arithmetic mean fitness (\cite{cohen1971})
+\item For a uniform distribution of season length (highly variable), the optimization problem becomes one of maximizing geometric mean fitness. In this case, simultaneous allocation to vegetative and reproductive growth can be part of optimal strategy (\cite{king1982a}). 
+\item Using an evolutionary algorithm and examining intermediate variability in season length (between fixed and uniform distribution), the authors find that steepness of gradient relates to the amount of variability in the environment (\cite{wong2005}). 
+\item A study that examines the production of workers versus sexual individuals in annual eusocial insects suggests that high levels of environmental variability are required to promote a graded control; they propose that realistic levels of environmental variability in season length are unlikely to be sufficient to do so; complements study above (\cite{mitesser2007}).
+\item Variations on the basic form of the model explore the effect of mortality (\cite{cohen1976}), nonlinear (\cite{vincent1980}) or seasonal production functions (\cite{schaffer1982,fox1992}), tissue loss (\cite{king1982}), storage (\cite{chiariello1984}), or constrained growth (\hl{citation needed}).
+\item More thoughts? Overview of model types that address connection of life history and timing or reproduction. Specific benefits of optimal control. Original models have been extended and enriched. I think this should be reduced to 1-2 concise paragraphs that also address other modeling approaches that have been used to study this kind of problem (evolutionary algorithms; \cite{wong2005}) and why we chose to use optimal control theory.
+\end{itemize}
+
+\item Branching modifies plant architecture and contributes to temporal patterns of resource allocation and reproduction
+
+\begin{itemize}
+\item A model of development demonstrates that season length and variability determine the optimal morphology of an inflorescence. (\cite{prusinkiewicz2007}). Ideas presented in this confirmed in tomato by a study demonstrating that inflorescence architecture is determined by rate of meristem maturation (\cite{park2012}).
+\item Variety of evidence associating variation in branching with environment: branching and altitude (\cite{milla2008}), bud banks increase with productivity in perennials (\cite{dalgleish2005})
+\item Developmental programs differ among plants in terms indeterminate versus determinate flowering, and how is that related to resource allocation patterns
+\item Developmental genetics identifies independent/related basis for flowering time, leaf production, and growth rate. Review to determine what these studies state about the relationship among these variables (e.g. \cite{rao2008,melzer2009,mendez-vigo2010,remington2013,serrano-mislata2016,moraes2019,taylor2019,karami2020})
+\item Inflorescence unit number and size; increasing total flower number impacts RS through both genders;  \cite{fishbein1996}
+\end{itemize}
+
+\item Past examination of branching and allocation/bet hedging
+
+\begin{itemize}
+\item \cite{pyke1989,kudoh2002,suzuki2006,hughes2014a}
 \end{itemize}
 
 
-Right now, I'm working with a model in which the reproductive meristem develops into a single flower. In one variant of the model, there is only growth along the primary axis (no side branches). In a second variant of the model, there is growth both along the primary axis as well as via axillary meristems. The next step would be to analyze models for which reproductive meristems develop into an inflorescence. The goal of analyzing this set of models is to ask how development patterns relating to meristem allocation contribute to life history strategies. 
 
-(1) I expect that longer seasons favor branching \cite{Geber1990}. 
-(2) As the end of the season becomes more unpredictable, it might become advantageous to have multiple branches, some of which can produce flowers and others which might still be producing leaves \cite{Geber1990}. 
-(3) I also expect this effect to be less pronounced for plants which produce inflorescences than single flowers \cite{bonser2006}, as inflorescences should provide additional flexibility in how many flowers to produce per reproductive meristem \cite{bonser2006,salomonson1994}.
-(4) "a particular plant morphology is the product of developmental decisions about the number and types of metamers, and thus branches produced. Is carbon availability critical to such decisions, and if so, at what level of morphological organization is its availability assessed?" (Casper and Watson 1984). Developmental decisions are made so as to maintain a positive carbon balance within a physiological  unit (CW 1984). When reproductive and vegetative branch formation compete for the same meristems, the development of reproductive branches will reduce the number of vegetative branches that can form (Watson 1980). Even if reproductive branches may be able to support themselves, forming them may reduce ultimate carbon balance because they are unlikely to contribute excess assimilate. Life history theory for animals does not apply to plants - the assumptions are not valid for plants where elaborating the aboveground structure can pay for its own cost. "predictions about a plant's behavior in different environments will vary according to the time period in which carbon availability acts as a developmental constraint, the degree to which translocation of assimilate is architecturally constrained, and the extent to which structures differ in their capacity to be carbon-autonomous." (CW 1984).
+\end{itemize}
+\doublespace
 
-Flowering in plants is correlated with rosette size - does this reflect the availability of stored assimilate to support maturation of the inflorescence OR does it reflect the development of sufficient leaves to support the inflorescence with current assimilate?
 
-Are reproductive or vegetative branches more expensive?
+Life history theory is a framework for understanding how evolution generates and responds to tradeoffs among growth, survival, and reproduction over the course of an organisms' life cycle. A central tenet of life history theory is that selection maximizes fitness by favoring trait combinations that optimally balance different parts of the life cycle (\cite{cole1954,lande1983}). Theoretical and empirical studies typically assume that organisms must allocate a limited pool of resources to competing functions such as growth versus survival. While this may be an appropriate assumption for animals, plants are modular organisms.
 
-(Torstensson and Telenius 1986) 
+Plants grow and reproduce via meristems, tissues that are made up of undifferentiated cells and are analogous to stem cells in animals (reviewed in \cite{mcsteen2005,wang2018}). Individual meristems can grow vegetatively, become an inflorescence meristem, or remain undifferentiated. Each vegetative meristem may generate additional meristems with the potential to differentiate into one of these three types. A meristem that differentiates into an inflorescence can no longer grow vegetatively. The onset of flowering thus prevents future vegetative growth at the level of individual meristems. Limiting the number of meristems available for differentiation and reproduction can thus produce tradeoffs: a plant with that allocates most of its meristems to reproduction now will not be able to allocate those meristems to reproduction later (\cite{watson1984a,geber1990a}).
 
-Patterns of development involving branching are found in land plants, brown and green algae, modular marine colonies, 
-\fi
+In plants where reproduction is fatal (monocarpic plants), plants must balance their investment in and the timing of growth and reproduction because both processes draw on a shared set of resources. Theoretical models of life history evolution typically represent this as a trade-off in energetic investment. However, plant development is modular and can constrain future energetic allocation to growth or reproduction.
 
+\hl{The hypotheses I've written turn explicitly to developmental patterns. I think that the question has become more about the relationship between development and the environment than it was when I originally wrote this introduction. It would be helpful to have theory about the relationship of development, evolution, and ecology (e.g. Dahlem Konferenz 1981) and empirical examples from other systems/organs (Sultan? toads?)}
+
+\cite{fox1990} discusses experiments with Eriogonum demonstrating that patterns of reproduction are the product of growth and development. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Questions}
 
-Life history theory typically assumes that trajectories of growth and reproduction are shaped by resource allocation decisions. Descriptions of development (Figure \ref{fig:transitions-determinate} and \ref{fig:transitions-indeterminate}) highlight how growth and fecundity depend on meristem production. Models that do not explicitly represent resource and development can not distinguish between the origin of tradeoffs. See \cite{white2016} for a complementary perspective on sources and sinks in plant growth and \cite{korner2015} for a review on how sinks might often limit plant growth. \cite{Fox1992} suggests allometric models are not sufficient and models that incorporate development will be necessary.
+\singlespace
+\begin{itemize}
 
-Resource limitation generates negative correlations between growth and fecundity within a life stage because both compete for resources. In a situation where resources are limited, we might expect to see trade-offs that are the result of resource allocation decisions (we wouldn't see these decisions when resources are not limited).
+\item Questions for an unbranched plant with a determinate inflorescence (1-dimensional model with a switch time only)
+\begin{itemize}
+\item ...
+\end{itemize}
 
-Meristem limitation generates positive correlations between growth and fecundity within a life stage because both depend on meristem production. In a situation where meristems are limited, we might expect to see trade-offs that are the result of meristem allocation decisions (we wouldn't see these decisions when meristems are not limited). 
+\item Questions for a branched plant with a determinate inflorescence
+\begin{itemize}
+\item Are plant life histories more sensitive to meristem or resource constraints in face of variability in season length? When season length is variable, branching creates variation in meristem number that in turn supports simultaneous growth and reproduction, and may be a a strategy that reduces variability in fitness. 
+\item How do meristem and resource constraints shape life history? Meristem and resource constraints will both influence fitness; the optimal strategy will be determined by the relative magnitude of the rate of meristem divisions and resource use efficiency.
+\end{itemize}
 
-I will address the following questions. \textbf{First}, I will use the models to determine whether including differentiation and growth of meristems reduces the likelihood of obtaining a strategy with an instantaneous switch \cite{cohen1971}. Put another way, are graded allocation strategies optimal when vegetative and reproductive growth are coupled \cite{Fox1992}? \textbf{Second}, I will look at the control strategies of decisions (e.g. meristem division) and the cumulative impact on control of resource budget. Do the control strategies of meristem decisions (e.g. bang-bang) translate to resource budgets (also being bang-bang?) \cite{Fox1992}? \textbf{Third}, I will ask when plants are more likely to be resource versus meristem limited. Specifically, I will focus on how the optimal strategy changes with increasing levels of environmental variation; are plants likely to be meristem limited in scenarios with high levels of uncertainty about season length in order to maintain the ability to capitalize on those longer seasons? Wyatt, Schemske, Stebbins, Salomonson 1994 
+\item Questions about optimal control
+\begin{itemize}
+\item I will use the models to determine whether including differentiation and growth of meristems reduces the likelihood of obtaining a strategy with an instantaneous switch (\cite{cohen1971}). Put another way, are graded allocation strategies optimal when vegetative and reproductive growth are coupled \cite{fox1992a}? 
+\item I will look at the control strategies of decisions (e.g. meristem division) and the cumulative impact on control of resource budget. Do the control strategies of meristem decisions (e.g. bang-bang) translate to resource budgets (also being bang-bang?) (\cite{fox1992a})? 
+\item I will ask when plants are more likely to be resource versus meristem limited. Specifically, I will focus on how the optimal strategy changes with increasing levels of environmental variation; are plants likely to be meristem limited in scenarios with high levels of uncertainty about season length in order to maintain the ability to capitalize on those longer seasons? (\cite{wyatt1982,schemske1980,stebbins1974,salomonson1994})
+\end{itemize}
 
-% One way of using these models would be to ask about the optimal strategies under different allocation rules. What is the best strategy when there are no meristems? What is the best strategy when the rates are the same but there are meristems? A model of resource allocation decisions will inevitably produce trade-offs that are the result of resource limitation. Will a model of meristem allocation decisions inevitably produce trade-offs that are the result of meristem limitation? 
+\item Questions about the optimal strategies under different allocation rules
+\begin{itemize}
+\item What is the best strategy when there are no meristems? 
+\item What is the best strategy when the rates are the same but there are meristems? 
+\item A model of resource allocation decisions will inevitably produce trade-offs that are the result of resource limitation. Will a model of meristem allocation decisions inevitably produce trade-offs that are the result of meristem limitation? 
+\end{itemize}
+
+\item Distinguish meristem versus resource allocation as the trade-off shaping life history evolution.
+\begin{itemize}
+\item Geber, Fox, Lehtila and Larsson
+\item Define conditions for meristem vs. resource limitation.
+\item Set up boundary conditions or test cases that demonstrate meristem vs. resource limitation.
+\end{itemize}
+
+\item Does including development lead to bang-bang control or graded allocation, and how does this depend on development mode?
+\begin{itemize}
+\item Hypotheses: Cohen, King and Roughgarden, Fox, Iwasa 
+\item Recover optimal controls.
+\item Compare results to the strategies from the Cohen or King and Roughgarden models. 
+\end{itemize}
+
+\item Explore the effect of environmental variation on flowering time via development.
+\begin{itemize}
+\item Hypotheses: \cite{wyatt1982,stebbins1974,prusinkiewicz2007}
+\end{itemize}
+
+\item Predictions about season length and variability in season length
+\begin{itemize}
+\item I expect that longer seasons favor branching (\cite{geber1990a}). 
+\item As the end of the season becomes more unpredictable, it might become advantageous to have multiple branches, some of which can produce flowers and others which might still be producing leaves (\cite{geber1990a}). 
+\item  I also expect this effect to be less pronounced for plants which produce inflorescences than single flowers (\cite{bonser2006}), as inflorescences should provide additional flexibility in how many flowers to produce per reproductive meristem (\cite{bonser2006,salomonson1994}).
+\item "a particular plant morphology is the product of developmental decisions about the number and types of metamers, and thus branches produced. Is carbon availability critical to such decisions, and if so, at what level of morphological organization is its availability assessed?" 
+\item Developmental decisions are made so as to maintain a positive carbon balance within a physiological  unit (\cite{watson1984}). When reproductive and vegetative branch formation compete for the same meristems, the development of reproductive branches will reduce the number of vegetative branches that can form (\cite{watson1984a}). Even if reproductive branches may be able to support themselves, forming them may reduce ultimate carbon balance because they are unlikely to contribute excess assimilate. Life history theory for animals does not apply to plants - the assumptions are not valid for plants where elaborating the aboveground structure can pay for its own cost. "predictions about a plant's behavior in different environments will vary according to the time period in which carbon availability acts as a developmental constraint, the degree to which translocation of assimilate is architecturally constrained, and the extent to which structures differ in their capacity to be carbon-autonomous." (\cite{watson1984}).
+\item Flowering in plants is correlated with rosette size - does this reflect the availability of stored assimilate to support maturation of the inflorescence OR does it reflect the development of sufficient leaves to support the inflorescence with current assimilate?
+\end{itemize}
+
+\item Predictions in terms of model parameters
 
 \begin{itemize}
 
@@ -231,8 +311,6 @@ I will address the following questions. \textbf{First}, I will use the models to
 
 \item When are resource allocation models appropriate for understanding the developmental decisions that plants make? When are resource allocation models insufficient for understanding the developmental decisions that plants make?
 
-% \item If it's possible to add herbivore pressure into the model, what kind of herbivory favors particular life history strategies? Comparisons could be between leaf herbivory (total leaf area that constrains rate of division), meristem herbivory (primary meristems are required for flowering), and floral herbivory/seed predation (directly on floral meristems)?
-
 % \item Hypothesis: species with indeterminate flowering may have stronger apical dominance when undamaged than species with determinate flowering when undamaged. Indeterminate flowering species may thus show stronger compensatory responses than determinate flowering species. (Adhikari Russell 2014). This could be tested by selecting for an optimal strategy under no herbivory for undamaged vs. damaged species, and then tracking how the strategy responds to imposing herbivory. This might work if the probability of meristem division is lower (stronger apical dominance) in indeterminate flowering species and the probability of meristem division is higher (weaker apical dominance) in determinate flowering species. 
 
 % \item  Weak apical dominance = higher probability of meristem division. Increase in resources would break dominance and activate axillary meristems. (Wise Abrahamson)
@@ -241,39 +319,84 @@ I will address the following questions. \textbf{First}, I will use the models to
 
 \end{itemize}
 
-Parker and Maynard-Smith (1990) describe how comparative studies and quantitative genetics can be used in conjunction with optimization to understand phenotypes. Specifically, they suggest that quantitative genetics can be used to identify constraints that are relevant for optimization models. Comparative methods can then  be used to test the predictions of those models. Here's a quote: "discovery of a genetic covariance can indicate presence of a developmental constraint that must be taken into account when formulating an optimization model". Experiments and interspecies comparisons can also help discover these constraints. 
-
-Various lines of evidence exist that point to constraints. First, there are experiments that show genetic covariance/correlation of flowering time and meristem number/tiller number. We have data from plants from different habitats (e.g. Geber 1990, Schmitt et al. 1993), from RILs (e.g. Haselhorst et al. 2011), from the result of selection experiments (e.g. Mitchell-Olds 199x?). Also Duffy et al. 1999, Kudoh et al. 2002, Watson 1984, Diggle 1993, Gardner and Latta 2008, Latta and Gardner 2009, Austen et al.  2014, Friedman et al. 2015, Rubin et al. 2018, van Tiendern 1996. Second, we have studies of development with mutants/knock-outs in Arabidopsis: Bradley et al. 1997, Karami et al. 2020, Melzer et al. 2008, Baumann et al. 2015. These experiments show that modifying flowering time genes (e.g. tfl) has an effect on the number of meristems, establishing that there is pleiotropy. Third, we have studies focusing on developmental stages (e.g. Baker and Diggle 2011). Crop selection (
-
-Here are some expectations: early flowering reduces meristem number. Late flowering increases meristem number. Environmental risk (e.g. dry habitats) promote the evolution of annuals and early flowering. This could be an interspecific comparison (within genera) or intraspecific (populations in riskier habitats flower earlier). Annuals derive from perennial ancestors (phylogenetic).
-
-Goals: connect vegetative branching, inflorescence development, trade-offs, and flowering time. Distinguish meristem versus resource limitation as the trade-off shaping life history evolution. Explore the effect of environmental variation on flowering time via development. Does including development lead to bang-bang control or graded allocation, and how does this depend on development mode.
-
+\item More predictions about flowering time and meristems
 \begin{itemize}
-\item Distinguish meristem versus resource allocation as the trade-off shaping life history evolution.
-\begin{itemize}
-\item Geber, Fox, Lehtila and Larsson
-\item Define conditions for meristem vs. resource limitation.
-\item Set up boundary conditions or test cases that demonstrate meristem vs. resource limitation.
-\end{itemize}
-
-\item Does including development lead to bang-bang control or graded allocation, and how does this depend on development mode.
-\begin{itemize}
-\item Hypotheses: Cohen, King and Roughgarden, Fox, Iwasa 
-\item Recover optimal controls.
-\item Compare results to the strategies from the Cohen or King and Roughgarden 00models. 
-\end{itemize}
-
-\item Explore the effect of environmental variation on flowering time via development.
-\begin{itemize}
-\item Hypotheses: Stebbins 1974, Wyatt 1982, Prusienkiewicz et al. 2007, 
+\item Early flowering reduces meristem number and late flowering increases meristem number. 
+\item Environmental risk (e.g. dry habitats) promote the evolution of annuals and early flowering. This could be an interspecific comparison (within genera) or intraspecific (populations in riskier habitats flower earlier). 
+\item Annuals derive from perennial ancestors (phylogenetic).
 \end{itemize}
 
 \end{itemize}
+\doublespace
+
+
+
+
+
+
+
+\subsection{Overview of dynamic optimization (assumptions, predictions, goals)}
+
+Life history theory typically assumes that trajectories of growth and reproduction are shaped by resource allocation decisions. Descriptions of development (Figure \ref{fig:transitions-determinate} and \ref{fig:transitions-indeterminate}) highlight how growth and fecundity depend on meristem production. Models that do not explicitly represent resource and development can not distinguish between the origin of tradeoffs. See \cite{white2016} for a complementary perspective on sources and sinks in plant growth and \cite{korner2015} for a review on how sinks might often limit plant growth. \cite{fox1992a} suggests allometric models are not sufficient and models that incorporate development will be necessary.
+
+A key assumption of the classic models is that plants are making allocation decisions about carbon, which is assumed to be the limiting resource. Although this assumption has been extended to include other nutrients, plant development complicates the picture. Because plants have modular structures, vegetative and reproductive growth are coupled insofar as plant architecture limits the total potential number of flowers or inflorescences. More generally, whether a plant is in a vegetative or reproductive phase is the product of decisions about the fate of primary or axillary meristems. This perspective aligns with a source-sink perspective on plant growth that suggests potential photosynthesis is not the sole determinant of plant growth but that plant growth is instead a balance of source (photosynthate) and sinks (maintenance, organ production, etc.) \cite{korner2015,white2016}.
+
+A shared assumption of reproductive allocation models, dynamic optimization models, and evolutionary demographic theory is that demographic parameters are themselves parts of organisms (\cite{fox1990}, p 1420). However, the representation of organisms in these models is nonetheless an abstraction. In particular, they treat growth and reproduction as independent components of an organism's life history to which some fraction of a limiting resource can be allocated. (\cite{fox1990}, p 1407) outlines three key points to why its important that development couples reproduction and growth for understanding how plants respond to drought. First, the models above assume that the reproduction and growth are independent. Second, developmental coupling is invariant among populations suggesting similar responses to the environment. 
+
+Modifications to original models include varying functions for productivity and reproduction (e.g. seasonal pattern, overlap or not), tissue loss and maintenance costs, multiple organs, allocation to storage, different types of survivorship curves, allometric relationships of reproductive to vegetative mass, and environmental stochasticity. The value in these models comes from an ability to explore how allocation decisions respond to different assumptions about variables such as resource use or variability in season length. 
+
+\singlespace
+\begin{itemize}
+
+\item Cohen 1971: derives bang-bang control; maximizes arithmetic mean yield; does not derive analytical solution for maximizing geometric mean
+\item Cohen 1976: constant environment, maximize arithmetic mean, ... [what are key conclusions here?]; also considers describing survival by a decreasing function and finds bang-bang
+\item Vincent and Pulliam 1980: analyzes Cohen 1971, generalizes the model; considers 2 photosynthate production functions (linear + nonlinear, saturating), both predict bang-bang; also analyzes optimal leaf toxin allocation
+\item Schaffer, Inouye, Whittam 1982: seasonal variation in photosynthesis/storage
+\item King and Roughgarden 1982: introduces random variation in season length; maximizes geometric mean fitness; builds on C71; obtains graded control, basis for Fox 92, Lindh 16
+\item King and Roughgarden 1982: includes tissue loss (herbivory); Rathcke and Lacey (84) claim as accurate
+\item Chiariello and Roughgarden 1982: includes tissue loss (herbivory), seasonal variation in assimilation/storage
+\item Fox 1992: modifies photosynthate production function to be time-varying (with a peak) and looks at different survivorship curves
+\item Fox 1992: reviews assumptions of resource allocation models; develops allometric model (cf Lindh 2016); suggests development needs to be incorporated
+\item Shitaka and Hirose 1993:
+\item Johansson et al. 2013: "the seasonal distribution of productivity (e.g. temperature and precipitation) can affect the size and even the direction of the optimal response of the flowering time to certain types of environmental change, such as increased productivity or increased season length" (Lindh et al. 2016), "assumed that plant growth rate is proportional to the vegetative mass during the growth season" (Lindh et al. 2016)
+\item Lindh et al. 2016: modifies KR82 by making growth exponential, logistic, or WBE (general constrained or allometric); also in appendix shows bang-bang control with exponentially decreasing survival corresponding to constant mortality
+
+\end{itemize}
+\doublespace
 
 \section{General approach}
 
+\singlespace
+\begin{itemize}
+\item Describing plant development and branching using differential equations
+
+\begin{itemize}
+\item Various authors have proposed considering plants as a population of subunits (e.g. \cite{white1979}).
+\item Plant architecture can be described using L-systems (\cite{prusinkiewicz2007}) but here we do not explicitly represent branching but rather the population of plant parts that result from branching. This is analogous to an approach modeling cell divisions using differential equations (\cite{itzkovitz2012}).
+\end{itemize}
+
+\item We developed differential equations that capture the basic processes of plant development 
+
+\begin{itemize}
+\item Assumed key step limiting steps were \hl{review} (\cite{fox1992})
+\item Followed dichotomous characterization of inflorescence development (\cite{kellogg2000}
+\item Key transition was from producing vegetative to inflorescence meristems, as suggested by developmental studies (e.g. \cite{bradley1997}).
+\item Interpretation of conversion efficiency is based on physiological interpretation (\cite{ackerly1999})
+\item Interpretation of per-capita rate of meristem division is based on plastochron index
+\end{itemize}
+
+\end{itemize}
+\doublespace
+
 We took the following approach to solving the problem outlined above. First, we sought to develop differential equations that capture the basic processes of plant development that are relevant to our questions. To accomplish this goal, we reviewed existing literature on plant development, models of plant development. Second, we specified the optimal control problem and goals. This step included defining Hamiltonian for cases with and without state variable constraints. Third, we solved the optimal control for the case without state variable constraints. We took this step in order to develop intuition about the system and to determine initial conditions for the numerical solution. Finally, we implemented a numerical algorithm to obtain solutions to the optimal control problem. 
+
+Here, we apply these ideas to develop a system of ordinary differential equations that describes the dynamics of plant development and constrains growth by the availability of photosynthate. This approach places the allocation decisions at the level of meristems (decisions about meristem fate) and leaves flexibility about much these decisions are limited by photosynthate. In classic models, any quantity of vegetative biomass can support unlimited primary meristem divisions which can in turn  contribute to unlimited number of floral meristems.
+
+Resource limitation generates negative correlations between growth and fecundity within a life stage because both compete for resources. In a situation where resources are limited, we might expect to see trade-offs that are the result of resource allocation decisions (we wouldn't see these decisions when resources are not limited).
+
+Meristem limitation generates positive correlations between growth and fecundity within a life stage because both depend on meristem production. In a situation where meristems are limited, we might expect to see trade-offs that are the result of meristem allocation decisions (we wouldn't see these decisions when meristems are not limited). 
+
+Goals: connect vegetative branching, inflorescence development, trade-offs, and flowering time. Distinguish meristem versus resource limitation as the trade-off shaping life history evolution. Explore the effect of environmental variation on flowering time via development. Does including development lead to bang-bang control or graded allocation, and how does this depend on development mode.
 
 \section{Models of plant development}
 
@@ -281,111 +404,19 @@ We took the following approach to solving the problem outlined above. First, we 
 
 Development in flowering plants can be characterized as a series of decisions at the meristems \cite{kellogg2000}. The primary shoot divides at the shoot apical meristem (SAM) and produces additional primary shoot meristems (main branch) and axillary meristems (AM), each of which is subtended by a leaf. The axillary meristems can develop into an axillary branch or remain quiescent. Each axillary branch has similar dynamics as the primary shoot meristem (though potentially at different rates). The shoot apical meristem is converted to an inflorescence meristem (IM) through internal or external signals. In turn, inflorescence meristems give rise to floral meristems (FM). 
 
-In plants with determinate inflorescences, the inflorescence meristem is eventually converted to a terminal flower, which consumes the meristem. Tomato is an example of a plant with a determinate inflorescence and sympodial growth \cite{Park2012}. In plants with indeterminate inflorescences, the inflorescence meristem only produces flowers at axillary positions. \textit{Arabidopsis} is an example of a plant with an indeterminate inflorescence and monopodial growth \cite{bradley1997a}. 
+In plants with determinate inflorescences, the inflorescence meristem is eventually converted to a terminal flower, which consumes the meristem. Tomato is an example of a plant with a determinate inflorescence and sympodial growth \cite{park2012}. In plants with indeterminate inflorescences, the inflorescence meristem only produces flowers at axillary positions. \textit{Arabidopsis} is an example of a plant with an indeterminate inflorescence and monopodial growth \cite{bradley1997}. 
 
-The `rules' characterizing plant development have been used to model the evolution of inflorescence architecture \cite{Prusinkiewicz2007}. The meristem dynamics that underly inflorescence architecture are also likely involved in organizing branching architecture \cite{Park2012}. Lindenmayer systems (L-systems) are a grammar that is capable of reconstructing the branching architecture of various organisms (e.g. algae, bacteria, plants). L-system statements highlight the overlap in decision rules that determine branching in vegetative and reproductive growth. 
+The `rules' characterizing plant development have been used to model the evolution of inflorescence architecture \cite{prusinkiewicz2007}. The meristem dynamics that underly inflorescence architecture are also likely involved in organizing branching architecture \cite{park2012}. Lindenmayer systems (L-systems) are a grammar that is capable of reconstructing the branching architecture of various organisms (e.g. algae, bacteria, plants). L-system statements highlight the overlap in decision rules that determine branching in vegetative and reproductive growth. 
 
-\cite{cohen1971} identified development as a factor that could help explain why an instant switch in allocation from vegetative to reproductive growth is rarely observed. Development connects growth and reproduction, and constrains how plants can shift allocation to reproduction \cite{fox1992}. Life history models for plants have not included developmental processes, which may limit their applicability and interpretation \cite{fox1992}. For example, it may be easier to test the predictions from models that separate meristems and biomass. Also, models that do not represent development can not determine whether allocation patterns are the result of selection on developmental decisions or resource allocation directly. The broader issue here is whether resource-based models can adequately represent plant life histories, or whether it is necessary to include development to describe the biological processes underlying life histories \cite{fox1992}. \hl{need to work on this paragraph}
+\cite{cohen1971} identified development as a factor that could help explain why an instant switch in allocation from vegetative to reproductive growth is rarely observed. Development connects growth and reproduction, and constrains how plants can shift allocation to reproduction \cite{fox1992a}. Life history models for plants have not included developmental processes, which may limit their applicability and interpretation \cite{fox1992a}. For example, it may be easier to test the predictions from models that separate meristems and biomass. Also, models that do not represent development can not determine whether allocation patterns are the result of selection on developmental decisions or resource allocation directly. The broader issue here is whether resource-based models can adequately represent plant life histories, or whether it is necessary to include development to describe the biological processes underlying life histories \cite{fox1992a}. \hl{need to work on this paragraph}
 
-I first describe resource allocation models \cite{cohen1971,King1982a}. I then describe how I represent meristem and resource allocation in models for plant life histories. These models are developed from ideas in \cite{fox1992,kellogg2000,Prusinkiewicz2007,itzkovitz2012}. First, I write models for plants with determinate inflorescences. Next, I write models for plants with indeterminate inflorescences. 
+I first describe resource allocation models \cite{cohen1971,king1982a}. I then describe how I represent meristem and resource allocation in models for plant life histories. These models are developed from ideas in \cite{fox1992a,kellogg2000,prusinkiewicz2007,itzkovitz2012}. First, I write models for plants with determinate inflorescences. Next, I write models for plants with indeterminate inflorescences. 
 
 %The main branching systems that are present in nature are monopodial and sympodial. In monopodial systems, the apex remains active. In sympodial systems, the apex terminates at some point. 
 
-\subsection{Resource allocation models}
-
-The plant growth model developed by \cite{cohen1971} and later elaborated by \cite{King1982a} represents resources allocated to vegetative and reproductive pools. I summarize the model in equations \ref{eqn:de-resource} and \ref{eqn:constraints-resource} and state diagram \ref{fig:state-resource}. In the model, $x_1$ and $x_2$ are the weights of the vegetative and reproductive parts of the plant, respectively. Photosynthesis is assumed to be linearly related to the weight of the vegetative part of the plant. The control function $u(t)$ is the proportion of photosynthate that is allocated to the vegetative pool.
-
-\cite{King1982a} propose that the long-term, optimal reproductive strategy will maximize the geometric mean of reproductive success. They propose that the function that should be optimized is the expectation of the log of fitness, $ J = (1/T) \int_{0}^{T} \mathrm{log}(x_2) \dd {t}$. They used the following system of equations:
-%
-\begin{align}
-\dot{x_1} & = u(t) x_1 \nonumber \\
-\dot{x_2} & = (1-u(t)) x_1 
-\label{eqn:de-resource}
-\end{align}
-
-\noindent subject to
-%
-\begin{align}
-0 \leq u&(t)  \leq 1 \nonumber \\
-0  < x_1,&\ 0  \leq x_2 
-\label{eqn:constraints-resource}
-\end{align}
-
-\begin{figure}[!h]
-\centering
-\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
-                    semithick]
-  \tikzstyle{every state}=[fill=blue!10,draw]    
-   \node [state] (a) { $x_1$ };
-    \node [state] (c) [right of=a] {$x_2$};
-    \path[dotted, ->] (a) edge node {$(1-u(t))$} (c);
-    \path[dotted] (a) edge [loop above] node {$u(t)$} (a);
-\end{tikzpicture}
-  \caption{State diagram describing the photosynthate allocation model.}
-  \label{fig:state-resource}
-\end{figure}
-
-\iffalse
-King and Roughgarden describe that the model can be transformed to include a rate of growth ($r$) by substituting $t' = rt$. The differential equations then become
-%
-\begin{align}
-\dot{x_1} & = u(t) r x_1 \nonumber \\
-\dot{x_2} & = (1-u(t)) r x_1 
-\label{eqn:transform-resource}
-\end{align}
-
-The growth rate constant $r$ in equation \ref{eqn:transform-resource} summarizes birth and death processes, $r = b - d$. This will be useful in a second. 
-
-The model for determinate inflorescences can be reduced to a resource allocation model as follows (compare Figure \ref{fig:state-resource} and \ref{fig:state-determinate-transform}). First, primary meristems divide into primary meristems and vegetative meristems. This is the process of vegetative growth. It's also important to note that in the resource allocation model, flowering draws on vegetative biomass accumulated during vegetative growth but does not deplete vegetative biomass. The second kind of division is thus when primary meristems divide into primary meristems and floral meristems. So we can write the growth rate constant as the difference between meristem `birth' rate ($\beta_1$) and `death' rate ($\alpha$): $r = \beta_1 - \alpha$. If we then remove the inflorescence meristem pool from the model in Figure \ref{fig:state-determinate}, we end up with the equivalent of the resource model. 
-
-A model for which $ r = 1 $ is one (for example) in which two primary meristems are produced and one is removed during each division (through death or quiescence). From a meristem perspective, this means accumulating meristems along an axis. From a resource perspective, this means accumulating a pool of photosynthetically active material. When $p(t)<1$, the interpretation would be that either some of those meristems begin to flower (and having more meristems means more flowering) or that resources are available to support reproduction. 
-
-\begin{figure}[hbt!]
-\centering
-\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=7cm,
-                    semithick]
-  \tikzstyle{every state}=[draw]    
-   \node [state, fill=darkspringgreen] (a) { $P$ };
-    \node [state, lightgray] (c) [right of=a] {$I$};
-    \node [state, fill=orange] (d) [right of=c] {$F$};    
-    \node [state, fill=red] (e) [below = 3cm of a] {$V$};    
-    
-    \path[dotted, ->,lightgray] (a) edge node {$(1-p(t)) \beta_1  $} (c);
-    \path[dotted] (a) edge [loop above] node {$ 2 p(t)  (\beta_1 - \alpha) $} (a);
-    %\path[dotted] (c) edge [loop above] node {$\beta_2$} (c);   
-    \path[dotted, ->,lightgray] (c) edge node {$\beta_2$} (d);    
-    \path[dotted] (a) edge[bend right] node {$( 1-p(t) ) (\beta_1 - \alpha) $} (d);
-    \path (a) edge [bend right] node {$ p(t) (\beta_1 - \alpha) $} (e);
-    \path[lightgray] (a) edge [bend left] node {$ ( 1-p(t) )(\beta_1 - \alpha)  $} (e);
-
-\end{tikzpicture}
-  \caption{State diagram describing the dynamics for plants with determinate inflorescences reduced to resource allocation model.}
-  \label{fig:state-determinate-transform}
-\end{figure}
-
-Figure \ref{fig:state-determinate-transform} shows how the meristem allocation model contains the resource allocation model. By removing inflorescence meristems I limit the system to two types of divisions. In the first, primary meristems divide and produce more primary meristems (and leave behind a vegetative meristem). This division happens with probability $p(t)$. In the second, primary meristems divide and produce floral meristems. This happens with probability $1-p(t)$. 
-
-The goal of this optimization problem is to maximize $F$. The variable in the model is $T$, the length of the season. The model is described by the following system of differential equations:
-%
-\begin{align}
-\dot{P} & = 2 r p(t) P - r p(t) P \nonumber \\
-\dot{V} & = r p(t) P \nonumber \\
-\dot{F} & = r ( 1-p(t) ) P 
-\label{eqn:de-determinate}
-\end{align}
-
-The differential equations describe the dynamics of three state variables: $P$, $V$, and $F$. I'm not sure where to go from here.
-
-\textcolor{red}{SPE: To make meristem-based models into resource-allocation models, say that each division requires a certain amount of resources, so the rate at which they can happen is limited by the rate of photosynthesis. Instead of being parameters, $\beta_1$ and $\beta_2$ would be control variables, with the additional constraint that the total resource investment in meristem divisions can't exceed the rate of photosynthesis, something like}
-
-\textcolor{red}{$c_1 \beta_1 p P + c_2 \beta_1 (1-p) P + c_3 \beta_2 I  \le \mathrm{constant}\times \mathrm{total\ leaf\ area} $}
-
-\textcolor{red}{and maybe upper limits on the maximum possible division rate. Not sure how total leaf area would be determined in this model - proportional to total number of primary meristems? GS: My thought is to have a fourth pool that is not dynamic (it is just added to in the same way as F) but accumulates parent meristems after divisions. This pool of parent meristems can set the total leaf area. New question: are the betas now proportions or free controls?}
-\fi
-
 \section{Determinate inflorescences}
 
-In plants with determinate inflorescences, the shoot apical meristem forms a terminal flower and an axillary bud \cite{bartlett2014}. In tomato, the primary shoot meristem converts to a floral meristem and a sympodial inflorescence meristem; this pattern is iterated to form the inflorescence \cite{Park2012}. 
+In plants with determinate inflorescences, the shoot apical meristem forms a terminal flower and an axillary bud \cite{bartlett2014}. In tomato, the primary shoot meristem converts to a floral meristem and a sympodial inflorescence meristem; this pattern is iterated to form the inflorescence \cite{park2012}. 
 
 I describe the developmental decisions in a plant with determinate inflorescences using three types of divisions (Figure \ref{fig:transitions-determinate}) \cite{itzkovitz2012}. First, a primary meristem can divide at the shoot apical meristem to give rise to two primary meristems: the main branch and an axillary bud. These divisions generate a vegetative, branching architecture. Second, a primary meristem can divide at the shoot apical meristem to give rise to an inflorescence meristem and a floral meristem. These divisions end vegetative growth and mark the transition from vegetative to reproductive growth along an axis. Third, an inflorescence meristem can divide into an inflorescence meristem and a floral meristem. These divisions are the only possible fate for inflorescence meristems. Using these categories assumes that there is no terminal division into two floral meristems. The end of season terminates flowering. This assumption is somewhat unrealistic because some plants do stop flowering. 
 
@@ -433,7 +464,6 @@ I describe the developmental decisions in a plant with determinate inflorescence
 % stem cell expansion
       \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2cm,
                     semithick]
-  %\tikzstyle{every state}=[fill=red,draw=none,text=white]
 
   \node[state, fill = green, draw = none,minimum size=.5cm] (A)                    {};
   \node[state, fill = orange, draw = none,minimum size=.5cm]         (C) [above =.9cm of A] {};
@@ -444,7 +474,6 @@ I describe the developmental decisions in a plant with determinate inflorescence
     \caption{Inflorescence meristem remaining an inflorescence meristem and generating a floral meristem}
   \end{subfigure}
         \caption{Meristem transitions in plants with determinate inflorescences.}
-    \label{fig:transitions-determinate}
 \end{figure}
 
 % new figure
@@ -508,7 +537,6 @@ I describe the developmental decisions in a plant with determinate inflorescence
     \caption{Inflorescence meristem remaining an inflorescence meristem and generating a floral meristem}
   \end{subfigure}
         \caption{Meristem transitions in plants with determinate inflorescences.}
-    \label{fig:transitions-determinate}
 \end{figure}
 
 I use these types of divisions/transitions to summarize the meristem dynamics for plants with determinate inflorescences in a system of equations with constraints (Equation \ref{eqn:de-determinate} and \ref{eqn:constraints-determinate}) and a state diagram (Figure \ref{fig:state-determinate}). In this model, $P$, $V$, $I$, and $F$ are the populations of primary, vegetative, inflorescence, and floral meristems, respectively. Primary meristems divide at a rate $\beta_1$. Inflorescence meristems divide at a rate $\beta_2$, and are thus converted to floral meristems at a rate $\beta_2$. Each division by an inflorescence meristem produces one inflorescence meristem and one floral meristem. The probability that a primary meristem divides into two primary meristems (branch and axillary meristem) and a vegetative meristem is given by the control function, $p(t)$. The probability that a primary meristem divides into a vegetative meristem, inflorescence meristem, and a floral meristem is given by $1-p(t)$. 
@@ -557,29 +585,6 @@ The goal of this optimization problem is to maximize $F$. The variable in the mo
   \caption{State diagram describing the dynamics for plants with determinate inflorescences.}
   \label{fig:state-determinate}
 \end{figure}
-
-\iffalse
-
-\begin{figure}[hbt!]
-\centering
-\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=7cm,
-                    semithick]
-  \tikzstyle{every state}=[draw]    
-   \node [state, fill=darkspringgreen] (a) { $P$ };
-    \node [state, fill=green] (c) [right of=a] {$I$};
-    \node [state, fill=orange] (d) [right of=c] {$F$};    
-    \path[->] (a) edge node {$(1-p(t))\beta_1 $} (c);
-    \path (a) edge [loop above] node {$ p(t)  \beta_1$} (a);
-    \path (c) edge [loop above] node {$\beta_2$} (c);   
-    \path[->] (c) edge node {$\beta_2$} (d);    
-    \path (a) edge[bend right] node {$( 1-p(t) ) \beta_1 $} (d);
-
-\end{tikzpicture}
-  \caption{State diagram describing the dynamics for plants with determinate inflorescences.}
-  \label{fig:state-determinate}
-\end{figure}
-
-\fi
 
 The equation $\dot{P}  = 2 \beta_1 p(t) P - \beta_1 p(t) P - ( 1-p(t) ) \beta_1 P $ describes how primary meristems that divide into two primary meristems add to the pool $P$ in proportion to size of the pool of primary meristems. These divisions also add to the vegetative meristem pool $V$. The process here is that a primary meristem unit becomes a vegetative meristem, and gives rise to two new primary meristems. Primary meristems are lost from the primary meristem pool when divisions give rise to inflorescence and floral meristems.
 
@@ -660,7 +665,7 @@ The adjoint equations are
 
 \section{Indeterminate inflorescences}
 
-In plants with indeterminate inflorescences, the inflorescence meristem only produces flowers at axillary positions. For example, in \textit{Arabidopsis} the primary shoot meristem converts to an inflorescence meristem that bears floral meristems in axillary positions \cite{bradley1997a}.
+In plants with indeterminate inflorescences, the inflorescence meristem only produces flowers at axillary positions. For example, in \textit{Arabidopsis} the primary shoot meristem converts to an inflorescence meristem that bears floral meristems in axillary positions \cite{bradley1997}.
 
 I describe the developmental decisions in a plant with indeterminate inflorescences using four types of divisions ((Figure \ref{fig:transitions-indeterminate}). First, a primary meristem can divide at the shoot apical meristem to give rise to two primary meristems: the main branch and an axillary bud. These divisions lead to a vegetative, branching architecture. Second, a primary meristem can divide at the shoot apical meristem to give rise to a primary meristem and an inflorescence meristem: a branch and an inflorescence. These divisions  produce either (1) an axillary inflorescence or (2) an inflorescence along the main branch and a vegetative, primary meristem that can continue branching. Third, a primary meristem can divide at the shoot apical meristem to give rise to two inflorescence meristems. Fourth, an inflorescence meristem can divide to give rise to an inflorescence meristem and a floral meristem. Inflorescence meristems have a single fate: they produce a branch with floral meristems in axillary positions.
 
@@ -746,7 +751,6 @@ I describe the developmental decisions in a plant with indeterminate inflorescen
     \caption{Inflorescence meristem remaining an inflorescence meristem and generating a floral meristem}
   \end{subfigure}\
         \caption{Meristem transitions in plants with indeterminate inflorescences.}
-        \label{fig:transitions-indeterminate}
 \end{figure}
 
 I use these types of divisions/transitions to summarize the meristem dynamics for plants with indeterminate inflorescences in a system of equations with constraints (Equation \ref{eqn:de-indeterminate} and \ref{eqn:constraints-indeterminate}) and a state diagram (Figure \ref{fig:state-indeterminate}). In this model, $P$, $V$, $I$, and $F$ are the populations of primary, vegetative, inflorescence, and floral meristems, respectively. 
@@ -866,188 +870,6 @@ Another point that I need to elaborate on is how vegetative pools and meristem p
 \subsection{Numerical algorithm}
 
 
-\section*{Numerical Approach}
-
-The canonical methods used to solve optimal control problems are the Pontryagin maximum principle and the Hamilton-Jacobi-Bellman equations. Despite the power of these analytic approaches, it remains challenging to apply them to problems with more than a handful of states or multiple types of constraints. Numerical methods to solve optimal control problems include forward-backward sweep method \hl{(Lenhart and Workman)}, and discretize-then-optimize. Here, we use a form of the latter, the \textbf{control parameterization} method. 
-
-We attempted to solve the optimal control using a forward-backward sweep method (Lenhart and Workman 20XX) but were unable to define the appropriate adjoint equations for the constrained problem. We then applied a form of the `control parameterization method` described by \cite{lin2014}.
-
-We wrote the function `control`, which computes values of derivatives for state variables in the ODE system, the accumulated penalty for violating constraints, and the accumulated objective function. We solved our ordinary differential equations using the R package \textbf{deSolve} \hl{(sotaert 2014)}. Our equations exhibited stiffness so we applied the Adams methods \hl{(Sotaert)}. Although \textbf{deSolve}'s default integration method (lsoda) detects stiffness properties, we followed the suggestion in \hl{Sotaert et al.} and selected the Adams method. We penalized values of the control that violated constraints by raising the absolute value of the difference of control values that lie outside the supported region to the power of 1.25. Originally, we squared this difference but this penalty is shallow for small errors and thus not differentiable. The code snippet below outlines the general structure of the control function.
-
-\begin{lstlisting}
-derivs = numeric(3);
-
-control <- function(t,y,parms,f1,f2,f3) {
-  
-  ## entries in y (system of ODEs)
-  X = y[1];
-  
-  ## Control intervals
-  u <- f(t);
-  
-  ## Apply positivity constraints, penalize if violated
-  ut = max(u,0); bad = abs(u-ut)^1.25; u = ut;
-  
-  ## Apply upper bound constraint, penalize if violated
-  ut = min(u,1); bad = bad + abs(u-ut)^1.25; 
-  
-  ## Derivative of state variable
-  derivs[1] =  u * X;
-  
-  ## Cumulative penalty
-  derivs[2] = bad;
-  
-  ## Cumulative objective function
-  derivs[3] = log(X);
-  
-  return(list(derivs));
-}
-
-\end{lstlisting}
-
-
-\cite{lin2014} provide an overview of the control parameterization method. In this approach, the control is approximated by a "linear combination of basis functions" which are often "piecewise-constant basis functions." In practice, this means that we divide our time horizon into an evenly spaced grid with $n$ points that has $n-1$ intervals. The control function is approximated by $n-1$ control intervals. The value on these intervals is optimized. The grid points remain fixed during optimization. In practice, we divide up our time horizon with grid points and generate a function that performs constant interpolation on the interval between the grid points. The code below demonstrates this procedure in R:
-
-\begin{lstlisting}
-## Generate grid points
-topt=seq(0,5,length=11); 
-
-## Generate random set of control values
-par = runif(length(topt),0.01,0.05); 
-
-## Generate function for interpolation
-f = approxfun(topt,par,rule=2);
-\end{lstlisting}
-
-We use the control intervals in our optimization routine. We write a function to be optimized. This function (optimfun) takes values for the control $\theta$ as its only argument. The control is used to generate the control intervals. The control intervals are used in combination with the initial conditions and model parameters to solve the differential equation that governs the evolution of the state variables (control). The function containing the differential equation also calculates an integrated constraint violation penalty, which sums across all violations of the state and parameter constraints. The function containing the differential equation also calculates the value of the objective function. The final value maximizes the objective function, and introduces a penalty for constraint violations and solutions with instability (oscillation).
-
-\begin{lstlisting}
-optim_fun = function(theta){
-  
-  ## Generate function for interpolation
-  f = approxfun(topt, theta, rule=2);
-  
-  ## Vectorize initial conditions and parameters
-  y0 = c(inits,other) 
-  
-  ## Solve ODE
-  out = ode(y=y0, times=seq(0,5,by=0.1), control, method=odemethod, parms=mParms, f=f);
-  
-  ## Get final value of constraint penalty
-  pen = out[nrow(out),"pen"]; # integrated constraint violation penalty 
-  
-  ## Get final value of objective function
-  obj = out[nrow(out),"obj"]; 
-  
-  ## Calculate penalty for instability
-  wiggly = diff(diff(tMat[,1])) + diff(diff(tMat[,2])) + diff(diff(tMat[,3])); 
-  
-  ## Sum up the value function
-  val = obj - pwt*pen - lambda*sum(wiggly^2)  ## SPE: sum instead of mean on wiggliness
-  return(-val)
-}
-\end{lstlisting}
-
-We initially considered a quadratic loss function to impose penalties for constraint violations. The quadratic loss function is added on to the objective function for optimization. We weight the penalty to deal with sharp changes in slope of the value function. The quadratic loss function is relatively shallow at small values, so we turned to a modified loss function, $\mathrm{abs}( f(x) - x )^{1.25} $. The function has a greater slope at small values but is smooth. The figure below shows the quadratic and modified loss function over large constraint violations, $(-3,3)$, and small constraint violations, $(-.1,.1)$. The solid lines are the unweighted loss functions (weight=1; quadratic is blue, modified is red). The dashed lines are the loss functions weighted by a constant of 10. 
-
-We started optimization with a smaller penalty for constraint violations (penalty = 1), which is similar to a penalty weight of 10 for a quadratic loss function at small values. After a first round of optimization, we imposed a larger penalty for constraint violation (penalty = 10).
-
-%%%%%%%%%%%%%
-% LOSS FUNCTIONS
-%%%%%%%%%%%%%
-\pgfmathdeclarefunction{quadraticloss}{1}{%
-  \pgfmathparse{#1*(x)^2}%
-}
-
-\pgfmathdeclarefunction{alternateloss}{1}{%
-  \pgfmathparse{#1*abs(x)^1.25}%
-}
-
- \begin{tikzpicture}
-    \begin{groupplot}[
-        group style={group size=2 by 1,
-                     %horizontal sep=2cm,
-			ylabels at = edge left,
-                     },
-                     %customaxis2,
-                     legend pos=north east,
-                   width=.4\textwidth,
-                           scale only axis,
-                     ]
-
- \nextgroupplot[
-  no markers, domain=-3:3, 
-  axis lines*=left, %xlabel=$x$, ylabel=$y$,
-        axis line style={draw=black},
-  every axis y label/.style={at=(current axis.above origin),anchor=south},
-  every axis x label/.style={at=(current axis.right of origin),anchor=west}
-  ]
-  \addplot [very thick,cyan!50!black] {quadraticloss(1)};
-  \addplot [dashed,cyan!50!black] {quadraticloss(10)};
-  \addplot [very thick,red!50!black] {alternateloss(1)};
-  \addplot [dashed,red!50!black] {alternateloss(10)};
-  %
- \nextgroupplot[
-  no markers, domain=-.1:.1, 
-  axis lines*=left, %xlabel=$x$, ylabel=$y$,
-        axis line style={draw=black},
-  every axis y label/.style={at=(current axis.above origin),anchor=south},
-  every axis x label/.style={at=(current axis.right of origin),anchor=west},
-  %xtick=\empty, ytick=\empty, %{4,6.5}
-  enlargelimits=true, clip=false, axis on top
-  ]
-  \addplot [very thick,cyan!50!black] {quadraticloss(1)};
-  \addplot [dashed,cyan!50!black] {quadraticloss(10)};
-  \addplot [very thick,red!50!black] {alternateloss(1)};
-  \addplot [dashed,red!50!black] {alternateloss(10)};
-    \end{groupplot}
-
-\end{tikzpicture}
-
-
-Finally, we initialize our optimization routine. \hl{In general, we use a combination of strategies to initialize the optimization routine. For some parameters, we randomly generate values on the support of the control functions (e.g. $0\leq u(t) \leq 1$). In other cases, we initialize our optimization with values from the analysis of unconstrained versions of our optimal control problem. We then set weights for the penalty we apply for constraint violations and instability. We choose to start with large penalties that decrease with each iteration of optimization; this has the effect of penalizing constraint violations early in the routine when the control is likely to be further from the optimum and reducing the weight of subsequent, smaller violations to the constraints.}
-
-\begin{lstlisting}
-
-## Randomly generate initial values for control
-par0 = runif(2*length(topt),0.01,0.05); 
-
-## Generate initial values for control from analysis of unconstrained problem
-# beta2 is maxed-out at the end in the unconstrained problem (from analysis of adjoint equations)   
-# so start with the max first
-par0 = c(par0, mParms[2]*seq(0,1,length=length(topt))^2) 
-
-## optimize: start with a large lambda, and decrease it with each iteration. 
-# pwt=1; lambda=0.2; fvals = numeric(5);  
-# SPE: large penalty weight, and large lambda at first 
-pwt=10; lambda=1; fvals = numeric(40);  
-
-\end{lstlisting}
-
-Once all of this machinery is in place, we proceed to iteratively solve our control problem. We take the following approach:
-
-\begin{itemize}
-\item Use the Runge-Kutta-4 method (rk4) for ODEs and Nelder-Mead for optimization (1 iteration).
-\item Reset the controls to lie within their constraints.
-\item Use the implicit Adams method (impAdams or impAdamsd) for ODEs and BFGS for optimization (1 iteration).
-\item \hl{Reset the controls to lie within their constraints. - do I do this here as well?}
-\item Enter an optimization loop. Within the loop:
-\subitem Use the implicit Adams method (impAdams or impAdamsd) for ODEs and Nelder-Mead for optimization.
-\subitem Reset the controls to lie within their constraints.
-\subitem Use the implicit Adams method (impAdams or impAdamsd) for ODEs and BFGS for optimization (1 iteration).
-\subitem Reduce the weight for lambda by half.
-\subitem \hl{Reduce the weight for constraint violation by half.} (?)
-
-\hl{What's the particular logic of this procedure - need to write a bit about this. }
-
-\end{itemize}
-
-\begin{lstlisting}
-
-fit = optim(par0, fn=optim_fun, method="Nelder-Mead",control = list(maxit=5000,trace=4,REPORT=1));
-
-\end{lstlisting}
-
 \clearpage
 \newpage
 
@@ -1055,7 +877,7 @@ fit = optim(par0, fn=optim_fun, method="Nelder-Mead",control = list(maxit=5000,t
 
 \subsection{Optimal strategies}
 
-I will use the models to determine whether including differentiation and growth of meristems reduces the likelihood of obtaining a strategy with an instantaneous switch \cite{Cohen1971}. Put another way, are graded allocation strategies optimal when vegetative and reproductive growth are coupled \cite{Fox1992}?
+I will use the models to determine whether including differentiation and growth of meristems reduces the likelihood of obtaining a strategy with an instantaneous switch \cite{cohen1971}. Put another way, are graded allocation strategies optimal when vegetative and reproductive growth are coupled \cite{fox1992a}?
 
 \subsection{Development patterns}
 
@@ -1073,7 +895,7 @@ Steve and I have discussed that the degree of resource or meristem limitation wo
 
 I will ask when plants are more likely to be resource versus meristem limited. Specifically, I will focus on how the optimal strategy changes with environmental variation; are plants likely to be meristem limited in scenarios with high levels of uncertainty about season length as a result of selection for the ability to capitalize on longer, if infrequent, seasons?
 
-In resource-only models (e.g. King and Roughgarden 1982), increasing variation in season length increases the proportion of the season in which the singular, graded control is optimal.
+In resource-only models (e.g. \cite{king1982a}), increasing variation in season length increases the proportion of the season in which the singular, graded control is optimal.
 
  \begin{figure}[!h]
        \includegraphics[page=1,width=.75\textwidth]{../figures/kingRoughgardenNormalSummary.pdf}  
@@ -1093,7 +915,8 @@ Below, I've included a plot of how end of-season fitness changes as a function o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \bibliographystyle{/Users/gregor/Dropbox/bibliography/styleFiles/ecology} 
-\bibliography{/Users/gregor/Dropbox/bibliography/optimal-control-lit}
+%\bibliography{/Users/gregor/Dropbox/bibliography/optimal-control-lit}
+\bibliography{/Users/gregor/Dropbox/bibliography/chapter-2}
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

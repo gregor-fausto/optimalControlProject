@@ -1,44 +1,146 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{55}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Ackerly(1999)}]{ackerly1999}
+Ackerly, D. 1999.
+\newblock Self-shading, carbon gain and leaf dynamics: a test of alternative
+  optimality models.
+\newblock Oecologia, {\bf 119}:300--310.
+\newblock Tex.ids= ackerly1999a.
+
+\bibitem[{Baker and Diggle(2011)}]{baker2011}
+Baker, R.~L. and P.~K. Diggle. 2011.
+\newblock Node-specific branching and heterochronic changes underlie
+  population-level differences in {Mimulus} guttatus ({Phrymaceae}) shoot
+  architecture.
+\newblock American Journal of Botany, {\bf 98}:1924--1934.
+
+\bibitem[{Baker et~al.(2014)Baker, Scherbatskoy, Lay, and Diggle}]{baker2014}
+Baker, R.~L., E.~Scherbatskoy, C.~R. Lay, and P.~K. Diggle. 2014.
+\newblock Developmental {Plasticity} of {Shoot} {Architecture}: {Morphological}
+  {Expression} and {Ecologically} {Relevant} {Onset} in {Locally} {Adapted}
+  {Populations} of \textit{{Mimulus} guttatus}.
+\newblock International Journal of Plant Sciences, {\bf 175}:59--69.
 
 \bibitem[{Bartlett and Thompson(2014)}]{bartlett2014}
 Bartlett, M.~E. and B.~Thompson. 2014.
 \newblock Meristem identity and phyllotaxis in inflorescence development.
 \newblock Frontiers in Plant Science, {\bf 5}.
 
-\bibitem[{Bradley(1997)}]{bradley1997a}
-Bradley, D. 1997.
+\bibitem[{Bonser and Aarssen(1996)}]{bonser1996}
+Bonser, S.~P. and L.~W. Aarssen. 1996.
+\newblock Meristem allocation: {A} new classification theory for adaptive
+  strategies in herbaceous plants.
+\newblock Oikos, {\bf 77}:347--352.
+
+\bibitem[{Bonser and Aarssen(2006)}]{bonser2006}
+Bonser, S.~P. and L.~W. Aarssen. 2006.
+\newblock Meristem allocation and life-history evolution in herbaceous plants.
+\newblock Canadian Journal of Botany, {\bf 84}:143--150.
+
+\bibitem[{Bradley et~al.(1997)Bradley, Ratcliffe, Vincent, Carpenter, and
+  Coen}]{bradley1997}
+Bradley, D., O.~Ratcliffe, C.~Vincent, R.~Carpenter, and E.~Coen. 1997.
 \newblock Inflorescence {Commitment} and {Architecture} in {Arabidopsis}.
 \newblock Science, {\bf 275}:80--83.
+
+\bibitem[{Chiariello and Roughgarden(1984)}]{chiariello1984}
+Chiariello, N.~R. and J.~Roughgarden. 1984.
+\newblock Storage {Allocation} in {Seasonal} {Races} of an {Annual} {Plant}:
+  {Optimal} {Versus} {Actual} {Allocation}.
+\newblock Ecology, {\bf 65}:1290--1301.
 
 \bibitem[{Cohen(1971)}]{cohen1971}
 Cohen, D. 1971.
 \newblock Maximizing final yield when growth is limited by time or by limiting
   resources.
 \newblock Journal of Theoretical Biology, {\bf 33}:299--307.
-\newblock Tex.isbn: 0022-5193 tex.mendeley-tags: optimal control.
 
-\bibitem[{Cole(1954)}]{Cole1954}
+\bibitem[{Cohen(1976)}]{cohen1976}
+Cohen, D. 1976.
+\newblock The optimal timing of reproduction.
+\newblock The American Naturalist, {\bf 110}:801--807.
+
+\bibitem[{Cole(1954)}]{cole1954}
 Cole, L.~C. 1954.
 \newblock The population consequences of life history phenomena.
 \newblock The Quarterly review of biology, {\bf 29}:103--137.
-\newblock Tex.isbn: 00335770.
 
-\bibitem[{Fox(1992)}]{Fox1992}
-Fox, G.~A. 1992.
+\bibitem[{Duffy et~al.(1999)Duffy, Bonser, and Aarssen}]{duffy1999}
+Duffy, N.~M., S.~P. Bonser, and L.~W. Aarssen. 1999.
+\newblock Patterns of {Variation} in {Meristem} {Allocation} across {Genotypes}
+  and {Species} in {Monocarpic} {Brassicaceae}.
+\newblock Oikos, {\bf 84}:284.
+
+\bibitem[{Fox(1990)}]{fox1990}
+Fox, G.~A. 1990.
+\newblock Components of {Flowering} {Time} {Variation} in a {Desert} {Annual}.
+\newblock Evolution, {\bf 44}:1404--1423.
+\newblock \_eprint:
+  https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1558-5646.1990.tb03835.x
+  tex.ids= Fox1990, Fox1990a tex.isbn: 0014-3820.
+
+\bibitem[{Fox(1992{\natexlab{{\em a\/}}})}]{fox1992a}
+Fox, G.~A. 1992{\natexlab{{\em a\/}}}.
 \newblock Annual plant life histories and the paradigm of resource allocation.
 \newblock Evolutionary Ecology, {\bf 6}:482--499.
 \newblock Tex.mendeley-tags: optimal control.
 
-\bibitem[{Geber(1990)}]{Geber1990}
+\bibitem[{Fox(1992{\natexlab{{\em b\/}}})}]{fox1992}
+Fox, G.~A. 1992{\natexlab{{\em b\/}}}.
+\newblock The effect of time-varying mortality and carbon assimilation on
+  models of carbon allocation in annual plants.
+\newblock Evolutionary Ecology, {\bf 6}:500--518.
+
+\bibitem[{Friedman et~al.(2015)Friedman, Twyford, Willis, and
+  Blackman}]{friedman2015a}
+Friedman, J., A.~D. Twyford, J.~H. Willis, and B.~K. Blackman. 2015.
+\newblock The extent and genetic basis of phenotypic divergence in life history
+  traits in {Mimulus} guttatus.
+\newblock Molecular Ecology, {\bf 24}:111--122.
+\newblock Tex.ids= Friedman2015 tex.mendeley-tags: empirical.
+
+\bibitem[{Geber(1990)}]{geber1990a}
 Geber, M.~A. 1990.
-\newblock The cost of meristem limitation in polygonum arenastrum: {Negative}
+\newblock The cost of meristem limitation in {Polygonum} arenastrum: {Negative}
   genetic correlations between fecundity and growth.
 \newblock Evolution, {\bf 44}:799--819.
-\newblock Tex.mendeley-tags: empirical.
+
+\bibitem[{Geber and Dawson(1990)}]{geber1990}
+Geber, M.~A. and T.~E. Dawson. 1990.
+\newblock Genetic variation in and covariation between leaf gas exchange,
+  morphology, and development in {Polygonum} arenastrum, an annual plant.
+\newblock Oecologia, {\bf 85}:153--158.
+
+\bibitem[{Hardy et~al.(1998)Hardy, Huyghe, Rahim, Roemer, Martins,
+  Sawicka-Sienkiewicz, and Caligari}]{hardy1998}
+Hardy, A., C.~Huyghe, M.~Rahim, P.~Roemer, J.~Martins, E.~Sawicka-Sienkiewicz,
+  and P.~Caligari. 1998.
+\newblock Effects of genotype and environment on architecture and flowering
+  time of indeterminate {Andean} lupins ({Lupinus} mutabilis {Sweet}).
+\newblock Australian Journal of Agricultural Research - AUST J AGR RES, {\bf
+  49}.
+
+\bibitem[{Haselhorst et~al.(2011)Haselhorst, Edwards, Rubin, and
+  Weinig}]{haselhorst2011}
+Haselhorst, M. S.~H., C.~E. Edwards, M.~J. Rubin, and C.~Weinig. 2011.
+\newblock Genetic architecture of life history traits and environment-specific
+  trade-offs.
+\newblock Molecular Ecology, {\bf 20}:4042--4058.
+\newblock Tex.ids= Haselhorst2011 tex.isbn: 1365-294X tex.mendeley-tags:
+  empirical.
+
+\bibitem[{Huang et~al.(2013)Huang, Ding, Effgen, Turck, and
+  Koornneef}]{huang2013}
+Huang, X., J.~Ding, S.~Effgen, F.~Turck, and M.~Koornneef. 2013.
+\newblock Multiple loci and genetic interactions involving flowering time genes
+  regulate stem branching among natural variants of {Arabidopsis}.
+\newblock New Phytologist, {\bf 199}:843--857.
+\newblock \_eprint:
+  https://nph.onlinelibrary.wiley.com/doi/pdf/10.1111/nph.12306.
 
 \bibitem[{Itzkovitz et~al.(2012)Itzkovitz, Blat, Jacks, Clevers, and
   van Oudenaarden}]{itzkovitz2012}
@@ -46,25 +148,54 @@ Itzkovitz, S., I.~Blat, T.~Jacks, H.~Clevers, and A.~van Oudenaarden. 2012.
 \newblock Optimality in the {Development} of {Intestinal} {Crypts}.
 \newblock Cell, {\bf 148}:608--619.
 
+\bibitem[{Karami et~al.(2020)Karami, Rahimi, Khan, Bemer, Hazarika, Mak,
+  Compier, van Noort, and Offringa}]{karami2020}
+Karami, O., A.~Rahimi, M.~Khan, M.~Bemer, R.~R. Hazarika, P.~Mak, M.~Compier,
+  V.~van Noort, and R.~Offringa. 2020.
+\newblock A suppressor of axillary meristem maturation promotes longevity in
+  flowering plants.
+\newblock Nature Plants, {\bf 6}:368--376.
+
 \bibitem[{Kellogg(2000)}]{kellogg2000}
 Kellogg, E.~A. 2000.
 \newblock A model of inflorescence development.
 \newblock In K.~L. Wilson and D.~A. Morrison, editors, Monocots: {Systematics}
   and {Evolution}, pages 84--88. CSIRO Publishing, Collingwood, VIC, Australia.
 
-\bibitem[{King and Roughgarden(1982)}]{King1982a}
-King, D. and J.~Roughgarden. 1982.
+\bibitem[{Kim and Donohue(2011)}]{kim2011}
+Kim, E. and K.~Donohue. 2011.
+\newblock Demographic, developmental and life-history variation across altitude
+  in {Erysimum} capitatum: {Altitudinal} variation in the life history of a
+  mustard.
+\newblock Journal of Ecology, {\bf 99}:1237--1249.
+
+\bibitem[{King and Roughgarden(1982{\natexlab{{\em a\/}}})}]{king1982a}
+King, D. and J.~Roughgarden. 1982{\natexlab{{\em a\/}}}.
 \newblock Graded allocation between vegetative and reproductive growth for
   annual plants in growing seasons of random length.
 \newblock Theoretical Population Biology, {\bf 22}:1--16.
-\newblock Tex.isbn: Alphabetical tex.mendeley-tags: optimal control.
+\newblock Tex.ids= King1982a, king1982 tex.isbn: Alphabetical
+  tex.mendeley-tags: optimal control.
+
+\bibitem[{King and Roughgarden(1982{\natexlab{{\em b\/}}})}]{king1982}
+King, D. and J.~Roughgarden. 1982{\natexlab{{\em b\/}}}.
+\newblock Vegetative multiple switches between and reproductive growth in
+  annual.
+\newblock Theoretical Population Biology, {\bf 21}:194--204.
+\newblock Tex.ids= King1982 tex.mendeley-tags: optimal control.
+
+\bibitem[{Kudoh et~al.(2002)Kudoh, Kachi, Kawano, and Ishiguri}]{kudoh2002}
+Kudoh, H., N.~Kachi, S.~Kawano, and Y.~Ishiguri. 2002.
+\newblock Intrinsic cost of delayed flowering in annual plants: {Negative}
+  correlation between flowering time and reproductive effort.
+\newblock Plant Species Biology, {\bf 17}:101--107.
 
 \bibitem[{Körner(2015)}]{korner2015}
 Körner, C. 2015.
 \newblock Paradigm shift in plant growth control.
 \newblock Current Opinion in Plant Biology, {\bf 25}:107--114.
 
-\bibitem[{Lande and Arnold(1983)}]{Lande1983}
+\bibitem[{Lande and Arnold(1983)}]{lande1983}
 Lande, R. and S.~J. Arnold. 1983.
 \newblock The measurement of selection on correlated characters.
 \newblock Evolution, {\bf 37}:1210--1226.
@@ -81,44 +212,182 @@ Lin, Q., R.~Loxton, K.~Lay~Teo, {,Department of Mathematics and Statistics,
   {A} survey.
 \newblock Journal of Industrial \& Management Optimization, {\bf 10}:275--309.
 
-\bibitem[{McSteen and Leyser(2005)}]{Ward2004}
+\bibitem[{McSteen and Leyser(2005)}]{mcsteen2005}
 McSteen, P. and O.~Leyser. 2005.
-\newblock {SHOOT} {BRANCHING}.
+\newblock Shoot branching.
 \newblock Annual Review of Plant Biology, {\bf 56}:353--374.
-\newblock Tex.isbn: 1543-5008 (Print){\textbackslash}r1543-5008 (Linking)
-  tex.mendeley-tags: empirical.
+\newblock Tex.ids= mcsteen2005a tex.isbn: 1543-5008
+  (Print){\textbackslash}r1543-5008 (Linking) tex.mendeley-tags: empirical.
 
-\bibitem[{Park et~al.(2012)Park, Jiang, Schatz, and Lippman}]{Park2012}
+\bibitem[{Milla et~al.(2008)Milla, Giménez-Benavides, and
+  Montserrat-Martí}]{milla2008}
+Milla, R., L.~Giménez-Benavides, and G.~Montserrat-Martí. 2008.
+\newblock Replacement of species along altitude gradients: {The} role of branch
+  architecture.
+\newblock Annals of Botany, {\bf 102}:953--966.
+\newblock Tex.isbn: 1095-8290 (Electronic){\textbackslash}r0305-7364 (Linking).
+
+\bibitem[{Méndez-Vigo et~al.(2010)Méndez-Vigo, De~Andrés, Ramiro,
+  Martínez-Zapater, and Alonso-Blanco}]{mendez-vigo2010}
+Méndez-Vigo, B., M.~T. De~Andrés, M.~Ramiro, J.~M. Martínez-Zapater, and
+  C.~Alonso-Blanco. 2010.
+\newblock Temporal analysis of natural variation for the rate of leaf
+  production and its relationship with flowering initiation in {Arabidopsis}
+  thaliana.
+\newblock Journal of Experimental Botany, {\bf 61}:1611--1623.
+\newblock Tex.isbn: 1460-2431 (Electronic){\textbackslash}n0022-0957 (Linking).
+
+\bibitem[{Nürk et~al.(2019)Nürk, Atchison, and Hughes}]{nurk2019}
+Nürk, N.~M., G.~W. Atchison, and C.~E. Hughes. 2019.
+\newblock Island woodiness underpins accelerated disparification in plant
+  radiations.
+\newblock New Phytologist, {\bf 224}:518--531.
+\newblock \_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/nph.15797.
+
+\bibitem[{Park et~al.(2012)Park, Jiang, Schatz, and Lippman}]{park2012}
 Park, S.~J., K.~Jiang, M.~C. Schatz, and Z.~B. Lippman. 2012.
 \newblock Rate of meristem maturation determines inflorescence architecture in
   tomato.
 \newblock Proceedings of the National Academy of Sciences, {\bf 109}:639--644.
-\newblock Tex.isbn: 1091-6490 (Electronic){\textbackslash}r0027-8424 (Linking).
+\newblock Tex.ids= Park2012 tex.isbn: 1091-6490
+  (Electronic){\textbackslash}r0027-8424 (Linking).
+
+\bibitem[{Parker and Smith(1990)}]{parker1990}
+Parker, G.~A. and J.~M. Smith. 1990.
+\newblock Optimality theory in evolutionary biology.
+\newblock Nature, {\bf 348}:27--33.
+
+\bibitem[{Ponraj and Theres(2020)}]{ponraj2020}
+Ponraj, U. and K.~Theres. 2020.
+\newblock Keep a distance to be different: axillary buds initiating at a
+  distance from the shoot apical meristem are crucial for the perennial
+  lifestyle of \textit{{Arabis} alpina}.
+\newblock New Phytologist, {\bf 227}:116--131.
+\newblock Tex.ids= ponraj2020b.
 
 \bibitem[{Prusinkiewicz et~al.(2007)Prusinkiewicz, Erasmus, Lane, Harder, and
-  Coen}]{Prusinkiewicz2007}
+  Coen}]{prusinkiewicz2007}
 Prusinkiewicz, P., Y.~Erasmus, B.~Lane, L.~D. Harder, and E.~Coen. 2007.
 \newblock Evolution and development of inflorescence architectures.
 \newblock Science, {\bf 316}:1452--1456.
+\newblock Tex.ids= prusinkiewicz2007a, prusinkiewicz2007b.
 
-\bibitem[{Wang et~al.(2018)Wang, Smith, and Li}]{Wang2018}
+\bibitem[{Remington et~al.(2013)Remington, Leinonen, Leppälä, and
+  Savolainen}]{remington2013}
+Remington, D.~L., P.~H. Leinonen, J.~Leppälä, and O.~Savolainen. 2013.
+\newblock Complex genetic effects on early vegetative development shape
+  resource allocation differences between {Arabidopsis} lyrata populations.
+\newblock Genetics, {\bf 195}:1087--1102.
+\newblock Tex.isbn: 1943-2631 (Electronic){\textbackslash}r0016-6731 (Linking)
+  tex.mendeley-tags: empirical tex.ids= Remington2013.
+
+\bibitem[{Salomonson et~al.(1994)Salomonson, Ohlson, and
+  Ericson}]{salomonson1994}
+Salomonson, A., M.~Ohlson, and L.~Ericson. 1994.
+\newblock Meristem activity and biomass production as response mechanisms in
+  two forest herbs.
+\newblock Oecologia, {\bf 100-100}:29--37.
+
+\bibitem[{Schaffer et~al.(1982)Schaffer, Inouye, and Whittam}]{schaffer1982}
+Schaffer, W.~M., R.~S. Inouye, and T.~S. Whittam. 1982.
+\newblock Energy {Allocation} by an {Annual} {Plant} when the {Effects} of
+  {Seasonality} on {Growth} and {Reproduction} are {Decoupled}.
+\newblock The American Naturalist, {\bf 120}:787--815.
+\newblock Tex.ids= schaffer1982a publisher: [University of Chicago Press,
+  American Society of Naturalists].
+
+\bibitem[{Schemske(1980)}]{schemske1980}
+Schemske, D.~W. 1980.
+\newblock Evolution of {Floral} {Display} in the {Orchid} {Brassavola}
+  {Nodosa}.
+\newblock Evolution, {\bf 34}:489--493.
+\newblock \_eprint:
+  https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1558-5646.1980.tb04838.x.
+
+\bibitem[{Schmitt(1993)}]{schmitt1993}
+Schmitt, J. 1993.
+\newblock Reaction norms of morphological and life-history traits to light
+  availability in impatiens capensis.
+\newblock Evolution, {\bf 47}:1654--1668.
+\newblock Tex.ids= Schmitt1993 tex.mendeley-tags: empirical.
+
+\bibitem[{Serrano-Mislata et~al.(2016)Serrano-Mislata, Fernández-Nohales,
+  Doménech, Hanzawa, Bradley, and Madueño}]{serrano-mislata2016}
+Serrano-Mislata, A., P.~Fernández-Nohales, M.~J. Doménech, Y.~Hanzawa,
+  D.~Bradley, and F.~Madueño. 2016.
+\newblock Separate elements of the \textit{{TERMINAL} {FLOWER} 1 cis}
+  -regulatory region integrate pathways to control flowering time and shoot
+  meristem identity.
+\newblock Development, {\bf 143}:3315--3327.
+\newblock Tex.isbn: 0000000175.
+
+\bibitem[{Stebbins(1974)}]{stebbins1974}
+Stebbins, G.~L. 1974.
+\newblock Flowering plants: evolution above the species level.
+\newblock Belknap Press of Harvard University Press, Cambridge, Mass.
+
+\bibitem[{Taylor et~al.(2019)Taylor, Wilczek, Roe, Welch, Runcie, Cooper, and
+  Schmitt}]{taylor2019}
+Taylor, M.~A., A.~M. Wilczek, J.~L. Roe, S.~M. Welch, D.~E. Runcie, M.~D.
+  Cooper, and J.~Schmitt. 2019.
+\newblock Large-effect flowering time mutations reveal conditionally adaptive
+  paths through fitness landscapes in \textit{{Arabidopsis} thaliana}.
+\newblock Proceedings of the National Academy of Sciences, {\bf
+  116}:17890--17899.
+
+\bibitem[{van Tienderen et~al.(1996)van Tienderen, Hammad, and
+  Zwaal}]{vantienderen1996}
+van Tienderen, P.~H., I.~Hammad, and F.~C. Zwaal. 1996.
+\newblock Pleiotropic effects of flowering time genes in the annual crucifer
+  {Arabidopsis} thaliana ({Brassicaceae}).
+\newblock American Journal of Botany, {\bf 83}:169--174.
+
+\bibitem[{Wang et~al.(2018)Wang, Smith, and Li}]{wang2018}
 Wang, B., S.~M. Smith, and J.~Li. 2018.
 \newblock Genetic regulation of shoot architecture.
 \newblock Annual Review of Plant Biology, {\bf 69}:437--468.
 \newblock Tex.isbn: 1545-2123 (Electronic) 1543-5008 (Linking)
   tex.mendeley-tags: empirical.
 
-\bibitem[{Watson(1984)}]{Watson1984a}
+\bibitem[{Watson and Casper(1984)}]{watson1984}
+Watson, M. and B.~Casper. 1984.
+\newblock Morphogenetic {Constraints} on {Patterns} of {Carbon} {Distribution}
+  in {Plants}.
+\newblock Annual Review of Ecology and Systematics, {\bf 15}:233--258.
+\newblock Tex.ids= watson1984b.
+
+\bibitem[{Watson(1984)}]{watson1984a}
 Watson, M.~A. 1984.
 \newblock Developmental constraints: {Effect} on population growth and patterns
   of resource allocation in a clonal plant.
 \newblock The American Naturalist, {\bf 123}:411--426.
-\newblock Tex.mendeley-tags: empirical.
+\newblock Tex.ids= Watson1984a, watson1984 tex.mendeley-tags: empirical.
 
 \bibitem[{White et~al.(2016)White, Rogers, Rees, and Osborne}]{white2016}
 White, A.~C., A.~Rogers, M.~Rees, and C.~P. Osborne. 2016.
 \newblock How can we make plants grow faster? {A} source–sink perspective on
   growth rate.
 \newblock Journal of Experimental Botany, {\bf 67}:31--45.
+
+\bibitem[{White(1979)}]{white1979}
+White, J. 1979.
+\newblock The {Plant} as a {Metapopulation}.
+\newblock Annual Review of Ecology and Systematics, {\bf 10}:109--145.
+\newblock \_eprint: https://doi.org/10.1146/annurev.es.10.110179.000545.
+
+\bibitem[{Wong and Ackerly(2005)}]{wong2005}
+Wong, T.~G. and D.~D. Ackerly. 2005.
+\newblock Optimal reproductive allocation in annuals and an informational
+  constraint on plasticity.
+\newblock New Phytologist, {\bf 166}:159--172.
+\newblock Tex.ids= Wong2005 tex.isbn: 0028-646X{\textbackslash}n1469-8137
+  tex.mendeley-tags: optimal control.
+
+\bibitem[{Wyatt(1982)}]{wyatt1982}
+Wyatt, R. 1982.
+\newblock Inflorescence {Architecture}: {How} {Flower} {Number}, {Arrangement},
+  and {Phenology} {Affect} {Pollination} and {Fruit}-{Set}.
+\newblock American Journal of Botany, {\bf 69}:585--594.
+\newblock Publisher: Botanical Society of America.
 
 \end{thebibliography}

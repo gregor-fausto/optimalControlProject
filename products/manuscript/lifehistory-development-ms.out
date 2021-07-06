@@ -1,19 +1,18 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Dynamic optimization}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Questions}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.1}{Questions}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Overview of dynamic optimization \(assumptions, predictions, goals\)}{section.1}% 3
 \BOOKMARK [1][-]{section.2}{General approach}{}% 4
 \BOOKMARK [1][-]{section.3}{Models of plant development}{}% 5
-\BOOKMARK [2][-]{subsection.3.1}{Resource allocation models}{section.3}% 6
-\BOOKMARK [1][-]{section.4}{Determinate inflorescences}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Model description}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Equations}{section.4}% 9
-\BOOKMARK [1][-]{section.5}{Indeterminate inflorescences}{}% 10
-\BOOKMARK [2][-]{subsection.5.1}{Description of diagram}{section.5}% 11
-\BOOKMARK [2][-]{subsection.5.2}{Model description - NEED TO UPDATE}{section.5}% 12
-\BOOKMARK [2][-]{subsection.5.3}{Optimal control problem and goals}{section.5}% 13
-\BOOKMARK [2][-]{subsection.5.4}{Analysis of optimal control problem}{section.5}% 14
-\BOOKMARK [2][-]{subsection.5.5}{Numerical algorithm}{section.5}% 15
-\BOOKMARK [1][-]{section.6}{Results}{}% 16
-\BOOKMARK [2][-]{subsection.6.1}{Optimal strategies}{section.6}% 17
-\BOOKMARK [2][-]{subsection.6.2}{Development patterns}{section.6}% 18
-\BOOKMARK [2][-]{subsection.6.3}{Environmental variation}{section.6}% 19
+\BOOKMARK [1][-]{section.4}{Determinate inflorescences}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Model description}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Equations}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Indeterminate inflorescences}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{Description of diagram}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{Model description - NEED TO UPDATE}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.3}{Optimal control problem and goals}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.4}{Analysis of optimal control problem}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.5}{Numerical algorithm}{section.5}% 14
+\BOOKMARK [1][-]{section.6}{Results}{}% 15
+\BOOKMARK [2][-]{subsection.6.1}{Optimal strategies}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.2}{Development patterns}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.3}{Environmental variation}{section.6}% 18
