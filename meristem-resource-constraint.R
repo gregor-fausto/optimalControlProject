@@ -157,7 +157,7 @@ listOut = list()
 for(i in 1:nrow(vars)){
   alpha=vars$alpha[i]
   mParms=c(vars$m[i]/2,vars$m[i],vars$m[i])
-  L_0 = .02
+  L_0 = 1
   listOut[[i]] <- optimize(f=optim_fun, interval=c(0,50), tol = 0.1 )
 }
 
@@ -217,7 +217,7 @@ library(RColorBrewer)
 colors <- colorRampPalette(brewer.pal(9, "PuRd"))(length(mVals))
 
 par(mfrow=c(1,1))
-plot(NA,xlim=c(0,2),ylim=c(0,max(vars$theta)),
+plot(NA,xlim=c(0,1),ylim=c(0,max(vars$theta)),
      xlab="Conversion rate of standing biomass (alpha)",
      ylab="Optimal switch time (theta)")
 for(i in 1:length(mVals)){
