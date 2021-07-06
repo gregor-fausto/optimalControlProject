@@ -30,7 +30,7 @@ leaf.deriv <- function(t,y,parms){
 # add to theta and calculate the value
 optim_fun = function(theta){
   
-  out = ode(y=L_0,times=seq(0,theta,by=0.001),leaf.deriv,
+  out = ode(y=L_0,times=seq(0,theta,by=0.01),leaf.deriv,
             method="rk4",parms=c(mParms[1],alpha),maxsteps = 1e5,rtol = 1e-2);
   
   L_theta = max(out[,2])
@@ -144,8 +144,8 @@ derivs=numeric(1);
 # 
 
 # grid
-mVals = seq(.1,2,by=.1)
-alphaVals = seq(.1,2,by=.1)
+mVals = seq(.1,1,by=.05)
+alphaVals = seq(.1,1,by=.05)
 vars=expand.grid(m=mVals,alpha=alphaVals)
 
 # to optimize the switch time with the ODE for leaf biomass
@@ -157,8 +157,8 @@ listOut = list()
 for(i in 1:nrow(vars)){
   alpha=vars$alpha[i]
   mParms=c(vars$m[i]/2,vars$m[i],vars$m[i])
-  L_0 = .2
-  listOut[[i]] <- optimize(f=optim_fun, interval=c(0,100), tol = 0.01 )
+  L_0 = .02
+  listOut[[i]] <- optimize(f=optim_fun, interval=c(0,50), tol = 0.1 )
 }
 
 theta=unlist(lapply(listOut, `[[`, 1))
@@ -202,6 +202,7 @@ matrix.image=function(A, x=NULL, y=NULL, col=rainbow(100,start=0.67,end=0),
   } 
 }
 
+pdf(paste0("~/Documents/optimalControlProject/products/figures/1d-",L_0,"-zoom.pdf"),height=6,width=6)
 matrix.image(thetaMat,alphaVals,mVals,
              xlab="Conversion rate of standing biomass (alpha)",
              ylab="Per capita meristem division rate (m)",
@@ -216,7 +217,7 @@ library(RColorBrewer)
 colors <- colorRampPalette(brewer.pal(9, "PuRd"))(length(mVals))
 
 par(mfrow=c(1,1))
-plot(NA,xlim=c(0,2),ylim=c(0,10),
+plot(NA,xlim=c(0,2),ylim=c(0,max(vars$theta)),
      xlab="Conversion rate of standing biomass (alpha)",
      ylab="Optimal switch time (theta)")
 for(i in 1:length(mVals)){
@@ -225,9 +226,12 @@ for(i in 1:length(mVals)){
   lines(varsSub$alpha,varsSub$theta,col=colors[i])
 }
 
-legend(x = 1.5, y = 10,
+legend(x = 1.5, y = 30,
+       title = "Meristem division rate",
        legend = c(min(mVals),median(mVals),max(mVals)),
        fill = colorRampPalette(brewer.pal(9, "PuRd"))(3),
        border = NA,
        y.intersp = 1,
        cex = 1, text.font = 1)
+
+dev.off()
