@@ -1,0 +1,92 @@
+\documentclass[crop,border=5pt,multi=tikzpicture]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots,fillbetween}
+\usepackage{animate}
+
+\usepackage{pgf}
+\usepackage{tikz}
+
+\usetikzlibrary{fit}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{automata}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{shapes.misc}
+
+\usepackage{mathtools}
+\usepackage{physics}
+
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\small}
+
+\usepackage{float,color}
+\usepackage{xcolor}
+\definecolor{darkspringgreen}{rgb}{0.09, 0.45, 0.27}
+
+\usepackage{tikz-qtree}
+\usetikzlibrary{trees}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots,fillbetween}
+\usepackage{animate}
+
+
+
+\begin{document}    
+
+%%%%%%%%%%%%%
+% LOSS FUNCTIONS
+%%%%%%%%%%%%%
+\pgfmathdeclarefunction{quadraticloss}{1}{%
+  \pgfmathparse{#1*(x)^2}%
+}
+
+\pgfmathdeclarefunction{alternateloss}{1}{%
+  \pgfmathparse{#1*abs(x)^1.25}%
+}
+
+ \begin{tikzpicture}
+    \begin{groupplot}[
+        group style={group size=2 by 1,
+                     %horizontal sep=2cm,
+			ylabels at = edge left,
+                     },
+                     %customaxis2,
+                     legend pos=north east,
+                   width=.4\textwidth,
+                           scale only axis,
+                     ]
+
+ \nextgroupplot[
+  no markers, domain=-3:3, 
+  axis lines*=left, %xlabel=$x$, ylabel=$y$,
+        axis line style={draw=black},
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west}
+  ]
+  \addplot [very thick,cyan!50!black] {quadraticloss(1)};
+  \addplot [dashed,cyan!50!black] {quadraticloss(10)};
+  \addplot [very thick,red!50!black] {alternateloss(1)};
+  \addplot [dashed,red!50!black] {alternateloss(10)};
+  %
+ \nextgroupplot[
+  no markers, domain=-.1:.1, 
+  axis lines*=left, %xlabel=$x$, ylabel=$y$,
+        axis line style={draw=black},
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  %xtick=\empty, ytick=\empty, %{4,6.5}
+  enlargelimits=true, clip=false, axis on top
+  ]
+  \addplot [very thick,cyan!50!black] {quadraticloss(1)};
+  \addplot [dashed,cyan!50!black] {quadraticloss(10)};
+  \addplot [very thick,red!50!black] {alternateloss(1)};
+  \addplot [dashed,red!50!black] {alternateloss(10)};
+    \end{groupplot}
+
+\end{tikzpicture}
+
+
+
+\end{document}

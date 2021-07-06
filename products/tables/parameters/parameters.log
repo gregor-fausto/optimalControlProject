@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.14)  19 MAY 2021 09:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.14)  18 JUN 2021 09:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -349,33 +349,29 @@ e
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd)
-Underfull \hbox (badness 5446) in paragraph at lines 84--84
-[]|\OT1/cmr/m/n/10 time deriva-tive of in-flo-res-cence meris-tems:
+Underfull \hbox (badness 5878) in paragraph at lines 84--84
+[]|\OT1/cmr/m/n/10 time deriva-tive of veg-e-ta-tive meris-tems:
  []
 
 
-Underfull \hbox (badness 1810) in paragraph at lines 84--84
-[]|\OT1/cmr/m/n/10 Per-capita rate rate of veg-e-ta-tive meris-tem
+Underfull \hbox (badness 1205) in paragraph at lines 84--84
+[]|\OT1/cmr/m/n/10 time deriva-tive of in-flo-res-cence meris-tems:
  []
 
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 2452) in paragraph at lines 120--120
-[]|\OT1/cmr/m/n/10 Per-capita rate rate of in-flo-res-cence meris-tem
- []
-
 [2
 
 ] (./parameters.aux) ) 
 Here is how much of TeX's memory you used:
  5025 strings out of 479383
  81822 string characters out of 5869387
- 372653 words of memory out of 5000000
+ 373653 words of memory out of 5000000
  22077 multiletter control sequences out of 15000+600000
  409099 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,9n,85p,259b,305s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 80i,9n,85p,736b,305s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmcsc10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/ams
@@ -383,7 +379,7 @@ fonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy10.pfb>
-Output written on parameters.pdf (2 pages, 68985 bytes).
+Output written on parameters.pdf (2 pages, 72991 bytes).
 PDF statistics:
  35 PDF objects out of 1000 (max. 8388607)
  24 compressed objects within 1 object stream

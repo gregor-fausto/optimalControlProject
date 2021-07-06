@@ -26,7 +26,7 @@ for(i in 1:n){
   runList[[i]] <- readRDS(paste0("model-scripts/analysisForEvolution/",outputVec[index[i]]))
 }
 
-j = length(runList[[2]]$beta1.list)
+j = length(runList[[1]]$beta1.list)
 
 ut <- list()
 beta1 <- list()

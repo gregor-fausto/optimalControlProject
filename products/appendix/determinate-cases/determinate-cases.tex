@@ -288,16 +288,16 @@ The optimality conditions, adjoint equations, and transversality conditions are 
 We rewrite the optimal control problem to include a state variable inequality constraint, which here is the resource constraint
 %
 \begin{align}
-\max_{u} &  \int_0^T  \log( F(t) ) \dd t & \mbox{ Objective function }   \nonumber \\
+\max_{u} &  \int_{T_l}^{T_u}  \log( F(t) ) \dd t & \mbox{ Objective function }   \nonumber \\
 \mathrm{subject\ to\ } 
-& \dot{P} =  \textcolor{red}{\gamma [\beta_1(t)] [( u(t)) P ] }- [\beta_1(t)] [(1 - u(t)) P ] & \mbox{ System of ODEs }   \nonumber \\
-& \dot{V} = [\beta_1(t)] [ u(t) P]  + [\beta_1(t)] [(1 - u(t)) P] = \beta_1 [P] \nonumber \\ 
-& \dot{I} = [\beta_1(t)] [( 1-u(t) ) P] - [\beta_2(t)] I  \\ 
-& \dot{F} = [\beta_2(t)] I  \nonumber \\ 
-& P(0) > 0;\ V(0),\ I(0),\ F(0) \geq 0 & \mbox{ Initial conditions}  \nonumber \\
+& \dot{V} =  \gamma [\beta_1(t)] [ u(t) ] V(t)  - [\beta_1(t)] [1 - u(t)] V(t) & \mbox{ System of ODEs }   \nonumber \\
+& \dot{L} = [\beta_1(t)] [ u(t) ] V(t)  + [\beta_1(t)] [1 - u(t)] V(t) = [ \beta_1(t) ] V(t) \nonumber \\ 
+& \dot{I} = [\beta_1(t)] [ 1-u(t) ] V(t) - [\beta_2(t)] I(t) \nonumber  \\ 
+& \dot{F} = [\beta_2(t)] I(t)  \nonumber \\ 
+& V(0) > 0;\ L(0)>0,\ I(0),\ F(0) \geq 0 & \mbox{ Initial conditions}  \nonumber \\
+& 0 \leq u(t) \leq 1 & \mbox{Control constraint} \nonumber \\
 & 0 \le \beta_1(t), \beta_2(t) \le M & \mbox{ Meristem constraint}  \nonumber \\
-& 0 \le \beta_1(t) P + \beta_2(t) I \le \textcolor{red}{\alpha} V & \mbox{ Resource constraint} \nonumber \\
-& 0 \leq u(t) \leq 1 & \mbox{Control constraint} \nonumber 
+& 0 \le \beta_1(t) V(t) + \beta_2(t) I(t) \le \alpha L(t) & \mbox{ Resource constraint} \nonumber 
 \end{align}
 
 We write the Hamiltonian as

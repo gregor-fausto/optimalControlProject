@@ -1,77 +1,58 @@
 This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: lifehistory-development-ms.aux
-Case mismatch error between cite keys fox1992 and Fox1992
----line 54 of file lifehistory-development-ms.aux
- : \citation{fox1992
- :                  }
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys fox1992 and Fox1992
----line 55 of file lifehistory-development-ms.aux
- : \citation{fox1992
- :                  }
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys fox1992 and Fox1992
----line 56 of file lifehistory-development-ms.aux
- : \citation{fox1992
- :                  }
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys fox1992 and Fox1992
----line 59 of file lifehistory-development-ms.aux
- : \citation{fox1992
- :                  ,kellogg2000,Prusinkiewicz2007,itzkovitz2012}
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys Cohen1971 and cohen1971
----line 117 of file lifehistory-development-ms.aux
- : \citation{Cohen1971
- :                    }
-I'm skipping whatever remains of this command
 The style file: /Users/gregor/Dropbox/bibliography/styleFiles/ecology.bst
-Database file #1: /Users/gregor/Dropbox/bibliography/optimal-control-lit.bib
-Repeated entry---line 3669 of file /Users/gregor/Dropbox/bibliography/optimal-control-lit.bib
- : @article{fox1992
- :                 ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "rees2016"
-You've used 18 entries,
+Database file #1: /Users/gregor/Dropbox/bibliography/chapter-2.bib
+Warning--I didn't find a database entry for "remington2015"
+Warning--I didn't find a database entry for "bonser2003"
+Warning--I didn't find a database entry for "doust2006"
+Warning--I didn't find a database entry for "baker2012"
+Warning--I didn't find a database entry for "rubin2018"
+Warning--I didn't find a database entry for "mitesser2007"
+Warning--I didn't find a database entry for "vincent1980"
+Warning--I didn't find a database entry for "dalgleish2005"
+Warning--I didn't find a database entry for "rao2008"
+Warning--I didn't find a database entry for "melzer2009"
+Warning--I didn't find a database entry for "moraes2019"
+You've used 55 entries,
             2706 wiz_defined-function locations,
-            736 strings with 9234 characters,
-and the built_in function-call counts, 9398 in all, are:
-= -- 938
-> -- 442
-< -- 13
-+ -- 156
-- -- 128
-* -- 742
-:= -- 1688
-add.period$ -- 82
-call.type$ -- 18
-change.case$ -- 143
-chr.to.int$ -- 18
-cite$ -- 18
-duplicate$ -- 416
-empty$ -- 654
-format.name$ -- 175
-if$ -- 1857
-int.to.chr$ -- 1
+            995 strings with 18942 characters,
+and the built_in function-call counts, 29874 in all, are:
+= -- 2931
+> -- 1582
+< -- 32
++ -- 541
+- -- 464
+* -- 2502
+:= -- 5348
+add.period$ -- 247
+call.type$ -- 55
+change.case$ -- 456
+chr.to.int$ -- 53
+cite$ -- 55
+duplicate$ -- 1265
+empty$ -- 1987
+format.name$ -- 628
+if$ -- 5865
+int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 18
-newline$ -- 106
-num.names$ -- 74
-pop$ -- 149
+missing$ -- 56
+newline$ -- 308
+num.names$ -- 222
+pop$ -- 488
 preamble$ -- 1
-purify$ -- 114
+purify$ -- 374
 quote$ -- 0
-skip$ -- 244
+skip$ -- 713
 stack$ -- 0
-substring$ -- 641
-swap$ -- 49
+substring$ -- 1999
+swap$ -- 162
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 162
+type$ -- 492
 warning$ -- 0
-while$ -- 90
+while$ -- 270
 width$ -- 0
-write$ -- 259
-(There were 6 error messages)
+write$ -- 773
+(There were 11 warnings)

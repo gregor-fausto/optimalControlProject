@@ -50,18 +50,18 @@
 %%%% time DERIVATIVES
 \multicolumn{3}{ l }{ \sc{time derivatives of state variables }} \\
 
- $\dot{V}$   & time derivative of vegetative meristems: change in vegetative meristem population size over a short time interval & vegetative meristems/time \\ 
- $\dot{L}$   & time derivative of leaves: change in leaf population size over a short time interval & leaves/time \\ 
- $\dot{I}$   & time derivative of inflorescence meristems: change in inflorescence meristem population size over a short time interval & inflorescence meristems/time \\ 
- $\dot{F}$   & time derivative of flowers: change in flower population size over a short time interval & flowers/time \\ 
+ $\dot{V}$   & time derivative of vegetative meristems: change in vegetative meristem population size over a short time interval & vegetative meristems/unit time \\ 
+ $\dot{L}$   & time derivative of leaves: change in leaf population size over a short time interval & leaves/unit time \\ 
+ $\dot{I}$   & time derivative of inflorescence meristems: change in inflorescence meristem population size over a short time interval & inflorescence meristems/unit time \\ 
+ $\dot{F}$   & time derivative of flowers: change in flower population size over a short time interval & flowers/unit time \\ 
  
    \hline
    
 %%%% PARAMETERS
 \multicolumn{3}{ l }{ \sc{ Parameters }} \\
 
- $\beta_1(t)$   & Per-capita rate rate of vegetative meristem growth & meristems/(meristem $\times$ time) \\
- $\beta_2(t)$   & Per-capita rate rate of inflorescence meristem growth & meristems/(meristem $\times$ time) \\
+ $\beta_1(t)$   & Per-capita rate rate of vegetative meristem growth & meristems/(meristem $\times$ unit time) \\
+ $\beta_2(t)$   & Per-capita rate rate of inflorescence meristem growth & meristems/(meristem $\times$ unit time) \\
  
  \hline
    
@@ -76,8 +76,8 @@
 %%%% CONSTRAINTS
 \multicolumn{3}{ l }{ \sc{ Control variables }} \\
 
- $M$   & Maximum per-capita rate of meristem growth & (meristems)/(meristem $\times$ time) \\
- $\alpha$   & Conversion rate for standing leaf biomass & (meristems)/(leaf $\times$ time) \\
+ $M$   & Maximum per-capita rate of meristem growth & (meristems)/(meristem $\times$ unit time) \\
+ $\alpha$   & Conversion rate for standing leaf biomass & (meristems)/(leaf $\times$ unit time) \\
 
    \hline
    
@@ -104,16 +104,16 @@
 %%%% PARAMETERS
 \multicolumn{3}{ l }{ \sc{ Parameters }} \\
 
- $\beta_1(t)$   & Per-capita rate rate of vegetative meristem growth & meristems/(meristem $\times$ time) \\
- $\beta_2(t)$   & Per-capita rate rate of inflorescence meristem growth & meristems/(meristem $\times$ time) \\
+ $\beta_1(t)$   & Per-capita rate rate of vegetative meristem growth & meristems/(meristem $\times$ unit time) \\
+ $\beta_2(t)$   & Per-capita rate rate of inflorescence meristem growth & meristems/(meristem $\times$ unit time) \\
  
  \hline
     
 %%%% CONSTRAINTS
 \multicolumn{3}{ l }{ \sc{ Control variables }} \\
 
- $M$   & Maximum per-capita rate of meristem growth & (meristems)/(meristem $\times$ time) \\
- $\alpha$   & Conversion rate for standing leaf biomass & (meristems)/(leaf $\times$ time) \\
+ $M$   & Maximum per-capita rate of meristem growth & (meristems)/(meristem $\times$ unit time) \\
+ $\alpha$   & Conversion rate for standing leaf biomass & (meristems)/(leaf $\times$ unit time) \\
 
    \hline
    
@@ -126,6 +126,6 @@ I drew out 3 scenarios: (1) a plant with no branching, and a single apical meris
 
 We should look at these drawings and agree on what counts as a vegetative meristem. In my mind, vegetative meristems are those that have the potential to divide and produce another vegetative meristem, either on the primary shoot axis or in an axillary position. In this sense, quiescent axillary meristems are determined by the proportion of meristem divisions that branch. Also, the proportion of meristem divisions that branch do not determine the position of those divisions; the model is agnostic about whether branching happens at positions close to or far from the shoot apical meristem.
 
-The issue is that meristems are discrete units. So for a plant that does not have branching and starts with a single vegetative meristem, the possible fates should only be a switch from vegetative to inflorescence meristems. Fractional meristem numbers do not really make sense. I wonder if it's possible to impose this on the continuous model by fixing the parameters $\beta_\dot$ to be whole numbers.
+The issue is that meristems are discrete units. So for a plant that does not have branching and starts with a single vegetative meristem, the possible fates should only be a switch from vegetative to inflorescence meristems. Fractional meristem numbers do not really make sense. I wonder if it's possible to impose this on the continuous model by fixing the parameters $\beta$ to be whole numbers.
 
 \end{document}
