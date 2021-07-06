@@ -311,6 +311,8 @@ so the minimization is
 \min_{\theta} & \ \theta + \frac{2}{\alpha L(0) \exp^{\alpha \theta}}  \nonumber
 \end{align}
 
+\clearpage
+\newpage
 
 \subsubsection{Meristem constraint only}
 When $\alpha$ approaches $\infty$ (case without resource constraint), the problem becomes the following. 
@@ -322,46 +324,17 @@ When $\alpha$ approaches $\infty$ (case without resource constraint), the proble
 \begin{align}
 \dot{L} =  M_0 \nonumber \\
 \tau_1 = \frac{1}{M_1} \nonumber \\ 
-\tau_2 = \frac{1}{M_2} \nonumber
+\tau_2 = \frac{1}{M_2}. \nonumber
 \end{align}
 
-and the plant should immediately transition to reproduction, $\theta=0$, which is completed according to
+The plant should immediately transition to reproduction, $\theta=0$, which is completed according to
 
 \begin{align}
-\tau_1 + \tau_2 = \frac{1}{M_1} + \frac{1}{M_2}  \nonumber
+\tau_1 + \tau_2 = \frac{1}{M_1} + \frac{1}{M_2}.  \nonumber
 \end{align}
 
-
-\begin{align}
-\int_{0}^{\theta} \dv{L}{t} =\int_{0}^{\theta} M_0 \nonumber \\
-\int_{0}^{\theta} \mathrm{d}L =\int_{0}^{\theta} M_0 \mathrm{d}t \nonumber \\
-L(\theta) - L(0) = M_0 \theta - M_0 0 \nonumber \\
-L(\theta) = L(0) + M_0 \theta \nonumber 
-\end{align}
-
-This means
-
-\begin{align}
-\tau_1 =  \frac{1}{\mathrm{min}(M_1,\alpha (L(0) + M_0 \theta )} \nonumber \\ 
-\tau_2 =  \frac{1}{\mathrm{min}(M_2,\alpha (L(0) + M_0 \theta )} \nonumber 
-\end{align}
-
-If $M_1, M_2$ are fast relative to $M_0$, the minimization becomes
-
-\begin{align}
-\min_{\theta} & \ \theta + \frac{2}{\alpha(L(0) + M_0 \theta)}  \nonumber
-\end{align}
-
-\begin{align}
-M_1= \alpha (L(0) + M_0 \theta ) \nonumber \\
-M_1 = \alpha L(0) + \alpha M_0 \theta  \nonumber \\
-\alpha M_0 \theta - M_1   = - \alpha L(0)  \nonumber \\
-\theta - \frac{M_1}{\alpha M_0} = - \frac{L(0)}{M_0} \nonumber \\
-\theta  =  \frac{1}{M_0} (\frac{M_1}{\alpha} - L(0)) \nonumber 
-\end{align}
-
-Because $\theta$ is positive, $\frac{M_1}{\alpha} - L(0)\geq0$. So $M_1 \geq \alpha L(0)$.
-
+\clearpage
+\newpage
 
 \begin{figure}[!h]
        \includegraphics[width=\textwidth]{../../figures/1d-resource-only.pdf}  
