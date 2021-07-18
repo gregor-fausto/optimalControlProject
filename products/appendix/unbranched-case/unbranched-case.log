@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.14)  6 JUL 2021 13:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.14)  6 JUL 2021 13:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -890,7 +890,11 @@ File: pgflibraryshapes.multipart.code.tex 2020/12/01 v3.1.7a (3.1.7a)
 \pgfnodepartsevenbox=\box88
 \pgfnodepartsixbox=\box89
 \pgfnodepartfivebox=\box90
-))) (./unbranched-case.aux)
+))) (./unbranched-case.aux
+
+LaTeX Warning: Label `fig:figure-x' multiply defined.
+
+)
 \openout1 = `unbranched-case.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
@@ -909,8 +913,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
 LaTeX Font Info:    ... okay on input line 117.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
 LaTeX Font Info:    ... okay on input line 117.
-
-(/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count329
 \scratchdimen=\dimen337
@@ -1020,28 +1023,68 @@ Underfull \hbox (badness 3407) in paragraph at lines 155--155
 
 ] [3] [4
 
-] [5]
-<../../figures/1d-resource-only.pdf, id=53, 578.16pt x 289.08pt>
+]
+<../../figures/1d-resource-only.pdf, id=48, 578.16pt x 289.08pt>
 File: ../../figures/1d-resource-only.pdf Graphic file (type pdf)
 <use ../../figures/1d-resource-only.pdf>
 Package pdftex.def Info: ../../figures/1d-resource-only.pdf  used on input line
- 371.
+ 340.
 (pdftex.def)             Requested size: 469.75499pt x 234.8769pt.
- [6
+ [5
 
- <../../figures/1d-resource-only.pdf>] (./unbranched-case.aux)
+ <../../figures/1d-resource-only.pdf>]
+<../../figures/1d-0.02-zoom.pdf, id=59, 433.62pt x 433.62pt>
+File: ../../figures/1d-0.02-zoom.pdf Graphic file (type pdf)
+<use ../../figures/1d-0.02-zoom.pdf>
+Package pdftex.def Info: ../../figures/1d-0.02-zoom.pdf  used on input line 350
+.
+(pdftex.def)             Requested size: 234.87749pt x 234.87912pt.
+<../../figures/1d-1-zoom.pdf, id=60, 433.62pt x 433.62pt>
+File: ../../figures/1d-1-zoom.pdf Graphic file (type pdf)
+<use ../../figures/1d-1-zoom.pdf>
+Package pdftex.def Info: ../../figures/1d-1-zoom.pdf  used on input line 351.
+(pdftex.def)             Requested size: 234.87749pt x 234.87912pt.
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 350--352
+[][] [] 
+ []
+
+<../../figures/1d-0.02-zoom.pdf, id=61, page=2, 433.62pt x 433.62pt>
+File: ../../figures/1d-0.02-zoom.pdf Graphic file (type pdf)
+<use ../../figures/1d-0.02-zoom.pdf, page 2>
+Package pdftex.def Info: ../../figures/1d-0.02-zoom.pdf , page2 used on input l
+ine 357.
+(pdftex.def)             Requested size: 234.87749pt x 234.87912pt.
+<../../figures/1d-1-zoom.pdf, id=62, page=2, 433.62pt x 433.62pt>
+File: ../../figures/1d-1-zoom.pdf Graphic file (type pdf)
+<use ../../figures/1d-1-zoom.pdf, page 2>
+Package pdftex.def Info: ../../figures/1d-1-zoom.pdf , page2 used on input line
+ 358.
+(pdftex.def)             Requested size: 234.87749pt x 234.87912pt.
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 357--359
+[][] [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6
+
+ <../../figures/1d-0.02-zoom.pdf> <../../figures/1d-1-zoom.pdf>] [7 <../../figu
+res/1d-0.02-zoom.pdf> <../../figures/1d-1-zoom.pdf>] (./unbranched-case.aux)
 Package rerunfilecheck Info: File `unbranched-case.out' has not changed.
 (rerunfilecheck)             Checksum: E174BFA6CC0BF6E69F61A95C70B83DD3;138.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24556 strings out of 479383
- 468878 string characters out of 5869387
+ 24577 strings out of 479383
+ 469591 string characters out of 5869387
  923295 words of memory out of 5000000
- 41159 multiletter control sequences out of 15000+600000
+ 41175 multiletter control sequences out of 15000+600000
  417457 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,10n,86p,738b,1086s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1054,15 +1097,14 @@ usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
 sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
 /local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
 ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
-al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on unbranched-case.pdf (6 pages, 146221 bytes).
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on unbranched-case.pdf (7 pages, 157281 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
- 34 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
+ 17 named destinations out of 1000 (max. 500000)
+ 54 words of extra memory for PDF output out of 10000 (max. 10000000)
 
