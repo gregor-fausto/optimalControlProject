@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.14)  18 JUL 2021 11:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.14)  18 JUN 2021 15:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -398,7 +398,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip66
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 45.
+Package hyperref Info: Option `colorlinks' set `true' on input line 44.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 
@@ -1080,22 +1080,22 @@ Package: ocgbase 2019/11/04 v0.17 support package for ocgx2.sty
 (./lifehistory-development-ms.aux)
 \openout1 = `lifehistory-development-ms.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1159,7 +1159,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 125.
+Package hyperref Info: Link coloring ON on input line 124.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1172,9 +1172,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count362
 )
-LaTeX Info: Redefining \ref on input line 125.
-LaTeX Info: Redefining \pageref on input line 125.
-LaTeX Info: Redefining \nameref on input line 125.
+LaTeX Info: Redefining \ref on input line 124.
+LaTeX Info: Redefining \pageref on input line 124.
+LaTeX Info: Redefining \nameref on input line 124.
  (./lifehistory-development-ms.out) (./lifehistory-development-ms.out)
 \@outlinefile=\write4
 \openout4 = `lifehistory-development-ms.out'.
@@ -1185,713 +1185,263 @@ LaTeX Info: Redefining \nameref on input line 125.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
 your preamble.
- on input line 125.
+ on input line 124.
 
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-Package natbib Warning: Citation `cole1954' on page 1 undefined on input line 1
-57.
-
-
-Package natbib Warning: Citation `lande1983' on page 1 undefined on input line 
-157.
-
-
-Package natbib Warning: Citation `fox1990' on page 1 undefined on input line 15
-8.
-
-
-Package natbib Warning: Citation `cohen1971' on page 1 undefined on input line 
-159.
-
-
-Package natbib Warning: Citation `schaffer1982' on page 1 undefined on input li
-ne 159.
-
-
-Package natbib Warning: Citation `fox1992a' on page 1 undefined on input line 1
-59.
-
-
-Package natbib Warning: Citation `nurk2019' on page 1 undefined on input line 1
-65.
-
-
-Package natbib Warning: Citation `remington2015a' on page 1 undefined on input 
-line 166.
-
-
-Package natbib Warning: Citation `ponraj2020' on page 1 undefined on input line
- 166.
-
-
-Package natbib Warning: Citation `baker2011' on page 1 undefined on input line 
-167.
-
-
-Package natbib Warning: Citation `baker2014' on page 1 undefined on input line 
-167.
-
-
-Package natbib Warning: Citation `friedman2015a' on page 1 undefined on input l
-ine 167.
-
-
-Package natbib Warning: Citation `kim2011' on page 1 undefined on input line 16
-7.
-
-
-Package natbib Warning: Citation `bonser1996' on page 1 undefined on input line
- 168.
+Package natbib Warning: Citation `remington2015' on page 1 undefined on input l
+ine 165.
 
 
 Package natbib Warning: Citation `bonser2003' on page 1 undefined on input line
- 168.
+ 167.
 
 
 Package natbib Warning: Citation `doust2006' on page 1 undefined on input line 
-168.
+167.
 
 
 Package natbib Warning: Citation `baker2012' on page 1 undefined on input line 
-168.
+167.
 
 
-Package natbib Warning: Citation `huang2013' on page 1 undefined on input line 
-168.
-
-
-Package natbib Warning: Citation `baker2014' on page 1 undefined on input line 
-168.
-
-
-Package natbib Warning: Citation `rubin2018a' on page 1 undefined on input line
- 168.
-
-
-Package natbib Warning: Citation `hardy1998' on page 1 undefined on input line 
-168.
-
-
-Package natbib Warning: Citation `geber1990a' on page 1 undefined on input line
- 174.
-
-
-Package natbib Warning: Citation `schmitt1993' on page 1 undefined on input lin
-e 174.
-
-
-Package natbib Warning: Citation `haselhorst2011' on page 1 undefined on input 
-line 174.
-
-
-Package natbib Warning: Citation `watson1984a' on page 1 undefined on input lin
-e 174.
-
-
-Package natbib Warning: Citation `vantienderen1996' on page 1 undefined on inpu
-t line 174.
-
-
-Package natbib Warning: Citation `duffy1999' on page 1 undefined on input line 
-174.
-
-
-Package natbib Warning: Citation `kudoh2002' on page 1 undefined on input line 
-174.
-
-
-Package natbib Warning: Citation `friedman2015a' on page 1 undefined on input l
-ine 174.
-
-
-Package natbib Warning: Citation `bradley1997' on page 1 undefined on input lin
-e 175.
-
-
-Package natbib Warning: Citation `karami2020' on page 1 undefined on input line
- 175.
+Package natbib Warning: Citation `rubin2018' on page 1 undefined on input line 
+167.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.176 \item W
-             e have studies focusing on developmental stages (e.g. \cite{bak...
-[1]
+l.174 \item S
+             tudies of development with mutants/knock-outs in Arabidopsis th...
+[1] [2]
 
-Package natbib Warning: Citation `baker2011' on page 2 undefined on input line 
-176.
-
-
-Package natbib Warning: Citation `parker1990' on page 2 undefined on input line
- 177.
-
-
-Package natbib Warning: Citation `mcsteen2005' on page 2 undefined on input lin
-e 183.
-
-
-Package natbib Warning: Citation `wang2018' on page 2 undefined on input line 1
-83.
-
-
-Package natbib Warning: Citation `watson1984a' on page 2 undefined on input lin
-e 185.
-
-
-Package natbib Warning: Citation `geber1990a' on page 2 undefined on input line
- 185.
-
-
-Package natbib Warning: Citation `schmitt1993' on page 2 undefined on input lin
-e 185.
-
-
-Package natbib Warning: Citation `cohen1971' on page 2 undefined on input line 
-191.
-
-
-Package natbib Warning: Citation `king1982a' on page 2 undefined on input line 
-192.
-
-
-Package natbib Warning: Citation `wong2005' on page 2 undefined on input line 1
-93.
-
-
-Package natbib Warning: Citation `mitesser2007' on page 2 undefined on input li
-ne 194.
-
-[2]
-
-Package natbib Warning: Citation `cohen1976' on page 3 undefined on input line 
-195.
+Package natbib Warning: Citation `mitesser2007' on page 3 undefined on input li
+ne 193.
 
 
 Package natbib Warning: Citation `vincent1980' on page 3 undefined on input lin
-e 195.
+e 194.
 
 
-Package natbib Warning: Citation `schaffer1982' on page 3 undefined on input li
-ne 195.
-
-
-Package natbib Warning: Citation `fox1992' on page 3 undefined on input line 19
-5.
-
-
-Package natbib Warning: Citation `king1982' on page 3 undefined on input line 1
-95.
-
-
-Package natbib Warning: Citation `chiariello1984' on page 3 undefined on input 
-line 195.
-
-
-Package natbib Warning: Citation `wong2005' on page 3 undefined on input line 1
-96.
-
-
-Package natbib Warning: Citation `prusinkiewicz2007' on page 3 undefined on inp
-ut line 202.
-
-
-Package natbib Warning: Citation `park2012' on page 3 undefined on input line 2
-02.
-
-
-Package natbib Warning: Citation `milla2008' on page 3 undefined on input line 
-203.
-
-
-Package natbib Warning: Citation `dalgleish2006' on page 3 undefined on input l
-ine 203.
+Package natbib Warning: Citation `dalgleish2005' on page 3 undefined on input l
+ine 202.
 
 
 Package natbib Warning: Citation `rao2008' on page 3 undefined on input line 20
-5.
+4.
 
 
-Package natbib Warning: Citation `melzer2008' on page 3 undefined on input line
- 205.
-
-
-Package natbib Warning: Citation `mendez-vigo2010' on page 3 undefined on input
- line 205.
-
-
-Package natbib Warning: Citation `remington2013' on page 3 undefined on input l
-ine 205.
-
-
-Package natbib Warning: Citation `serrano-mislata2016' on page 3 undefined on i
-nput line 205.
+Package natbib Warning: Citation `melzer2009' on page 3 undefined on input line
+ 204.
 
 
 Package natbib Warning: Citation `moraes2019' on page 3 undefined on input line
- 205.
+ 204.
 
-
-Package natbib Warning: Citation `taylor2019' on page 3 undefined on input line
- 205.
-
-
-Package natbib Warning: Citation `karami2020' on page 3 undefined on input line
- 205.
-
-
-Package natbib Warning: Citation `fishbein1996' on page 3 undefined on input li
-ne 206.
-
-
-Package natbib Warning: Citation `pyke1989' on page 3 undefined on input line 2
-12.
-
-
-Package natbib Warning: Citation `kudoh2002' on page 3 undefined on input line 
-212.
-
-
-Package natbib Warning: Citation `suzuki2006' on page 3 undefined on input line
- 212.
-
-
-Package natbib Warning: Citation `hughes2014a' on page 3 undefined on input lin
-e 212.
-
-
-Package natbib Warning: Citation `cole1954' on page 3 undefined on input line 2
-21.
-
-
-Package natbib Warning: Citation `lande1983' on page 3 undefined on input line 
-221.
-
-[3]
-
-Package natbib Warning: Citation `mcsteen2005' on page 4 undefined on input lin
-e 223.
-
-
-Package natbib Warning: Citation `wang2018' on page 4 undefined on input line 2
-23.
-
-
-Package natbib Warning: Citation `watson1984a' on page 4 undefined on input lin
-e 223.
-
-
-Package natbib Warning: Citation `geber1990a' on page 4 undefined on input line
- 223.
-
-
-Package natbib Warning: Citation `fox1990' on page 4 undefined on input line 22
-9.
-
-[4]
-
-Package natbib Warning: Citation `cohen1971' on page 5 undefined on input line 
-252.
-
-
-Package natbib Warning: Citation `fox1992a' on page 5 undefined on input line 2
-52.
-
-
-Package natbib Warning: Citation `fox1992a' on page 5 undefined on input line 2
-53.
-
-
-Package natbib Warning: Citation `wyatt1982' on page 5 undefined on input line 
-254.
-
-
-Package natbib Warning: Citation `schemske1980' on page 5 undefined on input li
-ne 254.
-
-
-Package natbib Warning: Citation `stebbins1974' on page 5 undefined on input li
-ne 254.
-
-
-Package natbib Warning: Citation `salomonson1994' on page 5 undefined on input 
-line 254.
-
-[5]
-
-Package natbib Warning: Citation `wyatt1982' on page 6 undefined on input line 
-280.
-
-
-Package natbib Warning: Citation `stebbins1974' on page 6 undefined on input li
-ne 280.
-
-
-Package natbib Warning: Citation `prusinkiewicz2007' on page 6 undefined on inp
-ut line 280.
-
-
-Package natbib Warning: Citation `geber1990a' on page 6 undefined on input line
- 285.
-
-
-Package natbib Warning: Citation `geber1990a' on page 6 undefined on input line
- 286.
-
-
-Package natbib Warning: Citation `bonser2006' on page 6 undefined on input line
- 287.
-
-
-Package natbib Warning: Citation `bonser2006' on page 6 undefined on input line
- 287.
-
-
-Package natbib Warning: Citation `salomonson1994' on page 6 undefined on input 
-line 287.
-
-
-Package natbib Warning: Citation `watson1984' on page 6 undefined on input line
- 289.
-
-
-Package natbib Warning: Citation `watson1984a' on page 6 undefined on input lin
-e 289.
-
-
-Package natbib Warning: Citation `watson1984' on page 6 undefined on input line
- 289.
-
-[6]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 297
+[3] [4] [5] [6]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 287
 .
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 297
+LaTeX Font Info:    Trying to load font information for U+msb on input line 287
 .
-
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [7]
 
 LaTeX Warning: Reference `fig:transitions-determinate' on page 8 undefined on i
-nput line 341.
+nput line 331.
 
 
 LaTeX Warning: Reference `fig:transitions-indeterminate' on page 8 undefined on
- input line 341.
+ input line 331.
 
+[8] [9] [10]
+Overfull \hbox (8.09973pt too wide) in paragraph at lines 373--374
+[]\OT1/cmr/m/n/12 Followed di-choto-mous char-ac-ter-i-za-tion of in-flo-res-ce
+nce de-vel-op-ment ([][]Kel-logg[][] ([][]2000[][]) 
+ []
 
-Package natbib Warning: Citation `white2016' on page 8 undefined on input line 
-341.
-
-
-Package natbib Warning: Citation `korner2015' on page 8 undefined on input line
- 341.
-
-
-Package natbib Warning: Citation `fox1992a' on page 8 undefined on input line 3
-41.
-
-
-Package natbib Warning: Citation `korner2015' on page 8 undefined on input line
- 343.
-
-
-Package natbib Warning: Citation `white2016' on page 8 undefined on input line 
-343.
-
-
-Package natbib Warning: Citation `fox1990' on page 8 undefined on input line 34
-5.
-
-
-Package natbib Warning: Citation `fox1990' on page 8 undefined on input line 34
-5.
-
-[8] [9]
-
-Package natbib Warning: Citation `white1979' on page 10 undefined on input line
- 375.
-
-
-Package natbib Warning: Citation `prusinkiewicz2007' on page 10 undefined on in
-put line 376.
-
-
-Package natbib Warning: Citation `itzkovitz2012' on page 10 undefined on input 
-line 376.
-
-
-Package natbib Warning: Citation `fox1992' on page 10 undefined on input line 3
-82.
-
-
-Package natbib Warning: Citation `kellogg2000' on page 10 undefined on input li
-ne 383.
-
-
-Package natbib Warning: Citation `bradley1997' on page 10 undefined on input li
-ne 384.
-
-
-Package natbib Warning: Citation `ackerly1999' on page 10 undefined on input li
-ne 385.
-
-[10] [11]
-
-Package natbib Warning: Citation `kellogg2000' on page 12 undefined on input li
-ne 406.
-
-
-Package natbib Warning: Citation `park2012' on page 12 undefined on input line 
-408.
-
-
-Package natbib Warning: Citation `bradley1997' on page 12 undefined on input li
-ne 408.
-
-[12]
-
-Package natbib Warning: Citation `prusinkiewicz2007' on page 13 undefined on in
-put line 410.
-
-
-Package natbib Warning: Citation `park2012' on page 13 undefined on input line 
-410.
-
-
-Package natbib Warning: Citation `cohen1971' on page 13 undefined on input line
- 412.
-
-
-Package natbib Warning: Citation `fox1992a' on page 13 undefined on input line 
-412.
-
-
-Package natbib Warning: Citation `fox1992a' on page 13 undefined on input line 
-412.
-
-
-Package natbib Warning: Citation `fox1992a' on page 13 undefined on input line 
-412.
-
-
-Package natbib Warning: Citation `cohen1971' on page 13 undefined on input line
- 414.
-
-
-Package natbib Warning: Citation `king1982a' on page 13 undefined on input line
- 414.
-
-
-Package natbib Warning: Citation `fox1992a' on page 13 undefined on input line 
-414.
-
-
-Package natbib Warning: Citation `kellogg2000' on page 13 undefined on input li
-ne 414.
-
-
-Package natbib Warning: Citation `prusinkiewicz2007' on page 13 undefined on in
-put line 414.
-
-
-Package natbib Warning: Citation `itzkovitz2012' on page 13 undefined on input 
-line 414.
-
-
-Package natbib Warning: Citation `bartlett2014' on page 13 undefined on input l
-ine 420.
-
-
-Package natbib Warning: Citation `park2012' on page 13 undefined on input line 
-420.
-
-[13]
+[11] [12] [13]
 
 LaTeX Warning: Reference `fig:transitions-determinate' on page 14 undefined on 
-input line 422.
+input line 412.
 
 
-Package natbib Warning: Citation `itzkovitz2012' on page 14 undefined on input 
-line 422.
-
-
-Underfull \hbox (badness 4303) in paragraph at lines 440--440
+Underfull \hbox (badness 4303) in paragraph at lines 430--430
 []\OT1/cmr/m/n/10.95 (a) |Pri-mary meris-tem
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 440--440
+Underfull \hbox (badness 10000) in paragraph at lines 430--430
 \OT1/cmr/m/n/10.95 tran-si-tion-ing to one
  []
 
 
-Underfull \hbox (badness 3724) in paragraph at lines 459--459
+Underfull \hbox (badness 3724) in paragraph at lines 449--449
 []\OT1/cmr/m/n/10.95 (b) |Pri-mary meris-tem
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 459--459
+Underfull \hbox (badness 3407) in paragraph at lines 449--449
 \OT1/cmr/m/n/10.95 e-ta-tive meris-tem, and
  []
 
 
-Underfull \hbox (badness 1189) in paragraph at lines 459--459
+Underfull \hbox (badness 1189) in paragraph at lines 449--449
 \OT1/cmr/m/n/10.95 gen-er-at-ing in-flo-res-cence
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 475--475
+Underfull \hbox (badness 1803) in paragraph at lines 465--465
 \OT1/cmr/m/n/10.95 res-cence meris-tem and
  []
 
 
-Underfull \hbox (badness 4303) in paragraph at lines 498--498
+Underfull \hbox (badness 4303) in paragraph at lines 488--488
 []\OT1/cmr/m/n/10.95 (a) |Pri-mary meris-tem
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--498
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
 \OT1/cmr/m/n/10.95 tran-si-tion-ing to one
  []
 
 
-Underfull \hbox (badness 3724) in paragraph at lines 519--519
+Underfull \hbox (badness 3724) in paragraph at lines 509--509
 []\OT1/cmr/m/n/10.95 (b) |Pri-mary meris-tem
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 519--519
+Underfull \hbox (badness 3407) in paragraph at lines 509--509
 \OT1/cmr/m/n/10.95 e-ta-tive meris-tem, and
  []
 
 
-Underfull \hbox (badness 1189) in paragraph at lines 519--519
+Underfull \hbox (badness 1189) in paragraph at lines 509--509
 \OT1/cmr/m/n/10.95 gen-er-at-ing in-flo-res-cence
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 538--538
+Underfull \hbox (badness 1803) in paragraph at lines 528--528
 \OT1/cmr/m/n/10.95 res-cence meris-tem and
  []
 
 [14] [15] [16] [17] [18] [19]
 
-Package natbib Warning: Citation `bradley1997' on page 20 undefined on input li
-ne 669.
-
-
 LaTeX Warning: Reference `fig:transitions-indeterminate' on page 20 undefined o
-n input line 671.
+n input line 661.
 
 [20]
-Overfull \hbox (0.75339pt too wide) in paragraph at lines 690--691
+Overfull \hbox (0.75339pt too wide) in paragraph at lines 680--681
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--691
+Underfull \hbox (badness 10000) in paragraph at lines 681--681
 \OT1/cmr/m/n/10.95 tem tran-si-tion-ing
  []
 
 
-Underfull \hbox (badness 3942) in paragraph at lines 691--691
+Underfull \hbox (badness 3942) in paragraph at lines 681--681
 \OT1/cmr/m/n/10.95 to one veg-e-ta-tive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--691
+Underfull \hbox (badness 10000) in paragraph at lines 681--681
 \OT1/cmr/m/n/10.95 meris-tem and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--691
+Underfull \hbox (badness 10000) in paragraph at lines 681--681
 \OT1/cmr/m/n/10.95 gen-er-at-ing two
  []
 
 
-Overfull \hbox (0.75339pt too wide) in paragraph at lines 709--710
+Overfull \hbox (0.75339pt too wide) in paragraph at lines 699--700
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--710
+Underfull \hbox (badness 10000) in paragraph at lines 700--700
 \OT1/cmr/m/n/10.95 tem tran-si-tion-ing
  []
 
 
-Underfull \hbox (badness 3942) in paragraph at lines 710--710
+Underfull \hbox (badness 3942) in paragraph at lines 700--700
 \OT1/cmr/m/n/10.95 to one veg-e-ta-tive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--710
+Underfull \hbox (badness 10000) in paragraph at lines 700--700
 \OT1/cmr/m/n/10.95 er-at-ing pri-mary
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--710
+Underfull \hbox (badness 10000) in paragraph at lines 700--700
 \OT1/cmr/m/n/10.95 and in-flo-res-cence
  []
 
 
-Overfull \hbox (0.75339pt too wide) in paragraph at lines 730--731
+Overfull \hbox (0.75339pt too wide) in paragraph at lines 720--721
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--731
+Underfull \hbox (badness 10000) in paragraph at lines 721--721
 \OT1/cmr/m/n/10.95 tem tran-si-tion-ing
  []
 
 
-Underfull \hbox (badness 3942) in paragraph at lines 731--731
+Underfull \hbox (badness 3942) in paragraph at lines 721--721
 \OT1/cmr/m/n/10.95 to one veg-e-ta-tive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--731
+Underfull \hbox (badness 10000) in paragraph at lines 721--721
 \OT1/cmr/m/n/10.95 meris-tem and
  []
 
 
-Overfull \hbox (0.75339pt too wide) in paragraph at lines 751--752
+Overfull \hbox (0.75339pt too wide) in paragraph at lines 741--742
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 752--752
+Underfull \hbox (badness 10000) in paragraph at lines 742--742
 []\OT1/cmr/m/n/10.95 (d) |In-flo-res-cence
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 752--752
+Underfull \hbox (badness 10000) in paragraph at lines 742--742
 \OT1/cmr/m/n/10.95 meris-tem re-main-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 752--752
+Underfull \hbox (badness 10000) in paragraph at lines 742--742
 \OT1/cmr/m/n/10.95 meris-tem and
  []
 
 
 LaTeX Warning: Reference `fig:transitions-indeterminate' on page 21 undefined o
-n input line 761.
+n input line 751.
 
 
 LaTeX Warning: Reference `fig:transitions-indeterminate' on page 21 undefined o
-n input line 761.
+n input line 751.
 
 [21]
 
 LaTeX Warning: Reference `fig:transitions-indeterminate' on page 22 undefined o
-n input line 770.
+n input line 760.
+
+
+LaTeX Warning: Reference `fig:transitions-indeterminate' on page 22 undefined o
+n input line 760.
 
 
 LaTeX Warning: Reference `fig:transitions-indeterminate' on page 22 undefined o
@@ -1899,102 +1449,71 @@ n input line 770.
 
 
 LaTeX Warning: Reference `fig:transitions-indeterminate' on page 22 undefined o
-n input line 780.
-
-
-LaTeX Warning: Reference `fig:transitions-indeterminate' on page 22 undefined o
-n input line 780.
+n input line 770.
 
 [22]
 
 LaTeX Warning: Reference `fig:transitions-indeterminate' on page 23 undefined o
-n input line 790.
+n input line 780.
 
 [23] [24] [25] [26]
-
-Package natbib Warning: Citation `cohen1971' on page 27 undefined on input line
- 881.
-
-
-Package natbib Warning: Citation `fox1992a' on page 27 undefined on input line 
-881.
-
-<../figures/resources2.pdf, id=260, page=1, 722.7pt x 361.35pt>
+<../figures/resources2.pdf, id=554, page=1, 722.7pt x 361.35pt>
 File: ../figures/resources2.pdf Graphic file (type pdf)
 <use ../figures/resources2.pdf, page 1>
 Package pdftex.def Info: ../figures/resources2.pdf , page1 used on input line 8
-88.
+78.
 (pdftex.def)             Requested size: 234.87749pt x 117.43735pt.
-<../figures/resources3.pdf, id=261, page=1, 722.7pt x 361.35pt>
+<../figures/resources3.pdf, id=555, page=1, 722.7pt x 361.35pt>
 File: ../figures/resources3.pdf Graphic file (type pdf)
 <use ../figures/resources3.pdf, page 1>
 Package pdftex.def Info: ../figures/resources3.pdf , page1 used on input line 8
-89.
+79.
 (pdftex.def)             Requested size: 234.87749pt x 117.43735pt.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 888--891
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 878--881
 [][] [] 
  []
 
 [27
 
  <../figures/resources2.pdf> <../figures/resources3.pdf>]
-
-Package natbib Warning: Citation `king1982a' on page 28 undefined on input line
- 899.
-
-<../figures/kingRoughgardenNormalSummary.pdf, id=279, page=1, 578.16pt x 289.08
+<../figures/kingRoughgardenNormalSummary.pdf, id=574, page=1, 578.16pt x 289.08
 pt>
 File: ../figures/kingRoughgardenNormalSummary.pdf Graphic file (type pdf)
 <use ../figures/kingRoughgardenNormalSummary.pdf, page 1>
 Package pdftex.def Info: ../figures/kingRoughgardenNormalSummary.pdf , page1 us
-ed on input line 902.
+ed on input line 892.
 (pdftex.def)             Requested size: 352.31624pt x 176.15768pt.
-<../figures/season.pdf, id=280, page=1, 361.35pt x 361.35pt>
+<../figures/season.pdf, id=575, page=1, 361.35pt x 361.35pt>
 File: ../figures/season.pdf Graphic file (type pdf)
 <use ../figures/season.pdf, page 1>
-Package pdftex.def Info: ../figures/season.pdf , page1 used on input line 909.
+Package pdftex.def Info: ../figures/season.pdf , page1 used on input line 899.
 (pdftex.def)             Requested size: 140.92792pt x 140.92593pt.
-[28 <../figures/kingRoughgardenNormalSummary.pdf> <../figures/season.pdf>]
-No file lifehistory-development-ms.bbl.
-[29
+ [28 <../figures/kingRoughgardenNormalSummary.pdf> <../figures/season.pdf>]
+(./lifehistory-development-ms.bbl [29
 
+] [30]
+Underfull \hbox (badness 2181) in paragraph at lines 138--144
+[]\OT1/cmr/m/n/12 Huang, X., J. Ding, S. Ef-f-gen, F. Turck, and M. Koorn-neef.
+ 2013.  Mul-ti-ple
+ []
 
-]
-<../figures-latex/figures-transitions.pdf, id=309, page=1, 120.9579pt x 67.1026
-9pt>
-File: ../figures-latex/figures-transitions.pdf Graphic file (type pdf)
-<use ../figures-latex/figures-transitions.pdf, page 1>
-Package pdftex.def Info: ../figures-latex/figures-transitions.pdf , page1 used 
-on input line 946.
-(pdftex.def)             Requested size: 234.87749pt x 130.30496pt.
- [30
-
- <../figures-latex/figures-transitions.pdf>]
-File: ../figures-latex/figures-transitions.pdf Graphic file (type pdf)
-<use ../figures-latex/figures-transitions.pdf, page 1>
-Package pdftex.def Info: ../figures-latex/figures-transitions.pdf , page1 used 
-on input line 955.
-(pdftex.def)             Requested size: 234.87749pt x 130.30496pt.
- [31
-
-]
-File: ../figures-latex/figures-transitions.pdf Graphic file (type pdf)
-<use ../figures-latex/figures-transitions.pdf, page 1>
-Package pdftex.def Info: ../figures-latex/figures-transitions.pdf , page1 used 
-on input line 964.
-(pdftex.def)             Requested size: 234.87749pt x 130.30496pt.
-
+[31]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2
+20.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 220.
+ [32]
+[33] [34]) [35]
 
 Package natbib Warning: There were undefined citations.
 
-[32
+[36
 
-] (./lifehistory-development-ms.aux
-
-Package pdfbase Warning: Rerun to get internal references right!
-
-)
+] (./lifehistory-development-ms.aux)
 Package rerunfilecheck Info: File `lifehistory-development-ms.out' has not chan
 ged.
 (rerunfilecheck)             Checksum: C0FF73FD173171C2EFE5890CAE4A8C74;1230.
@@ -2008,16 +1527,16 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
  )
 (\end occurred inside a group at level 4)
 
-### semi simple group (level 4) entered at line 390 (\begingroup)
-### semi simple group (level 3) entered at line 366 (\begingroup)
-### semi simple group (level 2) entered at line 331 (\begingroup)
-### semi simple group (level 1) entered at line 218 (\begingroup)
+### semi simple group (level 4) entered at line 380 (\begingroup)
+### semi simple group (level 3) entered at line 356 (\begingroup)
+### semi simple group (level 2) entered at line 321 (\begingroup)
+### semi simple group (level 1) entered at line 208 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 35826 strings out of 479383
- 830500 string characters out of 5869387
- 1280163 words of memory out of 5000000
- 52177 multiletter control sequences out of 15000+600000
+ 36065 strings out of 479383
+ 834440 string characters out of 5869387
+ 1285618 words of memory out of 5000000
+ 52357 multiletter control sequences out of 15000+600000
  413652 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,10n,98p,1138b,1475s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2025,22 +1544,20 @@ Here is how much of TeX's memory you used:
 -super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-ib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
-b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></u
-sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/l
-ocal/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on lifehistory-development-ms.pdf (33 pages, 246902 bytes).
+/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mib10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on lifehistory-development-ms.pdf (37 pages, 261130 bytes).
 PDF statistics:
- 415 PDF objects out of 1000 (max. 8388607)
- 352 compressed objects within 4 object streams
- 83 named destinations out of 1000 (max. 500000)
- 182 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 722 PDF objects out of 1000 (max. 8388607)
+ 655 compressed objects within 7 object streams
+ 139 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
